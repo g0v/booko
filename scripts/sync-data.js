@@ -51,6 +51,38 @@ const getNlpiLink = (title) => `https://ebook.nlpi.edu.tw/search?search_field=TI
 const getEsliteSearch = (title) => `https://www.eslite.com/Search?q=${encodeURIComponent(title)}`;
 const getKingstoneSearch = (title) => `https://www.kingstone.com.tw/search/search?q=${encodeURIComponent(title)}`;
 
+const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+async function fetchCoverFromGoogle(title, author) {
+  // Clean title: remove 《 》 and other common punctuation
+  const cleanTitle = title.replace(/[《》【】「」]/g, '').trim();
+  const cleanAuthor = author.replace(/[未知作者]/g, '').trim();
+  
+  const query = `intitle:${encodeURIComponent(cleanTitle)}${cleanAuthor ? `+inauthor:${encodeURIComponent(cleanAuthor)}` : ''}`;
+  const apiKey = process.env.GOOGLE_BOOKS_API_KEY;
+  const url = `https://www.googleapis.com/books/v1/volumes?q=${query}&maxResults=1${apiKey ? `&key=${apiKey}` : ''}`;
+
+  return new Promise((resolve) => {
+    https.get(url, (res) => {
+      let data = '';
+      res.on('data', (chunk) => data += chunk);
+      res.on('end', () => {
+        try {
+          const json = JSON.parse(data);
+          if (json.items && json.items[0]?.volumeInfo?.imageLinks) {
+            const links = json.items[0].volumeInfo.imageLinks;
+            resolve(links.thumbnail || links.smallThumbnail || null);
+          } else {
+            resolve(null);
+          }
+        } catch (e) {
+          resolve(null);
+        }
+      });
+    }).on('error', () => resolve(null));
+  });
+}
+
 function parseCsv(csvData) {
   const lines = csvData.split(/\r?\n/);
   const books = [];
