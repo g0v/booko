@@ -267,7 +267,7 @@ export const sheetData = {
         "高"
       ],
       "links": {
-        "books": "2023",
+        "books": "https://www.books.com.tw/products/0010968624",
         "eslite": "https://www.eslite.com/Search?q=%E6%B0%B8%E9%81%A0%E4%B8%8D%E5%86%8D%EF%BC%9A%E8%87%BA%E7%81%A3%E5%A8%81%E6%AC%8A%E9%AB%94%E5%88%B6%E4%B8%8B%E7%9A%84%E5%A3%93%E8%BF%AB%E8%88%87%E6%8A%B5%E6%8A%97",
         "kingstone": "https://www.kingstone.com.tw/search/search?q=%E6%B0%B8%E9%81%A0%E4%B8%8D%E5%86%8D%EF%BC%9A%E8%87%BA%E7%81%A3%E5%A8%81%E6%AC%8A%E9%AB%94%E5%88%B6%E4%B8%8B%E7%9A%84%E5%A3%93%E8%BF%AB%E8%88%87%E6%8A%B5%E6%8A%97",
         "nlpi": "https://ebook.nlpi.edu.tw/search?search_field=TI&search_input=%E6%B0%B8%E9%81%A0%E4%B8%8D%E5%86%8D%EF%BC%9A%E8%87%BA%E7%81%A3%E5%A8%81%E6%AC%8A%E9%AB%94%E5%88%B6%E4%B8%8B%E7%9A%84%E5%A3%93%E8%BF%AB%E8%88%87%E6%8A%B5%E6%8A%97"
