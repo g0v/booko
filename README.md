@@ -40,7 +40,25 @@ This is a curated website for books and documentaries related to Taiwan's democr
     npm run build
     ```
 
-## 待辦事項 / Todo List
+## 資料來源與排序邏輯 / Data Source & Sorting
+
+本專案的所有書籍與影音資料皆以 **Google Sheet** 為單一真理來源 (Single Source of Truth, SSOT)，請勿直接修改 `books_data.ts`。
+
+- **資料來源 (Source):** [Google Sheet Link](https://docs.google.com/spreadsheets/d/1Z0JUS0fw5SFaX1-oht6jEx5i8XI888vx5F9jm9BEggI/edit?gid=0#gid=0)
+- **同步方式 (Sync):** 執行 `npm run sync` 可將試算表資料同步至本地專案。
+
+### 排序邏輯 (Sorting Logic)
+
+書籍排列採用 **兩級排序 (Two-Level Sorting)** 機制，以確保學習路徑的循序漸進：
+
+1.  **第一級：難易度分組 (Primary: Level Mapping)**
+    - 先依照「初中高階」欄位進行分組。
+    - **順序：** 初階 (Basic) -> 中階 (Intermediate) -> 高階 (Advanced)。
+
+2.  **第二級：自訂順序 (Secondary: Sort Order)**
+    - 在同一個難易度群組內，依照試算表中的「排序」欄位 (數字) 進行升冪排列。
+    - 數字越小，排序越前。
+
 
 - [ ] **書籍封面精準度 (Book Cover Accuracy):**
     - **現狀:** 部分書籍使用 Unsplash 預設圖。 -> which is unreliable
