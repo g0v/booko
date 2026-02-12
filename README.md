@@ -1,20 +1,55 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# 民主富二代補課小站 (Democracy Remedial Station)
 
-# Run and deploy your AI Studio app
+這是一個關於台灣民主歷程與轉型正義的書籍/影音策展網站。網站將自由視為一份珍貴的家業，並將當代享受民主自由的人們稱為「民主富二代」。本站旨在透過分階的閱讀計畫，幫助使用者認識這份遺產的來歷。
 
-This contains everything you need to run your app locally.
+This is a curated website for books and documentaries related to Taiwan's democratic history and transitional justice. The website views freedom as a precious family legacy and refers to people today who enjoy democracy and freedom as "Second Generation Democracy Heirs" (民主富二代). The site aims to help users understand the origins of this legacy through a tiered reading plan.
 
-View your app in AI Studio: https://ai.studio/apps/drive/1hXOZoWTcmxwqifBIFrT-_1GOkr3ExDGh
+## 功能特色 / Features
 
-## Run Locally
+- **分階書單 (Tiered Book Lists):**
+    - **初階 (Basic):** 從聽故事開始，適合歷史小白。
+    - **中階 (Intermediate):** 把零散的歷史碎片拼成大藍圖。
+    - **進階 (Advanced):** 史料判讀與深度政經分析。
+- **兒童與青少年專區 (Children & Youth Section):** 親子共讀、歷史啟蒙書單。
+- **紀錄片專區 (Documentaries):** 影像紀錄。
+- **社群共編 (Community Contribution):** 允許使用者推薦書籍 (目前僅儲存於本地)。
+- **標籤篩選 (Tag Filtering):** 可透過標籤快速尋找相關書籍。
 
-**Prerequisites:**  Node.js
+## 技術棧 / Tech Stack
 
+- **Frontend:** React 19, TypeScript
+- **Build Tool:** Vite
+- **Styling:** Tailwind CSS
+- **Icons:** Lucide React
+- **Routing:** React Router DOM
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## 本地開發 / Development
+
+1.  **安裝依賴 / Install Dependencies:**
+    ```bash
+    npm install
+    ```
+
+2.  **啟動開發伺服器 / Start Dev Server:**
+    ```bash
+    npm run dev
+    ```
+
+3.  **建置 / Build:**
+    ```bash
+    npm run build
+    ```
+
+## 待辦事項 / Todo List
+
+- [ ] **書籍封面精準度 (Book Cover Accuracy):**
+    - **現狀:** 部分書籍使用 Unsplash 預設圖。 -> which is unreliable
+    - **發現:** 博客來封面圖具有規律的 Sharding 邏輯：`https://www.books.com.tw/img/[ID前3碼]/[ID中3碼]/[ID 7-8碼]/[完整ID].jpg`。 the product url should be already available in the sheet, eg: https://www.books.com.tw/products/0010910448?sloc=main
+    - **探索:** 需要更穩定的方式從書名自動獲取博客來產品 ID (Scraper 易受限，可考慮 Gemini API 輔助或手動補完試算表) - we should skip and warn the user if the sheet doesn't have the books product id in it
+- [ ] **搜尋功能優化 (Enhanced Search):**
+    - 增加對書名、作者的關鍵字搜尋功能 (目前僅支援標籤篩選)。
+- [ ] **細部 UI/UX 優化:**
+    - 增加深色模式 (Dark Mode)。
+    - 優化行動裝置體驗。
+- [ ] **SEO 優化:**
+    - 為每個頁面添加適當的 Meta Tags。

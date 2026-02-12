@@ -10,11 +10,28 @@ import { Book, ReadingLevel } from './types';
 
 const BooksView: React.FC = () => {
   const [filterTag, setFilterTag] = useState<string | null>(null);
+  const [searchQuery, setSearchQuery] = useState<string>('');
 
   const filteredBooks = useMemo(() => {
-    if (!filterTag) return BOOKS;
-    return BOOKS.filter(book => book.tags?.includes(filterTag));
-  }, [filterTag]);
+    let books = BOOKS;
+
+    // 1. Tag Filter
+    if (filterTag) {
+      books = books.filter(book => book.tags?.includes(filterTag));
+    }
+
+    // 2. Search Filter
+    if (searchQuery.trim()) {
+      const query = searchQuery.toLowerCase().trim();
+      books = books.filter(book =>
+        book.title.toLowerCase().includes(query) ||
+        book.author.toLowerCase().includes(query) ||
+        book.description.toLowerCase().includes(query)
+      );
+    }
+
+    return books;
+  }, [filterTag, searchQuery]);
 
   const basicBooks = filteredBooks.filter(b => b.level === 'basic');
   const intermediateBooks = filteredBooks.filter(b => b.level === 'intermediate');
@@ -23,7 +40,7 @@ const BooksView: React.FC = () => {
   return (
     <section className="animate-in fade-in duration-700">
       {/* Intro Section - Only show when not filtering */}
-      {!filterTag && (
+      {!filterTag && !searchQuery && (
         <div className="mb-16 bg-white/50 border border-rose-100 rounded-3xl p-8 sm:p-12 relative overflow-hidden">
           <div className="absolute top-0 right-0 p-8 text-rose-100/30">
             <Quote size={120} strokeWidth={1} />
@@ -49,29 +66,56 @@ const BooksView: React.FC = () => {
       )}
 
       <div className="mb-12 text-center max-w-3xl mx-auto">
-        <h2 className="text-3xl sm:text-4xl font-black text-stone-900 serif mb-4">
+        <h2 className="text-3xl sm:text-4xl font-black text-stone-900 serif mb-6">
           {filterTag ? `標籤搜尋：#${filterTag}` : '精選書單：分階補課計畫'}
         </h2>
-        {!filterTag ? (
+
+        {/* Search Input */}
+        <div className="relative max-w-md mx-auto mb-6">
+          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+            <Search size={18} className="text-stone-400" />
+          </div>
+          <input
+            type="text"
+            className="block w-full pl-10 pr-3 py-2 border border-stone-200 rounded-full leading-5 bg-white placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-rose-500 focus:border-rose-500 sm:text-sm transition-shadow shadow-sm"
+            placeholder="搜尋書名、作者..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
+          {searchQuery && (
+            <button
+              onClick={() => setSearchQuery('')}
+              className="absolute inset-y-0 right-0 pr-3 flex items-center text-stone-400 hover:text-stone-600 cursor-pointer"
+            >
+              <X size={16} />
+            </button>
+          )}
+        </div>
+
+        {!filterTag && !searchQuery ? (
           <p className="text-stone-600 text-base leading-relaxed italic">
             「歷史是一場記憶與遺忘的鬥爭。」—— 米蘭・昆德拉
           </p>
         ) : (
-          <div className="flex items-center justify-center mt-4">
-            <button 
-              onClick={() => setFilterTag(null)}
-              className="flex items-center gap-2 px-4 py-2 bg-rose-600 text-white rounded-full text-sm font-bold shadow-md hover:bg-rose-700 transition-colors"
-            >
-              <X size={16} />
-              清除篩選，查看全部書單
-            </button>
-          </div>
+          (filterTag || searchQuery) && (
+            <div className="flex items-center justify-center mt-4 gap-2">
+              {filterTag && (
+                <button
+                  onClick={() => setFilterTag(null)}
+                  className="flex items-center gap-2 px-4 py-2 bg-rose-100 text-rose-700 rounded-full text-sm font-bold hover:bg-rose-200 transition-colors"
+                >
+                  <X size={16} />
+                  清除標籤: #{filterTag}
+                </button>
+              )}
+            </div>
+          )
         )}
       </div>
 
       {/* 第一階段 */}
       {basicBooks.length > 0 && (
-        <div className="mb-16">
+        <div className="mb-16 animate-in fade-in slide-in-from-bottom-4 duration-500">
           <div className="flex items-center justify-between mb-6 border-b border-rose-100 pb-3">
             <div className="flex items-center space-x-3">
               <div className="p-1.5 bg-rose-100 rounded text-rose-800">
@@ -95,7 +139,7 @@ const BooksView: React.FC = () => {
 
       {/* 第二階段 */}
       {intermediateBooks.length > 0 && (
-        <div className="mb-16">
+        <div className="mb-16 animate-in fade-in slide-in-from-bottom-4 duration-500 delay-100">
           <div className="flex items-center space-x-3 mb-6 border-b border-amber-100 pb-3">
             <div className="p-1.5 bg-amber-100 rounded text-amber-800">
               <BookMarked size={20} />
@@ -117,7 +161,7 @@ const BooksView: React.FC = () => {
 
       {/* 第三階段 */}
       {advancedBooks.length > 0 && (
-        <div className="mb-16">
+        <div className="mb-16 animate-in fade-in slide-in-from-bottom-4 duration-500 delay-200">
           <div className="flex items-center space-x-3 mb-6 border-b border-red-100 pb-3">
             <div className="p-1.5 bg-red-100 rounded text-red-800">
               <GraduationCap size={20} />
@@ -141,13 +185,27 @@ const BooksView: React.FC = () => {
       {filteredBooks.length === 0 && (
         <div className="text-center py-20 bg-white rounded-3xl border border-dashed border-stone-200">
           <Search size={48} className="mx-auto text-stone-300 mb-4" />
-          <p className="text-stone-500 serif text-lg">找不到與 #{filterTag} 相關的書籍，換個標籤試試看？</p>
-          <button 
-            onClick={() => setFilterTag(null)}
-            className="mt-4 text-rose-700 font-bold hover:underline"
-          >
-            返回全部書單
-          </button>
+          <p className="text-stone-500 serif text-lg">
+            找不到與 {filterTag ? `#${filterTag}` : ''} {searchQuery ? `"${searchQuery}"` : ''} 相關的書籍。
+          </p>
+          <div className="flex justify-center gap-4 mt-4">
+            {filterTag && (
+              <button
+                onClick={() => setFilterTag(null)}
+                className="text-rose-700 font-bold hover:underline"
+              >
+                清除標籤
+              </button>
+            )}
+            {searchQuery && (
+              <button
+                onClick={() => setSearchQuery('')}
+                className="text-rose-700 font-bold hover:underline"
+              >
+                清除搜尋
+              </button>
+            )}
+          </div>
         </div>
       )}
     </section>
@@ -174,7 +232,7 @@ const ChildrenView: React.FC = () => {
           <span>{filterTag ? `標籤搜尋：#${filterTag}` : '兒童與青少年書房'}</span>
         </h2>
         {filterTag && (
-          <button 
+          <button
             onClick={() => setFilterTag(null)}
             className="flex items-center gap-2 px-3 py-1 bg-stone-100 text-stone-600 rounded-full text-xs font-bold mx-auto mb-4 hover:bg-rose-100 hover:text-rose-700 transition-colors"
           >
@@ -271,40 +329,40 @@ const ShareView: React.FC = () => {
         <div className="bg-white p-8 rounded-2xl shadow-xl border border-stone-200 max-w-2xl mx-auto animate-in zoom-in duration-300">
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <input 
-                placeholder="書名 (必填)" 
-                className="p-3 border rounded-xl bg-stone-50 focus:ring-2 focus:ring-rose-500 outline-none" 
-                value={formData.title} 
-                onChange={e => setFormData({...formData, title: e.target.value})} 
+              <input
+                placeholder="書名 (必填)"
+                className="p-3 border rounded-xl bg-stone-50 focus:ring-2 focus:ring-rose-500 outline-none"
+                value={formData.title}
+                onChange={e => setFormData({ ...formData, title: e.target.value })}
                 required
               />
-              <input 
-                placeholder="作者" 
-                className="p-3 border rounded-xl bg-stone-50 focus:ring-2 focus:ring-rose-500 outline-none" 
-                value={formData.author} 
-                onChange={e => setFormData({...formData, author: e.target.value})} 
+              <input
+                placeholder="作者"
+                className="p-3 border rounded-xl bg-stone-50 focus:ring-2 focus:ring-rose-500 outline-none"
+                value={formData.author}
+                onChange={e => setFormData({ ...formData, author: e.target.value })}
               />
             </div>
-            <select 
+            <select
               className="w-full p-3 border rounded-xl bg-stone-50 focus:ring-2 focus:ring-rose-500 outline-none"
               value={formData.level}
-              onChange={e => setFormData({...formData, level: e.target.value as ReadingLevel})}
+              onChange={e => setFormData({ ...formData, level: e.target.value as ReadingLevel })}
             >
               <option value="basic">初階：歷史小白友善</option>
               <option value="intermediate">中階：看懂社會形狀</option>
               <option value="advanced">進階：直視歷史痛點</option>
             </select>
-            <textarea 
-              placeholder="推薦理由 (簡短描述)" 
+            <textarea
+              placeholder="推薦理由 (簡短描述)"
               className="w-full p-3 border rounded-xl bg-stone-50 h-24 focus:ring-2 focus:ring-rose-500 outline-none"
               value={formData.reason}
-              onChange={e => setFormData({...formData, reason: e.target.value})}
+              onChange={e => setFormData({ ...formData, reason: e.target.value })}
             ></textarea>
-            <input 
-              placeholder="您的稱呼" 
-              className="w-full p-3 border rounded-xl bg-stone-50 focus:ring-2 focus:ring-rose-500 outline-none" 
-              value={formData.contributor} 
-              onChange={e => setFormData({...formData, contributor: e.target.value})} 
+            <input
+              placeholder="您的稱呼"
+              className="w-full p-3 border rounded-xl bg-stone-50 focus:ring-2 focus:ring-rose-500 outline-none"
+              value={formData.contributor}
+              onChange={e => setFormData({ ...formData, contributor: e.target.value })}
             />
             <div className="flex gap-2">
               <button type="submit" className="flex-grow bg-rose-700 text-white p-3 rounded-xl font-bold hover:bg-rose-800 transition-colors">送出推薦</button>
