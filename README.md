@@ -46,7 +46,7 @@ This is a curated website for books and documentaries related to Taiwan's democr
     - **現狀:** 部分書籍使用 Unsplash 預設圖。 -> which is unreliable
     - **發現:** 博客來封面圖具有規律的 Sharding 邏輯：`https://www.books.com.tw/img/[ID前3碼]/[ID中3碼]/[ID 7-8碼]/[完整ID].jpg`。 the product url should be already available in the sheet, eg: https://www.books.com.tw/products/0010910448?sloc=main
     - **探索:** 需要更穩定的方式從書名自動獲取博客來產品 ID (Scraper 易受限，可考慮 Gemini API 輔助或手動補完試算表) - we should skip and warn the user if the sheet doesn't have the books product id in it
-- [ ] **搜尋功能優化 (Enhanced Search):**
+- [x] **搜尋功能優化 (Enhanced Search):**
     - 增加對書名、作者的關鍵字搜尋功能 (目前僅支援標籤篩選)。
 - [ ] **細部 UI/UX 優化:**
     - 增加深色模式 (Dark Mode)。
