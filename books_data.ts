@@ -145,6 +145,7 @@ export const sheetData = {
       "title": "台灣最好的時刻1977-1987：民族記憶美麗島",
       "author": "吳乃德",
       "description": "吳乃德致敬美麗島世代，分析那十年間展現的勇氣與人性光輝。",
+      "coverImage": "https://s.eslite.com/Upload/Product/202003/o/637191679712611250.jpg",
       "level": "basic",
       "tags": [
         "民主運動"
