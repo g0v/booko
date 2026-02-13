@@ -29,11 +29,10 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                 <Link
                   key={item.path}
                   to={item.path}
-                  className={`flex items-center space-x-1.5 px-4 py-2 rounded-full text-sm font-bold transition-all ${
-                    location.pathname === item.path
+                  className={`flex items-center space-x-1.5 px-4 py-2 rounded-full text-sm font-bold transition-all ${location.pathname === item.path
                       ? 'text-rose-700 bg-rose-50 shadow-sm'
                       : 'text-stone-600 hover:text-rose-600 hover:bg-stone-50'
-                  }`}
+                    }`}
                 >
                   {item.icon}
                   <span>{item.label}</span>
@@ -53,11 +52,11 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
           <div className="mb-8 flex justify-center">
             <History size={40} className="text-rose-800 opacity-50" />
           </div>
-          <p className="serif text-stone-200 text-xl mb-4 max-w-2xl mx-auto leading-relaxed">這不只是一份書單，這是一場關於「我們是誰」的追尋。</p>
+          <p className="serif text-stone-200 text-xl mb-4 max-w-2xl mx-auto leading-relaxed">自由不是禮物，是每一代人的接力賽。</p>
           <div className="h-px w-20 bg-rose-900 mx-auto mb-8"></div>
-          <p className="text-xs tracking-widest font-bold uppercase mb-2">Democracy Heritage Project</p>
+          <p className="text-xs tracking-widest font-bold uppercase mb-2">本站授權：CC BY 4.0</p>
           <p className="text-[10px] opacity-50">© {new Date().getFullYear()} 民主富二代補課小站. All history belongs to the people.</p>
-          
+
           <nav className="flex flex-wrap justify-center gap-6 mt-10 md:hidden">
             {navItems.map((item) => (
               <Link key={item.path} to={item.path} className="text-[11px] font-black uppercase tracking-tighter hover:text-white border-b border-stone-700 pb-1">
