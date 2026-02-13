@@ -12,7 +12,7 @@ This is a curated website for books and documentaries related to Taiwan's democr
     - **進階 (Advanced):** 史料判讀與深度政經分析。
 - **兒童與青少年專區 (Children & Youth Section):** 親子共讀、歷史啟蒙書單。
 - **紀錄片專區 (Documentaries):** 影像紀錄。
-- **社群共編 (Community Contribution):** 允許使用者推薦書籍 (目前僅儲存於本地)。
+- **社群共編 (Community Contribution):** 連結至 Google Form 收集推薦書單。
 - **標籤篩選 (Tag Filtering):** 可透過標籤快速尋找相關書籍。
 
 ## 技術棧 / Tech Stack
@@ -61,13 +61,14 @@ This is a curated website for books and documentaries related to Taiwan's democr
 
 ## 待辦事項 / Todo List
 
-- [ ] **推薦功能改版 (Revamp Recommendation):** 將「我要推薦」功能改成使用 Google Form: [Link](https://docs.google.com/forms/d/1HZPkLNFjrCWHlJ5qjLVhf6sM5AFGG5-w12R71jqt_PQ/edit)
-- [ ] **書籍封面精準度 (Book Cover Accuracy):**
-    - **現狀:** 部分書籍使用 Unsplash 預設圖。 -> which is unreliable
-    - **發現:** 博客來封面圖具有規律的 Sharding 邏輯：`https://www.books.com.tw/img/[ID前3碼]/[ID中3碼]/[ID 7-8碼]/[完整ID].jpg`。 the product url should be already available in the sheet, eg: https://www.books.com.tw/products/0010910448?sloc=main
-    - **探索:** 需要更穩定的方式從書名自動獲取博客來產品 ID (Scraper 易受限，可考慮 Gemini API 輔助或手動補完試算表) - we should skip and warn the user if the sheet doesn't have the books product id in it
+- [x] **推薦功能改版 (Revamp Recommendation):** 將「我要推薦」功能改成使用 Google Form: [Link](https://docs.google.com/forms/d/1HZPkLNFjrCWHlJ5qjLVhf6sM5AFGG5-w12R71jqt_PQ/edit)
+- [x] **紀錄片資料維護 (Documentary Data):** 修正《牽阮的手》等紀錄片的 thumbnail 連結，改用官方海報或可靠來源。
 - [x] **搜尋功能優化 (Enhanced Search):**
     - 增加對書名、作者的關鍵字搜尋功能 (目前僅支援標籤篩選)。
+- [/] **書籍封面精準度 (Book Cover Accuracy):**
+    - **現狀:** 部分書籍使用 Unsplash 預設圖。 -> which is unreliable
+    - **發現:** 博客來封面圖具有規律的 Sharding 邏輯：`https://www.books.com.tw/img/[ID前3碼]/[ID中3碼]/[ID 7-8碼]/[完整ID].jpg`。 the product url should be already available in the sheet, eg: https://www.books.com.tw/products/0010910448?sloc=main
+    - **進度:** 已建立 `utils/bookCover.ts` 處理博客來圖片邏輯，下一步需確保 Google Sheet 中包含正確的產品 ID。
 - [ ] **細部 UI/UX 優化:**
     - 增加深色模式 (Dark Mode)。
     - 優化行動裝置體驗。
