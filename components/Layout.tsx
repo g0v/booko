@@ -52,7 +52,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
           <div className="mb-8 flex justify-center">
             <History size={40} className="text-rose-800 opacity-50" />
           </div>
-          <p className="serif text-stone-200 text-xl mb-4 max-w-2xl mx-auto leading-relaxed">自由不是禮物，是每一代人的接力賽。</p>
+          <p className="serif text-stone-200 text-xl mb-4 max-w-2xl mx-auto leading-relaxed">自由，是每一代人的接力賽。</p>
           <div className="h-px w-20 bg-rose-900 mx-auto mb-8"></div>
           <p className="text-xs tracking-widest font-bold uppercase mb-2">本站授權：CC BY 4.0</p>
           <p className="text-[10px] opacity-50">© {new Date().getFullYear()} 民主富二代補課小站. All history belongs to the people.</p>
