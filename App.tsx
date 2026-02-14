@@ -161,7 +161,7 @@ const BooksView: React.FC = () => {
               <div className="flex items-center flex-wrap gap-2 mb-0.5">
                 <h3 className="text-xl font-bold text-stone-900 dark:text-stone-100 serif">進階：思辨大補帖</h3>
               </div>
-              <p className="text-stone-500 dark:text-stone-400 text-xs font-medium">練就一身史料判讀力與深度深度政經分析</p>
+              <p className="text-stone-500 dark:text-stone-400 text-xs font-medium">練就一身史料判讀力與深度政經分析</p>
             </div>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-5">
