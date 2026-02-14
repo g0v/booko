@@ -79,4 +79,7 @@ This is a curated website for books and documentaries related to Taiwan's democr
     - 優化行動裝置體驗。
 - [ ] **SEO 優化:**
     - 為每個頁面添加適當的 Meta Tags。
+- [ ] **授權標示 (License):** 增加授權標示 CC BY 4.0 並增加圖示。
+- [ ] **投稿方式擴充 (Submission Expansion):** 新增批次書單投稿方式（除了單本從 Google Form 填寫之外的方法）。
+- [ ] **網域指向 (Domain):** 將網域指向 [booko.g0v.tw](https://booko.g0v.tw)。
 
