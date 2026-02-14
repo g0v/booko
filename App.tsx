@@ -120,7 +120,7 @@ const BooksView: React.FC = () => {
               </div>
             </div>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-5">
             {basicBooks.map((book) => (
               <BookCard key={book.id} book={book} onTagClick={setFilterTag} />
             ))}
@@ -142,7 +142,7 @@ const BooksView: React.FC = () => {
               <p className="text-stone-500 dark:text-stone-400 text-xs font-medium">把零散的歷史碎片拼成大藍圖</p>
             </div>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-5">
             {intermediateBooks.map((book) => (
               <BookCard key={book.id} book={book} onTagClick={setFilterTag} />
             ))}
@@ -164,7 +164,7 @@ const BooksView: React.FC = () => {
               <p className="text-stone-500 dark:text-stone-400 text-xs font-medium">練就一身史料判讀力與深度深度政經分析</p>
             </div>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-5">
             {advancedBooks.map((book) => (
               <BookCard key={book.id} book={book} onTagClick={setFilterTag} />
             ))}
@@ -235,7 +235,7 @@ const ChildrenView: React.FC = () => {
           從溫柔的筆觸開始，讓孩子透過繪本看見土地的故事。
         </p>
       </div>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-5">
         {filteredChildrenBooks.map((book) => (
           <BookCard key={book.id} book={book} onTagClick={setFilterTag} />
         ))}
