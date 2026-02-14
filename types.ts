@@ -2,10 +2,11 @@
 export interface PurchaseLinks {
   books: string;
   eslite: string;
-  kingstone: string;
-  nlpi?: string;
-  readmoo?: string;
+  kingstone?: string;
+  momo?: string;
   kobo?: string;
+  readmoo?: string;
+  nlpi?: string;
 }
 
 export type ReadingLevel = 'basic' | 'intermediate' | 'advanced';

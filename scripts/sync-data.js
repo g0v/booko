@@ -109,17 +109,22 @@ function parseAdultCsv(csvData) {
   const lines = csvData.split(/\r?\n/);
   const books = [];
 
-  // Adult Header: 分類中排序,書名,分類,作者,出版年,初中高階,博客來,簡介,金石堂,誠品,是否列入
+  // Adult Header Update:
+  // 0: 分類中排序, 1: 書名, 2: 分類, 3: 作者, 4: 出版年, 5: 初中高階, 6: 博客來, 7: 金石堂, 8: 誠品, 9: momo, 10: tazze, 11: Kobo, 12: readmoo, 13: 簡介, 14: 金石堂(unused), 15: 誠品(unused), 16: 是否列入
   for (let i = 1; i < lines.length; i++) {
     const line = lines[i].trim();
     if (!line) continue;
 
     const cols = line.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/).map(c => c.replace(/^"|"$/g, '').trim());
-    // Col 0 is "分類中排序"
-    // Adult Header indices: 0:排序, 1:書名, 2:分類, 3:作者, 4:出版年, 5:初中高階, 6:博客來, 7:簡介, 8:金石堂, 9:誠品, 10:是否列入
-    const [sortOrderStr, title, category, author, year, level, booksUrl, description, kingstoneUrl, esliteUrl, include] = cols;
+
+    const [
+      sortOrderStr, title, category, author, year, level,
+      booksUrl, kingstoneUrl, esliteUrl, momoUrl, tazzeUrl, koboUrl, readmooUrl,
+      description, _ks_unused, _es_unused, include
+    ] = cols;
 
     if (!title || title === '書名' || title.includes('新增以下書目')) continue;
+    if (include === '否') continue;
 
     // Use booksUrl from CSV (Column G)
     const coverUrl = getCoverFromUrl(booksUrl);
@@ -146,6 +151,9 @@ function parseAdultCsv(csvData) {
         books: booksUrl || `https://search.books.com.tw/search/query/key/${encodeURIComponent(title)}`,
         eslite: esliteUrl || getEsliteSearch(title),
         kingstone: kingstoneUrl || getKingstoneSearch(title),
+        momo: momoUrl || undefined,
+        kobo: koboUrl || undefined,
+        readmoo: readmooUrl || undefined,
         nlpi: getNlpiLink(title)
       }
     };

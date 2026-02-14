@@ -1,5 +1,5 @@
 export const sheetData = {
-  "lastUpdated": "2026-02-12T23:45:08.040Z",
+  "lastUpdated": "2026-02-14T21:34:42.422Z",
   "books": [
     {
       "id": "sheet-12",
@@ -33,23 +33,6 @@ export const sheetData = {
         "eslite": "https://www.eslite.com/Search?q=%E5%B0%91%E5%B9%B4%E8%87%BA%E7%81%A3%E5%8F%B2",
         "kingstone": "https://www.kingstone.com.tw/search/search?q=%E5%B0%91%E5%B9%B4%E8%87%BA%E7%81%A3%E5%8F%B2",
         "nlpi": "https://ebook.nlpi.edu.tw/search?search_field=TI&search_input=%E5%B0%91%E5%B9%B4%E8%87%BA%E7%81%A3%E5%8F%B2"
-      }
-    },
-    {
-      "id": "sheet-17",
-      "title": "台灣人四百年史",
-      "author": "史明",
-      "description": "史明畢生心血，從被殖民者立場建構獨派史觀的經典論述。",
-      "coverImage": "https://www.books.com.tw/img/001/076/86/0010768686.jpg",
-      "level": "basic",
-      "tags": [
-        "通論"
-      ],
-      "links": {
-        "books": "https://www.books.com.tw/products/0010768686?sloc=main",
-        "eslite": "https://www.eslite.com/Search?q=%E5%8F%B0%E7%81%A3%E4%BA%BA%E5%9B%9B%E7%99%BE%E5%B9%B4%E5%8F%B2",
-        "kingstone": "https://www.kingstone.com.tw/search/search?q=%E5%8F%B0%E7%81%A3%E4%BA%BA%E5%9B%9B%E7%99%BE%E5%B9%B4%E5%8F%B2",
-        "nlpi": "https://ebook.nlpi.edu.tw/search?search_field=TI&search_input=%E5%8F%B0%E7%81%A3%E4%BA%BA%E5%9B%9B%E7%99%BE%E5%B9%B4%E5%8F%B2"
       }
     },
     {
@@ -124,6 +107,23 @@ export const sheetData = {
       }
     },
     {
+      "id": "sheet-17",
+      "title": "台灣人四百年史",
+      "author": "史明",
+      "description": "史明畢生心血，從被殖民者立場建構獨派史觀的經典論述。",
+      "coverImage": "https://www.books.com.tw/img/001/076/86/0010768686.jpg",
+      "level": "basic",
+      "tags": [
+        "通論"
+      ],
+      "links": {
+        "books": "https://www.books.com.tw/products/0010768686?sloc=main",
+        "eslite": "https://www.eslite.com/Search?q=%E5%8F%B0%E7%81%A3%E4%BA%BA%E5%9B%9B%E7%99%BE%E5%B9%B4%E5%8F%B2",
+        "kingstone": "https://www.kingstone.com.tw/search/search?q=%E5%8F%B0%E7%81%A3%E4%BA%BA%E5%9B%9B%E7%99%BE%E5%B9%B4%E5%8F%B2",
+        "nlpi": "https://ebook.nlpi.edu.tw/search?search_field=TI&search_input=%E5%8F%B0%E7%81%A3%E4%BA%BA%E5%9B%9B%E7%99%BE%E5%B9%B4%E5%8F%B2"
+      }
+    },
+    {
       "id": "sheet-18",
       "title": "台灣之春：解嚴前的台灣民主運動",
       "author": "胡慧玲",
@@ -145,7 +145,6 @@ export const sheetData = {
       "title": "台灣最好的時刻1977-1987：民族記憶美麗島",
       "author": "吳乃德",
       "description": "吳乃德致敬美麗島世代，分析那十年間展現的勇氣與人性光輝。",
-      "coverImage": "https://s.eslite.com/Upload/Product/202003/o/637191679712611250.jpg",
       "level": "basic",
       "tags": [
         "民主運動"
@@ -246,6 +245,23 @@ export const sheetData = {
       }
     },
     {
+      "id": "sheet-5",
+      "title": "此地即世界",
+      "author": "StoryStudio",
+      "description": "拒絕孤立，從全球化脈絡看台灣歷史，具國際視野普及讀物。",
+      "coverImage": "https://www.books.com.tw/img/001/102/65/0011026528.jpg",
+      "level": "intermediate",
+      "tags": [
+        "通論"
+      ],
+      "links": {
+        "books": "https://www.books.com.tw/products/0011026528?sloc=main",
+        "eslite": "https://www.eslite.com/Search?q=%E6%AD%A4%E5%9C%B0%E5%8D%B3%E4%B8%96%E7%95%8C",
+        "kingstone": "https://www.kingstone.com.tw/search/search?q=%E6%AD%A4%E5%9C%B0%E5%8D%B3%E4%B8%96%E7%95%8C",
+        "nlpi": "https://ebook.nlpi.edu.tw/search?search_field=TI&search_input=%E6%AD%A4%E5%9C%B0%E5%8D%B3%E4%B8%96%E7%95%8C"
+      }
+    },
+    {
       "id": "sheet-27",
       "title": "他們沒在寫小說的時候：戒嚴台灣小說家群像",
       "author": "朱宥勳",
@@ -315,56 +331,6 @@ export const sheetData = {
       }
     },
     {
-      "id": "sheet-4",
-      "title": "台灣人三部曲",
-      "author": "鍾肇政",
-      "description": "鍾肇政史詩，描繪日治三代家族興衰，尋找認同的必讀經典。",
-      "level": "intermediate",
-      "tags": [
-        "文學"
-      ],
-      "links": {
-        "books": "https://search.books.com.tw/search/query/key/台灣人三部曲",
-        "eslite": "https://www.eslite.com/Search?q=%E5%8F%B0%E7%81%A3%E4%BA%BA%E4%B8%89%E9%83%A8%E6%9B%B2",
-        "kingstone": "https://www.kingstone.com.tw/search/search?q=%E5%8F%B0%E7%81%A3%E4%BA%BA%E4%B8%89%E9%83%A8%E6%9B%B2",
-        "nlpi": "https://ebook.nlpi.edu.tw/search?search_field=TI&search_input=%E5%8F%B0%E7%81%A3%E4%BA%BA%E4%B8%89%E9%83%A8%E6%9B%B2"
-      }
-    },
-    {
-      "id": "sheet-5",
-      "title": "此地即世界",
-      "author": "StoryStudio",
-      "description": "拒絕孤立，從全球化脈絡看台灣歷史，具國際視野普及讀物。",
-      "coverImage": "https://www.books.com.tw/img/001/102/65/0011026528.jpg",
-      "level": "intermediate",
-      "tags": [
-        "通論"
-      ],
-      "links": {
-        "books": "https://www.books.com.tw/products/0011026528?sloc=main",
-        "eslite": "https://www.eslite.com/Search?q=%E6%AD%A4%E5%9C%B0%E5%8D%B3%E4%B8%96%E7%95%8C",
-        "kingstone": "https://www.kingstone.com.tw/search/search?q=%E6%AD%A4%E5%9C%B0%E5%8D%B3%E4%B8%96%E7%95%8C",
-        "nlpi": "https://ebook.nlpi.edu.tw/search?search_field=TI&search_input=%E6%AD%A4%E5%9C%B0%E5%8D%B3%E4%B8%96%E7%95%8C"
-      }
-    },
-    {
-      "id": "sheet-6",
-      "title": "亞細亞的孤兒",
-      "author": "吳濁流",
-      "description": "吳濁流經典，預言台灣人在地緣政治夾縫中被遺棄的孤獨宿命。",
-      "level": "intermediate",
-      "tags": [
-        "文學",
-        "日治"
-      ],
-      "links": {
-        "books": "https://search.books.com.tw/search/query/key/亞細亞的孤兒",
-        "eslite": "https://www.eslite.com/Search?q=%E4%BA%9E%E7%B4%B0%E4%BA%9E%E7%9A%84%E5%AD%A4%E5%85%92",
-        "kingstone": "https://www.kingstone.com.tw/search/search?q=%E4%BA%9E%E7%B4%B0%E4%BA%9E%E7%9A%84%E5%AD%A4%E5%85%92",
-        "nlpi": "https://ebook.nlpi.edu.tw/search?search_field=TI&search_input=%E4%BA%9E%E7%B4%B0%E4%BA%9E%E7%9A%84%E5%AD%A4%E5%85%92"
-      }
-    },
-    {
       "id": "sheet-7",
       "title": "茶金歲月",
       "author": "廖運潘",
@@ -378,6 +344,7 @@ export const sheetData = {
         "books": "https://www.books.com.tw/products/0010907623?sloc=main",
         "eslite": "https://www.eslite.com/Search?q=%E8%8C%B6%E9%87%91%E6%AD%B2%E6%9C%88",
         "kingstone": "https://www.kingstone.com.tw/search/search?q=%E8%8C%B6%E9%87%91%E6%AD%B2%E6%9C%88",
+        "kobo": "https://www.kobo.com/tw/zh/ebook/GSF1VVkKhTOqip8nOx_QIA?sId=bf08e38f-404a-4348-8578-07536e6ee913&ssId=UyqXxs9OAuAJ9e21xO_yO&cPos=1",
         "nlpi": "https://ebook.nlpi.edu.tw/search?search_field=TI&search_input=%E8%8C%B6%E9%87%91%E6%AD%B2%E6%9C%88"
       }
     },

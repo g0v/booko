@@ -26,9 +26,13 @@ const BookCard: React.FC<BookCardProps> = ({ book, onTagClick }) => {
 
   const purchaseOptions = [
     { name: '博客來', url: book.links.books },
-    ...(book.links.readmoo ? [{ name: 'Readmoo 讀墨', url: book.links.readmoo }] : []),
-    ...(book.links.kobo ? [{ name: 'Kobo', url: book.links.kobo }] : []),
-  ];
+    { name: '誠品線上', url: book.links.eslite },
+    { name: '金石堂', url: book.links.kingstone },
+    { name: 'momo購物', url: book.links.momo },
+    { name: '樂天Kobo', url: book.links.kobo },
+    { name: '讀墨Readmoo', url: book.links.readmoo },
+  ].filter(option => option.url);
+
   return (
     <div className="group bg-white dark:bg-stone-800 rounded-lg shadow-sm hover:shadow-md dark:shadow-stone-900/50 transition-all duration-300 overflow-hidden border border-stone-200 dark:border-stone-700 flex flex-col h-full relative">
       <div className="relative aspect-[3/4] overflow-hidden bg-stone-100 dark:bg-stone-700">
@@ -70,11 +74,11 @@ const BookCard: React.FC<BookCardProps> = ({ book, onTagClick }) => {
           {book.description}
         </p>
 
-        <div className="pt-2.5 border-t border-stone-100 dark:border-stone-700">
+        <div className="pt-2.5 border-t border-stone-100 dark:border-stone-700 relative">
           <div className="grid grid-cols-2 gap-2">
             {purchaseOptions.length === 1 ? (
               <a
-                href={book.links.books}
+                href={purchaseOptions[0].url}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex py-1.5 bg-stone-900 dark:bg-rose-700 hover:bg-rose-800 dark:hover:bg-rose-600 text-white text-[9px] font-bold rounded items-center justify-center space-x-1 transition-colors shadow-sm"
@@ -86,7 +90,7 @@ const BookCard: React.FC<BookCardProps> = ({ book, onTagClick }) => {
               <div className="relative" ref={dropdownRef}>
                 <button
                   onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                  className="w-full flex py-1.5 bg-stone-900 dark:bg-rose-700 hover:bg-rose-800 dark:hover:bg-rose-600 text-white text-[9px] font-bold rounded items-center justify-center space-x-1 transition-colors shadow-sm"
+                  className="w-full h-full flex py-1.5 bg-stone-900 dark:bg-rose-700 hover:bg-rose-800 dark:hover:bg-rose-600 text-white text-[9px] font-bold rounded items-center justify-center space-x-1 transition-colors shadow-sm"
                 >
                   <ShoppingCart size={10} />
                   <span>網路購書</span>
@@ -94,18 +98,20 @@ const BookCard: React.FC<BookCardProps> = ({ book, onTagClick }) => {
                 </button>
 
                 {isDropdownOpen && (
-                  <div className="absolute bottom-full left-0 right-0 mb-1 bg-white dark:bg-stone-800 rounded shadow-lg border border-stone-200 dark:border-stone-700 overflow-hidden z-10">
+                  <div className="absolute bottom-full left-0 mb-2 w-32 bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 rounded-lg shadow-xl py-1 z-50 animate-in fade-in slide-in-from-top-1 duration-200">
                     {purchaseOptions.map((option, index) => (
                       <a
                         key={index}
                         href={option.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center justify-between px-3 py-2 hover:bg-stone-100 dark:hover:bg-stone-700 text-stone-900 dark:text-stone-100 text-[10px] font-medium transition-colors"
+                        className="block px-3 py-1.5 text-[10px] text-stone-700 dark:text-stone-200 hover:bg-rose-50 dark:hover:bg-rose-900/30 hover:text-rose-700 dark:hover:text-rose-400 font-medium transition-colors"
                         onClick={() => setIsDropdownOpen(false)}
                       >
-                        <span>{option.name}</span>
-                        <ExternalLink size={9} className="ml-1" />
+                        <div className="flex items-center justify-between">
+                          <span>{option.name}</span>
+                          <ExternalLink size={9} className="opacity-50" />
+                        </div>
                       </a>
                     ))}
                   </div>
@@ -129,5 +135,4 @@ const BookCard: React.FC<BookCardProps> = ({ book, onTagClick }) => {
     </div>
   );
 };
-
 export default BookCard;
