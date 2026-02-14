@@ -17,7 +17,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
     <div className="min-h-screen flex flex-col bg-[#fbfaf8] dark:bg-[#1e1e1e] transition-colors duration-300">
       <header className="sticky top-0 z-50 bg-white/80 dark:bg-stone-900/80 backdrop-blur-md border-b border-stone-200 dark:border-stone-700 transition-colors duration-300">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16 sm:h-20">
             <Link to="/" className="flex items-center space-x-3 group">
               <History className="text-rose-700 dark:text-rose-400 transform group-hover:rotate-12 transition-transform" size={28} />
@@ -47,12 +47,12 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         </div>
       </header>
 
-      <main className="flex-grow max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+      <main className="flex-grow max-w-[1400px] mx-auto w-full px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         {children}
       </main>
 
       <footer className="bg-stone-900 dark:bg-stone-950 text-stone-400 py-16 transition-colors duration-300">
-        <div className="max-w-7xl mx-auto px-4 text-center">
+        <div className="max-w-[1400px] mx-auto px-4 text-center">
           <div className="mb-8 flex justify-center">
             <History size={40} className="text-rose-800 dark:text-rose-700 opacity-50" />
           </div>
