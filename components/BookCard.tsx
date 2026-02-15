@@ -26,12 +26,27 @@ const BookCard: React.FC<BookCardProps> = ({ book, onTagClick }) => {
 
   const purchaseOptions = [
     { name: '博客來', url: book.links.books },
-    { name: '誠品線上', url: book.links.eslite },
-    { name: '金石堂', url: book.links.kingstone },
-    { name: 'momo購物', url: book.links.momo },
-    { name: '樂天Kobo', url: book.links.kobo },
-    { name: '讀墨Readmoo', url: book.links.readmoo },
-  ].filter(option => option.url);
+    {
+      name: book.links.eslite ? '誠品線上' : '誠品線上 (Google)',
+      url: book.links.eslite || `https://www.google.com/search?q=${encodeURIComponent(book.title)}+site:eslite.com`
+    },
+    {
+      name: book.links.kingstone ? '金石堂' : '金石堂 (Google)',
+      url: book.links.kingstone || `https://www.google.com/search?q=${encodeURIComponent(book.title)}+site:kingstone.com.tw`
+    },
+    {
+      name: book.links.momo ? 'momo購物' : 'momo購物 (Google)',
+      url: book.links.momo || `https://www.google.com/search?q=${encodeURIComponent(book.title)}+site:momoshop.com.tw`
+    },
+    {
+      name: book.links.kobo ? '樂天Kobo' : '樂天Kobo (Google)',
+      url: book.links.kobo || `https://www.google.com/search?q=${encodeURIComponent(book.title)}+site:www.rakuten.com.tw`
+    },
+    {
+      name: book.links.readmoo ? '讀墨Readmoo' : '讀墨Readmoo (Google)',
+      url: book.links.readmoo || `https://www.google.com/search?q=${encodeURIComponent(book.title)}+site:readmoo.com`
+    },
+  ];
 
   return (
     <div className="group bg-white dark:bg-stone-800 rounded-lg shadow-sm hover:shadow-md dark:shadow-stone-900/50 transition-all duration-300 overflow-hidden border border-stone-200 dark:border-stone-700 flex flex-col h-full relative">
@@ -76,48 +91,36 @@ const BookCard: React.FC<BookCardProps> = ({ book, onTagClick }) => {
 
         <div className="pt-2.5 border-t border-stone-100 dark:border-stone-700 relative">
           <div className="grid grid-cols-2 gap-2">
-            {purchaseOptions.length === 1 ? (
-              <a
-                href={purchaseOptions[0].url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex py-1.5 bg-stone-900 dark:bg-rose-700 hover:bg-rose-800 dark:hover:bg-rose-600 text-white text-[9px] font-bold rounded items-center justify-center space-x-1 transition-colors shadow-sm"
+            <div className="relative" ref={dropdownRef}>
+              <button
+                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                className="w-full h-full flex py-1.5 bg-stone-900 dark:bg-rose-700 hover:bg-rose-800 dark:hover:bg-rose-600 text-white text-[9px] font-bold rounded items-center justify-center space-x-1 transition-colors shadow-sm"
               >
                 <ShoppingCart size={10} />
                 <span>網路購書</span>
-              </a>
-            ) : (
-              <div className="relative" ref={dropdownRef}>
-                <button
-                  onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                  className="w-full h-full flex py-1.5 bg-stone-900 dark:bg-rose-700 hover:bg-rose-800 dark:hover:bg-rose-600 text-white text-[9px] font-bold rounded items-center justify-center space-x-1 transition-colors shadow-sm"
-                >
-                  <ShoppingCart size={10} />
-                  <span>網路購書</span>
-                  <ChevronDown size={10} className={`transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} />
-                </button>
+                <ChevronDown size={10} className={`transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} />
+              </button>
 
-                {isDropdownOpen && (
-                  <div className="absolute bottom-full left-0 mb-2 w-32 bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 rounded-lg shadow-xl py-1 z-50 animate-in fade-in slide-in-from-top-1 duration-200">
-                    {purchaseOptions.map((option, index) => (
-                      <a
-                        key={index}
-                        href={option.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="block px-3 py-1.5 text-[10px] text-stone-700 dark:text-stone-200 hover:bg-rose-50 dark:hover:bg-rose-900/30 hover:text-rose-700 dark:hover:text-rose-400 font-medium transition-colors"
-                        onClick={() => setIsDropdownOpen(false)}
-                      >
-                        <div className="flex items-center justify-between">
-                          <span>{option.name}</span>
-                          <ExternalLink size={9} className="opacity-50" />
-                        </div>
-                      </a>
-                    ))}
-                  </div>
-                )}
-              </div>
-            )}
+              {isDropdownOpen && (
+                <div className="absolute bottom-full left-0 mb-2 w-32 bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 rounded-lg shadow-xl py-1 z-50 animate-in fade-in slide-in-from-top-1 duration-200">
+                  {purchaseOptions.map((option, index) => (
+                    <a
+                      key={index}
+                      href={option.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block px-3 py-1.5 text-[10px] text-stone-700 dark:text-stone-200 hover:bg-rose-50 dark:hover:bg-rose-900/30 hover:text-rose-700 dark:hover:text-rose-400 font-medium transition-colors"
+                      onClick={() => setIsDropdownOpen(false)}
+                    >
+                      <div className="flex items-center justify-between">
+                        <span>{option.name}</span>
+                        <ExternalLink size={9} className="opacity-50" />
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
 
             <a
               href={book.links.nlpi}
