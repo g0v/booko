@@ -9,9 +9,11 @@ const __dirname = path.dirname(__filename);
 const SHEET_ID = '1Z0JUS0fw5SFaX1-oht6jEx5i8XI888vx5F9jm9BEggI';
 const ADULT_SHEET_GID = '0';
 const CHILDREN_SHEET_GID = '1880693572';
+const DOC_SHEET_GID = '2093490158';
 
 const ADULT_CSV_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=csv&gid=${ADULT_SHEET_GID}`;
 const CHILDREN_CSV_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=csv&gid=${CHILDREN_SHEET_GID}`;
+const DOC_CSV_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=csv&gid=${DOC_SHEET_GID}`;
 
 const CACHE_PATH = path.join(__dirname, 'cover_cache.json');
 
@@ -198,6 +200,35 @@ function parseChildrenCsv(csvData) {
   return books;
 }
 
+function parseDocCsv(csvData) {
+  const lines = csvData.split(/\r?\n/);
+  const docs = [];
+
+  // Documentary Header: A:標籤, B:片名, C:首映年份, D:導演, E:說明 48字內
+  for (let i = 1; i < lines.length; i++) {
+    const line = lines[i].trim();
+    if (!line) continue;
+
+    const cols = line.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/).map(c => c.replace(/^"|"$/g, '').trim());
+    const [tagsStr, title, year, director, description] = cols;
+
+    if (!title || title === '片名') continue;
+
+    const doc = {
+      id: `doc-sheet-${i}`,
+      title: title,
+      director: director || '未知',
+      year: year || '未知',
+      description: description || title,
+      thumbnail: '', // Placeholder, as not in CSV
+      tags: tagsStr ? tagsStr.split(',').map(t => t.trim()) : []
+    };
+    docs.push(doc);
+  }
+  return docs;
+}
+
+
 
 function fetchSheet(url) {
   return new Promise((resolve, reject) => {
@@ -216,13 +247,15 @@ async function sync() {
   console.log('Fetching data from Google Sheets...');
 
   try {
-    const [adultsCsv, childrenCsv] = await Promise.all([
+    const [adultsCsv, childrenCsv, docsCsv] = await Promise.all([
       fetchSheet(ADULT_CSV_URL),
-      fetchSheet(CHILDREN_CSV_URL)
+      fetchSheet(CHILDREN_CSV_URL),
+      fetchSheet(DOC_CSV_URL)
     ]);
 
     let books = parseAdultCsv(adultsCsv);
     let childrenBooks = parseChildrenCsv(childrenCsv);
+    let documentaries = parseDocCsv(docsCsv);
 
     // Sort books by Level (basic -> intermediate -> advanced) then by _sortOrder
     const levelOrder = { 'basic': 1, 'intermediate': 2, 'advanced': 3 };
@@ -247,7 +280,8 @@ async function sync() {
     const output = {
       lastUpdated: new Date().toISOString(),
       books,
-      childrenBooks
+      childrenBooks,
+      documentaries
     };
 
     const content = `export const sheetData = ${JSON.stringify(output, null, 2)};`;
@@ -256,7 +290,7 @@ async function sync() {
       content
     );
 
-    console.log(`Successfully synced ${books.length} books and ${childrenBooks.length} children books to books_data.ts.`);
+    console.log(`Successfully synced ${books.length} books, ${childrenBooks.length} children books, and ${documentaries.length} documentaries to books_data.ts.`);
     process.exit(0);
 
   } catch (err) {

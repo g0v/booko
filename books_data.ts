@@ -1,5 +1,5 @@
 export const sheetData = {
-  "lastUpdated": "2026-02-14T21:34:42.422Z",
+  "lastUpdated": "2026-02-15T01:01:02.634Z",
   "books": [
     {
       "id": "sheet-12",
@@ -788,6 +788,499 @@ export const sheetData = {
         "kingstone": "https://www.kingstone.com.tw/search/search?q=%E9%9E%8B%E5%8C%A0%E9%A6%AC%E4%B8%81",
         "nlpi": "https://ebook.nlpi.edu.tw/search?search_field=TI&search_input=%E9%9E%8B%E5%8C%A0%E9%A6%AC%E4%B8%81"
       }
+    }
+  ],
+  "documentaries": [
+    {
+      "id": "doc-sheet-2",
+      "title": "跳舞時代",
+      "director": "郭珍弟、簡偉斯",
+      "year": "2003",
+      "description": "跳舞時代",
+      "thumbnail": "",
+      "tags": [
+        "日本二戰時代"
+      ]
+    },
+    {
+      "id": "doc-sheet-3",
+      "title": "綠的海平線",
+      "director": "郭亮吟",
+      "year": "2006",
+      "description": "綠的海平線",
+      "thumbnail": "",
+      "tags": []
+    },
+    {
+      "id": "doc-sheet-4",
+      "title": "灣生畫家：立石鐵臣",
+      "director": "郭亮吟、藤田修平",
+      "year": "2016",
+      "description": "灣生畫家：立石鐵臣",
+      "thumbnail": "",
+      "tags": []
+    },
+    {
+      "id": "doc-sheet-5",
+      "title": "灣生回家",
+      "director": "黃銘正",
+      "year": "2015",
+      "description": "灣生回家",
+      "thumbnail": "",
+      "tags": []
+    },
+    {
+      "id": "doc-sheet-6",
+      "title": "路有多遠",
+      "director": "湯湘竹",
+      "year": "2010",
+      "description": "路有多遠",
+      "thumbnail": "",
+      "tags": []
+    },
+    {
+      "id": "doc-sheet-7",
+      "title": "海的彼端",
+      "director": "黃胤毓",
+      "year": "2016",
+      "description": "海的彼端",
+      "thumbnail": "",
+      "tags": []
+    },
+    {
+      "id": "doc-sheet-8",
+      "title": "綠色牢籠",
+      "director": "黃胤毓",
+      "year": "2021",
+      "description": "綠色牢籠",
+      "thumbnail": "",
+      "tags": []
+    },
+    {
+      "id": "doc-sheet-9",
+      "title": "由島至島",
+      "director": "許雅舒",
+      "year": "2024",
+      "description": "由島至島",
+      "thumbnail": "",
+      "tags": []
+    },
+    {
+      "id": "doc-sheet-10",
+      "title": "沖天",
+      "director": "張釗維",
+      "year": "2015",
+      "description": "沖天",
+      "thumbnail": "",
+      "tags": []
+    },
+    {
+      "id": "doc-sheet-11",
+      "title": "疾風魅影－黑貓中隊",
+      "director": "楊佈新",
+      "year": "2018",
+      "description": "疾風魅影－黑貓中隊",
+      "thumbnail": "",
+      "tags": []
+    },
+    {
+      "id": "doc-sheet-12",
+      "title": "春天－許金玉的故事",
+      "director": "曾文珍",
+      "year": "2002",
+      "description": "春天－許金玉的故事",
+      "thumbnail": "",
+      "tags": [
+        "白色恐怖二二八"
+      ]
+    },
+    {
+      "id": "doc-sheet-13",
+      "title": "白色見證",
+      "director": "柯一正",
+      "year": "2003",
+      "description": "白色見證",
+      "thumbnail": "",
+      "tags": []
+    },
+    {
+      "id": "doc-sheet-14",
+      "title": "暗夜哭聲",
+      "director": "吳乙峰",
+      "year": "1996",
+      "description": "暗夜哭聲",
+      "thumbnail": "",
+      "tags": []
+    },
+    {
+      "id": "doc-sheet-15",
+      "title": "綠色玫瑰",
+      "director": "陳俊志",
+      "year": "2007",
+      "description": "綠色玫瑰",
+      "thumbnail": "",
+      "tags": []
+    },
+    {
+      "id": "doc-sheet-16",
+      "title": "尋找湯德章",
+      "director": "黃銘正、連楨惠",
+      "year": "2024",
+      "description": "尋找湯德章",
+      "thumbnail": "",
+      "tags": []
+    },
+    {
+      "id": "doc-sheet-17",
+      "title": "他們為什麼不說話",
+      "director": "廖建華",
+      "year": "2017",
+      "description": "他們為什麼不說話",
+      "thumbnail": "",
+      "tags": []
+    },
+    {
+      "id": "doc-sheet-18",
+      "title": "野番茄",
+      "director": "廖克發",
+      "year": "2021",
+      "description": "野番茄",
+      "thumbnail": "",
+      "tags": []
+    },
+    {
+      "id": "doc-sheet-19",
+      "title": "無法離開的人",
+      "director": "陳芯宜",
+      "year": "2022",
+      "description": "無法離開的人",
+      "thumbnail": "",
+      "tags": []
+    },
+    {
+      "id": "doc-sheet-20",
+      "title": "流麻溝十五號 (原圖標示為流麻溝女思想的)",
+      "director": "周美玲",
+      "year": "2022",
+      "description": "流麻溝十五號 (原圖標示為流麻溝女思想的)",
+      "thumbnail": "",
+      "tags": []
+    },
+    {
+      "id": "doc-sheet-21",
+      "title": "牽阮的手",
+      "director": "莊益增、顏蘭權",
+      "year": "2010",
+      "description": "牽阮的手",
+      "thumbnail": "",
+      "tags": [
+        "民主運動"
+      ]
+    },
+    {
+      "id": "doc-sheet-22",
+      "title": "革命進行式",
+      "director": "陳麗貴",
+      "year": "2015",
+      "description": "革命進行式",
+      "thumbnail": "",
+      "tags": []
+    },
+    {
+      "id": "doc-sheet-23",
+      "title": "回首來時路－她們參政的足跡",
+      "director": "陳麗貴",
+      "year": "2014",
+      "description": "回首來時路－她們參政的足跡",
+      "thumbnail": "",
+      "tags": []
+    },
+    {
+      "id": "doc-sheet-24",
+      "title": "春雨424",
+      "director": "廖建華",
+      "year": "2020",
+      "description": "春雨424",
+      "thumbnail": "",
+      "tags": []
+    },
+    {
+      "id": "doc-sheet-25",
+      "title": "綠色小組系列紀錄片",
+      "director": "綠色小組",
+      "year": "1986-",
+      "description": "綠色小組系列紀錄片",
+      "thumbnail": "",
+      "tags": []
+    },
+    {
+      "id": "doc-sheet-26",
+      "title": "末代叛亂犯",
+      "director": "廖建華",
+      "year": "2015",
+      "description": "末代叛亂犯",
+      "thumbnail": "",
+      "tags": []
+    },
+    {
+      "id": "doc-sheet-27",
+      "title": "狂飆一夢",
+      "director": "廖建華",
+      "year": "2019",
+      "description": "狂飆一夢",
+      "thumbnail": "",
+      "tags": []
+    },
+    {
+      "id": "doc-sheet-28",
+      "title": "山有多高",
+      "director": "湯湘竹",
+      "year": "2002",
+      "description": "山有多高",
+      "thumbnail": "",
+      "tags": [
+        "台灣史與兩岸/父輩鄉愁"
+      ]
+    },
+    {
+      "id": "doc-sheet-29",
+      "title": "銀簪子",
+      "director": "蕭菊貞",
+      "year": "2000",
+      "description": "銀簪子",
+      "thumbnail": "",
+      "tags": []
+    },
+    {
+      "id": "doc-sheet-30",
+      "title": "打拚－台灣人民的歷史",
+      "director": "符昌鋒 等",
+      "year": "2007",
+      "description": "打拚－台灣人民的歷史",
+      "thumbnail": "",
+      "tags": []
+    },
+    {
+      "id": "doc-sheet-31",
+      "title": "阿罩霧風雲",
+      "director": "許明淳",
+      "year": "2013",
+      "description": "阿罩霧風雲",
+      "thumbnail": "",
+      "tags": []
+    },
+    {
+      "id": "doc-sheet-32",
+      "title": "狂飆的世代",
+      "director": "潘曉剛",
+      "year": "2015",
+      "description": "狂飆的世代",
+      "thumbnail": "",
+      "tags": []
+    },
+    {
+      "id": "doc-sheet-33",
+      "title": "台灣人在滿洲國",
+      "director": "蔣顯斌",
+      "year": "2013",
+      "description": "台灣人在滿洲國",
+      "thumbnail": "",
+      "tags": []
+    },
+    {
+      "id": "doc-sheet-34",
+      "title": "最後島嶼－台灣防衛戰1950-1955",
+      "director": "謝嘉錕",
+      "year": "2011",
+      "description": "最後島嶼－台灣防衛戰1950-1955",
+      "thumbnail": "",
+      "tags": []
+    },
+    {
+      "id": "doc-sheet-35",
+      "title": "單打雙不打",
+      "director": "黃明川",
+      "year": "1994",
+      "description": "單打雙不打",
+      "thumbnail": "",
+      "tags": []
+    },
+    {
+      "id": "doc-sheet-36",
+      "title": "---",
+      "director": "---",
+      "year": "---",
+      "description": "---",
+      "thumbnail": "",
+      "tags": [
+        "---"
+      ]
+    },
+    {
+      "id": "doc-sheet-37",
+      "title": "消失的王國：拱樂社",
+      "director": "郭珍弟",
+      "year": "1999",
+      "description": "消失的王國：拱樂社",
+      "thumbnail": "",
+      "tags": [
+        "其他民間"
+      ]
+    },
+    {
+      "id": "doc-sheet-38",
+      "title": "台灣黑電影",
+      "director": "侯季然",
+      "year": "2005",
+      "description": "台灣黑電影",
+      "thumbnail": "",
+      "tags": []
+    },
+    {
+      "id": "doc-sheet-39",
+      "title": "天亮前的戀愛故事",
+      "director": "林俊傑",
+      "year": "2011",
+      "description": "天亮前的戀愛故事",
+      "thumbnail": "",
+      "tags": []
+    },
+    {
+      "id": "doc-sheet-40",
+      "title": "甘露水",
+      "director": "林君昵、黃邦銓",
+      "year": "2021",
+      "description": "甘露水",
+      "thumbnail": "",
+      "tags": []
+    },
+    {
+      "id": "doc-sheet-41",
+      "title": "櫻之聲",
+      "director": "郭亮吟、藤田修平",
+      "year": "2016",
+      "description": "櫻之聲",
+      "thumbnail": "",
+      "tags": []
+    },
+    {
+      "id": "doc-sheet-42",
+      "title": "四十年",
+      "director": "侯季然",
+      "year": "2016",
+      "description": "四十年",
+      "thumbnail": "",
+      "tags": []
+    },
+    {
+      "id": "doc-sheet-43",
+      "title": "我們的那時時刻",
+      "director": "楊力州",
+      "year": "2016",
+      "description": "我們的那時時刻",
+      "thumbnail": "",
+      "tags": []
+    },
+    {
+      "id": "doc-sheet-44",
+      "title": "蘋果的滋味",
+      "director": "李惠仁",
+      "year": "2015",
+      "description": "蘋果的滋味",
+      "thumbnail": "",
+      "tags": []
+    },
+    {
+      "id": "doc-sheet-45",
+      "title": "流離島影",
+      "director": "游智煒 等",
+      "year": "2000",
+      "description": "流離島影",
+      "thumbnail": "",
+      "tags": []
+    },
+    {
+      "id": "doc-sheet-46",
+      "title": "稻草人",
+      "director": "王童",
+      "year": "1987",
+      "description": "稻草人",
+      "thumbnail": "",
+      "tags": [
+        "劇情片"
+      ]
+    },
+    {
+      "id": "doc-sheet-47",
+      "title": "香蕉天堂",
+      "director": "王童",
+      "year": "1989",
+      "description": "香蕉天堂",
+      "thumbnail": "",
+      "tags": []
+    },
+    {
+      "id": "doc-sheet-48",
+      "title": "無言的山丘",
+      "director": "王童",
+      "year": "1992",
+      "description": "無言的山丘",
+      "thumbnail": "",
+      "tags": []
+    },
+    {
+      "id": "doc-sheet-49",
+      "title": "紅柿子",
+      "director": "王童",
+      "year": "1996",
+      "description": "紅柿子",
+      "thumbnail": "",
+      "tags": []
+    },
+    {
+      "id": "doc-sheet-50",
+      "title": "超級市民",
+      "director": "萬仁",
+      "year": "1985",
+      "description": "超級市民",
+      "thumbnail": "",
+      "tags": []
+    },
+    {
+      "id": "doc-sheet-51",
+      "title": "超級大國民",
+      "director": "萬仁",
+      "year": "1995",
+      "description": "超級大國民",
+      "thumbnail": "",
+      "tags": []
+    },
+    {
+      "id": "doc-sheet-52",
+      "title": "破輪胎",
+      "director": "萬仁",
+      "year": "1999",
+      "description": "破輪胎",
+      "thumbnail": "",
+      "tags": []
+    },
+    {
+      "id": "doc-sheet-53",
+      "title": "眼淚",
+      "director": "鄭文堂",
+      "year": "2010",
+      "description": "眼淚",
+      "thumbnail": "",
+      "tags": []
+    },
+    {
+      "id": "doc-sheet-54",
+      "title": "天馬茶房",
+      "director": "林正盛",
+      "year": "1999",
+      "description": "天馬茶房",
+      "thumbnail": "",
+      "tags": []
     }
   ]
 };
