@@ -204,17 +204,23 @@ function parseDocCsv(csvData) {
   const lines = csvData.split(/\r?\n/);
   const docs = [];
 
-  // Documentary Header: A:標籤, B:片名, C:首映年份, D:導演, E:說明 48字內
+  // Documentary Header: 
+  // 0: 排序, 1: 標籤, 2: 片名, 3: 首映年份, 4: 導演, 5: 說明 48字內
   for (let i = 1; i < lines.length; i++) {
     const line = lines[i].trim();
     if (!line) continue;
 
     const cols = line.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/).map(c => c.replace(/^"|"$/g, '').trim());
-    const [tagsStr, title, year, director, description] = cols;
+    const [sortOrderStr, tagsStr, title, year, director, description] = cols;
 
     if (!title || title === '片名') continue;
 
+    // Parse sort order, default to a high number if missing
+    const sortOrder = parseInt(sortOrderStr, 10);
+    const validSortOrder = isNaN(sortOrder) ? 999999 : sortOrder;
+
     const doc = {
+      _sortOrder: validSortOrder, // Temporary property for sorting
       id: `doc-sheet-${i}`,
       title: title,
       director: director || '未知',
@@ -276,6 +282,9 @@ async function sync() {
 
     // Remove Google Books enrichment as per user request
     // "remove the existing google book api static covers. let's just use the ones from books.com.tw"
+
+    documentaries.sort((a, b) => a._sortOrder - b._sortOrder);
+    documentaries = documentaries.map(({ _sortOrder, ...doc }) => doc);
 
     const output = {
       lastUpdated: new Date().toISOString(),

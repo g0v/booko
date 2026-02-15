@@ -249,21 +249,63 @@ const ChildrenView: React.FC = () => {
   );
 };
 
-const DocumentariesView: React.FC = () => (
-  <section className="animate-in fade-in duration-700">
-    <div className="mb-12 text-center max-w-3xl mx-auto">
-      <h2 className="text-3xl sm:text-4xl font-black text-stone-900 dark:text-stone-100 serif mb-4">光影紀實：看見真實的面容</h2>
-      <p className="text-stone-600 dark:text-stone-300 text-base leading-relaxed">
-        文字之外，紀錄片用最直觀的方式，保存了那些被遺忘的聲音與影像。
-      </p>
-    </div>
-    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-5">
-      {DOCUMENTARIES.map((doc) => (
-        <DocCard key={doc.id} doc={doc} />
+const DocumentariesView: React.FC = () => {
+  const groupedDocs = useMemo(() => {
+    const groups: Record<string, typeof DOCUMENTARIES> = {};
+
+    DOCUMENTARIES.forEach(doc => {
+      const tags = doc.tags && doc.tags.length > 0 ? doc.tags : ['其他影片'];
+      tags.forEach(tag => {
+        if (!groups[tag]) groups[tag] = [];
+        // Avoid duplicate in same tag if somehow tags repeat
+        if (!groups[tag].some(d => d.id === doc.id)) {
+          groups[tag].push(doc);
+        }
+      });
+    });
+
+    // Sort tag names: "民主運動" first, then others alphabetically
+    const sortedTags = Object.keys(groups).sort((a, b) => {
+      if (a === '民主運動') return -1;
+      if (b === '民主運動') return 1;
+      if (a === '其他影片') return 1; // Put "Others" at the end
+      if (b === '其他影片') return -1;
+      return a.localeCompare(b, 'zh-TW');
+    });
+
+    return sortedTags.map(tag => ({
+      tag,
+      docs: groups[tag]
+    }));
+  }, []);
+
+  return (
+    <section className="animate-in fade-in duration-700">
+      <div className="mb-12 text-center max-w-3xl mx-auto">
+        <h2 className="text-3xl sm:text-4xl font-black text-stone-900 dark:text-stone-100 serif mb-4">光影紀實：看見真實的面容</h2>
+        <p className="text-stone-600 dark:text-stone-300 text-base leading-relaxed">
+          文字之外，紀錄片用最直觀的方式，保存了那些被遺忘的聲音與影像。
+        </p>
+      </div>
+
+      {groupedDocs.map(({ tag, docs }) => (
+        <div key={tag} className="mb-16">
+          <div className="flex items-center space-x-3 mb-6 border-b border-rose-100 dark:border-rose-900/30 pb-3">
+            <div className="p-1.5 bg-rose-100 dark:bg-rose-900/40 rounded text-rose-800 dark:text-rose-400">
+              <Star size={20} fill="currentColor" />
+            </div>
+            <h3 className="text-xl font-bold text-stone-900 dark:text-stone-100 serif">{tag}</h3>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-5">
+            {docs.map((doc) => (
+              <DocCard key={doc.id} doc={doc} />
+            ))}
+          </div>
+        </div>
       ))}
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 const ShareView: React.FC = () => {
   return (
