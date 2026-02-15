@@ -33,6 +33,7 @@ const DocCard: React.FC<DocCardProps> = ({ doc }) => {
                 src={doc.thumbnail || `https://placehold.co/400x600/1c1917/rose?text=${encodeURIComponent(doc.title)}`}
                 alt={doc.title}
                 onError={() => setImageError(true)}
+                referrerPolicy="no-referrer"
                 className="w-full h-full object-cover grayscale-[0.3] group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-40 group-hover:opacity-20 transition-opacity"></div>

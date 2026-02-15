@@ -797,7 +797,7 @@ export const sheetData = {
       "director": "莊益增、顏蘭權",
       "year": "2010",
       "description": "牽阮的手",
-      "thumbnail": "https://zh.wikipedia.org/wiki/%E7%89%BD%E9%98%AE%E7%9A%84%E6%89%8B#/media/File:%E7%89%BD%E9%98%AE%E7%9A%84%E6%89%8B.jpg",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/zh/e/e5/%E7%89%BD%E9%98%AE%E7%9A%84%E6%89%8B.jpg",
       "tags": [
         "民主運動"
       ]
