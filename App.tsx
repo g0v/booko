@@ -285,6 +285,18 @@ const DocumentariesView: React.FC = () => {
         <h2 className="text-3xl sm:text-4xl font-black text-stone-900 dark:text-stone-100 serif mb-4">光影紀實：看見真實的面容</h2>
         <p className="text-stone-600 dark:text-stone-300 text-base leading-relaxed">
           文字之外，紀錄片用最直觀的方式，保存了那些被遺忘的聲音與影像。
+          <br />
+          <span className="text-sm opacity-80 mt-2 block">
+            首批片單引自廖建華導演
+            <a
+              href="https://www.threads.net/@liao.jian.hua/post/DUllOVlk2pX?xmt=AQF0bz_K0JcwcJb0jleetYGkIpdFoX3EVmUhUogRTDcx6A"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:text-rose-600 transition-colors"
+            >
+              整理清單
+            </a>
+          </span>
         </p>
       </div>
 

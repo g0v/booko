@@ -1,5 +1,5 @@
 export const sheetData = {
-  "lastUpdated": "2026-02-15T01:54:46.274Z",
+  "lastUpdated": "2026-02-15T03:03:27.994Z",
   "books": [
     {
       "id": "sheet-12",
@@ -1085,7 +1085,7 @@ export const sheetData = {
       "description": "山有多高",
       "thumbnail": "",
       "tags": [
-        "台灣史與兩岸/父輩鄉愁"
+        "台灣史"
       ]
     },
     {
@@ -1096,7 +1096,7 @@ export const sheetData = {
       "description": "銀簪子",
       "thumbnail": "",
       "tags": [
-        "台灣史與兩岸/父輩鄉愁"
+        "台灣史"
       ]
     },
     {
@@ -1107,7 +1107,7 @@ export const sheetData = {
       "description": "打拚－台灣人民的歷史",
       "thumbnail": "",
       "tags": [
-        "台灣史與兩岸/父輩鄉愁"
+        "台灣史"
       ]
     },
     {
@@ -1118,7 +1118,7 @@ export const sheetData = {
       "description": "阿罩霧風雲",
       "thumbnail": "",
       "tags": [
-        "台灣史與兩岸/父輩鄉愁"
+        "台灣史"
       ]
     },
     {
@@ -1129,7 +1129,7 @@ export const sheetData = {
       "description": "狂飆的世代",
       "thumbnail": "",
       "tags": [
-        "台灣史與兩岸/父輩鄉愁"
+        "台灣史"
       ]
     },
     {
@@ -1140,7 +1140,7 @@ export const sheetData = {
       "description": "台灣人在滿洲國",
       "thumbnail": "",
       "tags": [
-        "台灣史與兩岸/父輩鄉愁"
+        "台灣史"
       ]
     },
     {
@@ -1151,7 +1151,7 @@ export const sheetData = {
       "description": "最後島嶼－台灣防衛戰1950-1955",
       "thumbnail": "",
       "tags": [
-        "台灣史與兩岸/父輩鄉愁"
+        "台灣史"
       ]
     },
     {
@@ -1162,7 +1162,7 @@ export const sheetData = {
       "description": "單打雙不打",
       "thumbnail": "",
       "tags": [
-        "台灣史與兩岸/父輩鄉愁"
+        "台灣史"
       ]
     },
     {
