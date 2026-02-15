@@ -69,7 +69,7 @@ This is a curated website for books and documentaries related to Taiwan's democr
 - [x] **書籍封面精準度 (Book Cover Accuracy):** 已建立 `utils/bookCover.ts` 處理博客來圖片 sharding 邏輯，並同步至資料庫。
 - [x] **佈局優化 (Layout Optimization):** 大螢幕每排顯示從 5 本增加至 6 本。
 - [/] **多平台購書連結 (Multi-platform Purchase Links):** 資料層已同步金石堂、誠品等連結，UI 介面開發中。
-- [ ] **影音資料 SSOT 同步 (Video Data SSOT Sync):** 從 SSOT 匯入紀錄片影視片單，具有分類、說明、tag。
+- [x] **影音資料 SSOT 同步 (Video Data SSOT Sync):** 已從 SSOT 匯入紀錄片影視片單，具有分類、說明、tag。
 - [ ] **SSOT 資料強化 (SSOT Data Enhancement):** 新增 kobo, readmoo 商品頁連結。
 - [ ] **書籍資訊擴充 (Book Info Expansion):** 書籍欄增加出版年份資訊。
 - [ ] **新增「關於本站」分頁 (About Page):** 新增關於本站的介紹與說明頁面。

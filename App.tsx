@@ -257,7 +257,7 @@ const DocumentariesView: React.FC = () => (
         文字之外，紀錄片用最直觀的方式，保存了那些被遺忘的聲音與影像。
       </p>
     </div>
-    <div className="grid grid-cols-1 gap-8">
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-5">
       {DOCUMENTARIES.map((doc) => (
         <DocCard key={doc.id} doc={doc} />
       ))}

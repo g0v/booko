@@ -7,13 +7,4 @@ import { sheetData } from './books_data';
 export const BOOKS: Book[] = sheetData.books as unknown as Book[];
 export const CHILDREN_BOOKS: Book[] = sheetData.childrenBooks as unknown as Book[];
 
-export const DOCUMENTARIES: Documentary[] = [
-  {
-    id: 'd1',
-    title: '牽阮的手',
-    director: '莊益增、顏蘭權',
-    year: '2010',
-    description: '以田朝明醫師與田孟淑女士的愛情故事為線索，交織出台灣民主運動歷程。',
-    thumbnail: 'https://upload.wikimedia.org/wikipedia/zh/e/e5/%E7%89%BD%E9%98%AE%E7%9A%84%E6%89%8B.jpg'
-  }
-];
+export const DOCUMENTARIES: Documentary[] = sheetData.documentaries as unknown as Documentary[];

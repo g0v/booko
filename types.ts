@@ -31,4 +31,5 @@ export interface Documentary {
   description: string;
   thumbnail: string;
   youtubeId?: string;
+  tags?: string[];
 }
