@@ -71,7 +71,7 @@ This is a curated website for books and documentaries related to Taiwan's democr
 - [x] **多平台購書連結 (Multi-platform Purchase Links):** 資料層已同步金石堂、誠品等連結，UI 介面開發中。
 - [x] **影音資料 SSOT 同步 (Video Data SSOT Sync):** 已從 SSOT 匯入紀錄片影視片單，具有分類、說明、tag。
 - [ ] **紀錄片圖片修正 (Documentary Image Fix):** 修正紀錄片影視分頁的圖片，使用正確影片海報圖。
-- [ ] **紀錄片排序邏輯 (Documentary Sorting Logic):** 建立紀錄片影視的兩級排序（與精選書籍同），第一級以 SSOT 中「標籤」分組，第二級按試算表中的「排序」欄位進行升冪排列。
+- [x] **紀錄片排序邏輯 (Documentary Sorting Logic):** 建立紀錄片影視的兩級排序：第一級以 SSOT 中「標籤」分組（「民主運動」置頂），第二級按試算表中的「排序」欄位進行升冪排列。
 - [ ] **SSOT 資料強化 (SSOT Data Enhancement):** 新增 kobo, readmoo 商品頁連結。
 - [ ] **書籍資訊擴充 (Book Info Expansion):** 書籍欄增加出版年份資訊。
 - [ ] **新增「關於本站」分頁 (About Page):** 新增關於本站的介紹與說明頁面。
