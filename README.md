@@ -36,11 +36,16 @@ This is a curated website for books and documentaries related to Taiwan's democr
     ```bash
     npm run dev
     ```
-
 3.  **建置 / Build:**
     ```bash
     npm run build
     ```
+
+## 部署 / Deployment
+
+本專案使用 GitHub Actions 自動部署至 GitHub Pages。
+- **自動部署：** 每當推送到 `main` 分支時，`.github/workflows/pages.yml` 會自動執行建置並部署。
+- **自定義網域：** 透過 `public/CNAME` 檔案，網站建置後會自動包含網域設定，指向 [booko.g0v.tw](https://booko.g0v.tw)。
 
 ## 資料來源與排序邏輯 / Data Source & Sorting
 
@@ -83,5 +88,5 @@ This is a curated website for books and documentaries related to Taiwan's democr
     - 為每個頁面添加適當的 Meta Tags。
 - [ ] **授權標示 (License):** 增加授權標示 CC BY 4.0 並增加圖示。
 - [ ] **投稿方式擴充 (Submission Expansion):** 新增批次書單投稿方式（除了單本從 Google Form 填寫之外的方法）。
-- [ ] **網域指向 (Domain):** 將網域指向 [booko.g0v.tw](https://booko.g0v.tw)。
+- [x] **網域指向 (Domain):** 將網域指向 [booko.g0v.tw](https://booko.g0v.tw)。
 
