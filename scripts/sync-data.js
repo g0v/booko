@@ -55,6 +55,47 @@ const getKingstoneSearch = (title) => `https://www.kingstone.com.tw/search/searc
 
 const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
+async function downloadFile(url, dest) {
+  if (!url) return null;
+
+  // If we already have the file, skip downloading (unless we want to force refresh)
+  if (fs.existsSync(dest)) {
+    return true;
+  }
+
+  return new Promise((resolve) => {
+    https.get(url, {
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+      }
+    }, (res) => {
+      if (res.statusCode === 301 || res.statusCode === 302 || res.statusCode === 307) {
+        return resolve(downloadFile(res.headers.location, dest));
+      }
+
+      if (res.statusCode !== 200) {
+        console.error(`    Download failed: ${res.statusCode} for ${url}`);
+        resolve(false);
+        return;
+      }
+
+      const fileStream = fs.createWriteStream(dest);
+      res.pipe(fileStream);
+      fileStream.on('finish', () => {
+        fileStream.close();
+        resolve(true);
+      });
+      fileStream.on('error', (err) => {
+        console.error(`    Stream error for ${url}: ${err.message}`);
+        resolve(false);
+      });
+    }).on('error', (err) => {
+      console.error(`    Network error downloading ${url}: ${err.message}`);
+      resolve(false);
+    });
+  });
+}
+
 async function fetchCoverFromGoogle(title, author) {
   // Clean title: remove 《 》 and other common punctuation
   const cleanTitle = title.replace(/[《》【】「」]/g, '').trim();
@@ -262,6 +303,50 @@ async function sync() {
     let books = parseAdultCsv(adultsCsv);
     let childrenBooks = parseChildrenCsv(childrenCsv);
     let documentaries = parseDocCsv(docsCsv);
+
+    console.log('Downloading images...');
+
+    // Download Documentary Posters
+    for (const doc of documentaries) {
+      if (doc.thumbnail && doc.thumbnail.startsWith('http')) {
+        const ext = path.extname(new URL(doc.thumbnail).pathname) || '.jpg';
+        const filename = `${doc.id}${ext}`;
+        const dest = path.join(__dirname, '../public/assets/posters', filename);
+        console.log(`  Downloading poster for: ${doc.title}`);
+        const success = await downloadFile(doc.thumbnail, dest);
+        if (success) {
+          doc.thumbnail = `/assets/posters/${filename}`;
+        }
+      }
+    }
+
+    // Download Adult Book Covers
+    for (const book of books) {
+      if (book.coverImage && book.coverImage.startsWith('http')) {
+        const ext = path.extname(new URL(book.coverImage).pathname) || '.jpg';
+        const filename = `${book.id}${ext}`;
+        const dest = path.join(__dirname, '../public/assets/covers', filename);
+        console.log(`  Downloading cover for: ${book.title}`);
+        const success = await downloadFile(book.coverImage, dest);
+        if (success) {
+          book.coverImage = `/assets/covers/${filename}`;
+        }
+      }
+    }
+
+    // Download Children Book Covers
+    for (const book of childrenBooks) {
+      if (book.coverImage && book.coverImage.startsWith('http')) {
+        const ext = path.extname(new URL(book.coverImage).pathname) || '.jpg';
+        const filename = `${book.id}${ext}`;
+        const dest = path.join(__dirname, '../public/assets/covers', filename);
+        console.log(`  Downloading cover for: ${book.title}`);
+        const success = await downloadFile(book.coverImage, dest);
+        if (success) {
+          book.coverImage = `/assets/covers/${filename}`;
+        }
+      }
+    }
 
     // Sort books by Level (basic -> intermediate -> advanced) then by _sortOrder
     const levelOrder = { 'basic': 1, 'intermediate': 2, 'advanced': 3 };
