@@ -92,14 +92,23 @@ const BookCard: React.FC<BookCardProps> = ({ book, onTagClick }) => {
         <div className="pt-2.5 border-t border-stone-100 dark:border-stone-700 relative">
           <div className="grid grid-cols-2 gap-2">
             <div className="relative" ref={dropdownRef}>
-              <button
-                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                className="w-full h-full flex py-1.5 bg-stone-900 dark:bg-rose-700 hover:bg-rose-800 dark:hover:bg-rose-600 text-white text-[9px] font-bold rounded items-center justify-center space-x-1 transition-colors shadow-sm"
-              >
-                <ShoppingCart size={10} />
-                <span>網路購書</span>
-                <ChevronDown size={10} className={`transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} />
-              </button>
+              <div className="flex h-full rounded overflow-hidden shadow-sm">
+                <a
+                  href={book.links.books}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 flex py-1.5 bg-stone-900 dark:bg-rose-700 hover:bg-rose-800 dark:hover:bg-rose-600 text-white text-[9px] font-bold items-center justify-center space-x-1 transition-colors"
+                >
+                  <ShoppingCart size={10} />
+                  <span>網路購書</span>
+                </a>
+                <button
+                  onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                  className="flex items-center px-1.5 bg-stone-900 dark:bg-rose-700 hover:bg-rose-800 dark:hover:bg-rose-600 text-white border-l border-white/20 transition-colors"
+                >
+                  <ChevronDown size={10} className={`transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} />
+                </button>
+              </div>
 
               {isDropdownOpen && (
                 <div className="absolute bottom-full left-0 mb-2 w-32 bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 rounded-lg shadow-xl py-1 z-50 animate-in fade-in slide-in-from-top-1 duration-200">
