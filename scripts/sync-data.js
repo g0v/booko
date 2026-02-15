@@ -205,13 +205,13 @@ function parseDocCsv(csvData) {
   const docs = [];
 
   // Documentary Header: 
-  // 0: 排序, 1: 標籤, 2: 片名, 3: 首映年份, 4: 導演, 5: 說明 48字內
+  // 0: 排序, 1: 標籤, 2: 片名, 3: 首映年份, 4: 導演, 5: 圖片, 6: 說明 48字內
   for (let i = 1; i < lines.length; i++) {
     const line = lines[i].trim();
     if (!line) continue;
 
     const cols = line.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/).map(c => c.replace(/^"|"$/g, '').trim());
-    const [sortOrderStr, tagsStr, title, year, director, description] = cols;
+    const [sortOrderStr, tagsStr, title, year, director, thumbnail, description] = cols;
 
     if (!title || title === '片名') continue;
 
@@ -226,7 +226,7 @@ function parseDocCsv(csvData) {
       director: director || '未知',
       year: year || '未知',
       description: description || title,
-      thumbnail: '', // Placeholder, as not in CSV
+      thumbnail: thumbnail || '',
       tags: tagsStr ? tagsStr.split(',').map(t => t.trim()) : []
     };
     docs.push(doc);

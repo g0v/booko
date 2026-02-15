@@ -1,5 +1,5 @@
 export const sheetData = {
-  "lastUpdated": "2026-02-15T04:45:10.625Z",
+  "lastUpdated": "2026-02-15T04:48:16.138Z",
   "books": [
     {
       "id": "sheet-12",
@@ -796,8 +796,8 @@ export const sheetData = {
       "title": "牽阮的手",
       "director": "莊益增、顏蘭權",
       "year": "2010",
-      "description": "https://zh.wikipedia.org/wiki/%E7%89%BD%E9%98%AE%E7%9A%84%E6%89%8B#/media/File:%E7%89%BD%E9%98%AE%E7%9A%84%E6%89%8B.jpg",
-      "thumbnail": "",
+      "description": "牽阮的手",
+      "thumbnail": "https://zh.wikipedia.org/wiki/%E7%89%BD%E9%98%AE%E7%9A%84%E6%89%8B#/media/File:%E7%89%BD%E9%98%AE%E7%9A%84%E6%89%8B.jpg",
       "tags": [
         "民主運動"
       ]
@@ -840,8 +840,8 @@ export const sheetData = {
       "title": "跳舞時代",
       "director": "郭珍弟、簡偉斯",
       "year": "2003",
-      "description": "https://viewpoint.pts.org.tw/uploads/event_carousel_image/file/68061f243673761ade8a1e70/medium_3067ae263cd49b162290e8a0bb27b4d8_71e48c0d92.jpg",
-      "thumbnail": "",
+      "description": "跳舞時代",
+      "thumbnail": "https://viewpoint.pts.org.tw/uploads/event_carousel_image/file/68061f243673761ade8a1e70/medium_3067ae263cd49b162290e8a0bb27b4d8_71e48c0d92.jpg",
       "tags": [
         "日本二戰時代"
       ]
@@ -851,8 +851,8 @@ export const sheetData = {
       "title": "綠的海平線",
       "director": "郭亮吟",
       "year": "2006",
-      "description": "https://upload.wikimedia.org/wikipedia/zh/e/e3/%E7%B6%A0%E7%9A%84%E6%B5%B7%E5%B9%B3%E7%B7%9A%E5%AE%A3%E5%82%B3.gif",
-      "thumbnail": "",
+      "description": "綠的海平線",
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/zh/e/e3/%E7%B6%A0%E7%9A%84%E6%B5%B7%E5%B9%B3%E7%B7%9A%E5%AE%A3%E5%82%B3.gif",
       "tags": [
         "日本二戰時代"
       ]
