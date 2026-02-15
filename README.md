@@ -53,6 +53,7 @@ This is a curated website for books and documentaries related to Taiwan's democr
 
 - **資料來源 (Source):** [Google Sheet Link](https://docs.google.com/spreadsheets/d/1Z0JUS0fw5SFaX1-oht6jEx5i8XI888vx5F9jm9BEggI/edit?gid=0#gid=0)
 - **同步方式 (Sync):** 執行 `npm run sync` 可將試算表資料同步至本地專案。
+    - **自動下載圖片：** 同步過程中會自動將海報與封面圖下載至 `public/assets/` 資料夾，避免相依於外部圖源。
 
 ### 排序邏輯 (Sorting Logic)
 
@@ -71,11 +72,11 @@ This is a curated website for books and documentaries related to Taiwan's democr
 - [x] **推薦功能改版 (Revamp Recommendation):** 將「我要推薦」功能改成使用 Google Form: [Link](https://docs.google.com/forms/d/1HZPkLNFjrCWHlJ5qjLVhf6sM5AFGG5-w12R71jqt_PQ/edit)
 - [x] **紀錄片資料維護 (Documentary Data):** 修正《牽阮的手》等紀錄片的 thumbnail 連結，改用官方海報或可靠來源。
 - [x] **搜尋功能優化 (Enhanced Search):** 增加對書名、作者、描述的關鍵字搜尋功能。
-- [x] **書籍封面精準度 (Book Cover Accuracy):** 已建立 `utils/bookCover.ts` 處理博客來圖片 sharding 邏輯，並同步至資料庫。
+- [x] **書籍封面精準度 (Book Cover Accuracy):** 已建立 `utils/bookCover.ts` 處理博客來圖片 sharding 邏輯，同步時會自動下載至本地儲存，確保顯示穩定。
 - [x] **佈局優化 (Layout Optimization):** 大螢幕每排顯示從 5 本增加至 6 本。
 - [x] **多平台購書連結 (Multi-platform Purchase Links):** 資料層已同步金石堂、誠品等連結，UI 介面開發中。
 - [x] **影音資料 SSOT 同步 (Video Data SSOT Sync):** 已從 SSOT 匯入紀錄片影視片單，具有分類、說明、tag。
-- [x] **紀錄片圖片修正 (Documentary Image Fix):** 已同步 SSOT 中 Column F「圖片」欄位，有連結的項目將正確顯示影片海報。
+- [x] **紀錄片圖片修正 (Documentary Image Fix):** 已同步 SSOT 中 Column F「圖片」欄位。採用 **本地儲存 (Local Storage)** 方案，同步時自動下載圖檔至 GitHub 倉庫，徹底解決外部擋圖與 CORS 問題。
 - [x] **紀錄片排序邏輯 (Documentary Sorting Logic):** 建立紀錄片影視的兩級排序：第一級以 SSOT 中「標籤」分組（「民主運動」置頂），第二級按試算表中的「排序」欄位進行升冪排列。
 - [ ] **SSOT 資料強化 (SSOT Data Enhancement):** 新增 kobo, readmoo 商品頁連結。
 - [ ] **書籍資訊擴充 (Book Info Expansion):** 書籍欄增加出版年份資訊。
