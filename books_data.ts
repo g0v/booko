@@ -1,5 +1,5 @@
 export const sheetData = {
-  "lastUpdated": "2026-02-15T20:15:09.607Z",
+  "lastUpdated": "2026-02-15T22:47:34.762Z",
   "books": [
     {
       "id": "sheet-12",
@@ -455,7 +455,7 @@ export const sheetData = {
       "id": "sheet-36",
       "title": "被出賣的台灣",
       "author": "George H. Kerr",
-      "description": "柯喬治目擊證��，記錄戰後混亂與二二八，國際了解台灣關鍵。",
+      "description": "柯喬治目擊證詞，記錄戰後混亂與二二八，國際了解台灣關鍵。",
       "coverImage": "/assets/covers/sheet-36.jpg",
       "level": "intermediate",
       "tags": [
@@ -808,7 +808,7 @@ export const sheetData = {
       "director": "馮賢賢",
       "year": "2020",
       "description": "春雨424",
-      "thumbnail": "",
+      "thumbnail": "/assets/posters/doc-sheet-24.jpg",
       "tags": [
         "民主運動"
       ]
@@ -881,10 +881,10 @@ export const sheetData = {
     },
     {
       "id": "doc-sheet-6",
-      "title": "路有多遠",
+      "title": "路有多長",
       "director": "湯湘竹",
       "year": "2010",
-      "description": "路有多遠",
+      "description": "路有多長",
       "thumbnail": "",
       "tags": [
         "日本二戰時代"
@@ -907,7 +907,7 @@ export const sheetData = {
       "director": "黃胤毓",
       "year": "2021",
       "description": "綠色牢籠",
-      "thumbnail": "",
+      "thumbnail": "/assets/posters/doc-sheet-8.jpg",
       "tags": [
         "日本二戰時代"
       ]
@@ -1050,7 +1050,7 @@ export const sheetData = {
       "director": "陳麗貴",
       "year": "2015",
       "description": "革命進行式",
-      "thumbnail": "",
+      "thumbnail": "/assets/posters/doc-sheet-22.jpg",
       "tags": [
         "民主運動"
       ]
@@ -1061,7 +1061,7 @@ export const sheetData = {
       "director": "陳麗貴",
       "year": "2014",
       "description": "回首來時路－她們參政的足跡",
-      "thumbnail": "",
+      "thumbnail": "/assets/posters/doc-sheet-23.jpg",
       "tags": [
         "民主運動"
       ]
@@ -1072,7 +1072,7 @@ export const sheetData = {
       "director": "廖建華",
       "year": "2019",
       "description": "狂飆一夢",
-      "thumbnail": "",
+      "thumbnail": "/assets/posters/doc-sheet-27.jpg",
       "tags": [
         "民主運動"
       ]
