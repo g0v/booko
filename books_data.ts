@@ -1,12 +1,12 @@
 export const sheetData = {
-  "lastUpdated": "2026-02-15T18:15:27.135Z",
+  "lastUpdated": "2026-02-15T20:15:09.607Z",
   "books": [
     {
       "id": "sheet-12",
       "title": "一個春天的童話：小說亮均、亭均",
       "author": "李敏勇",
       "description": "李敏勇小說，隱喻戰後兩代人在政治創傷中的對話與救贖。",
-      "coverImage": "https://www.books.com.tw/img/001/104/24/0011042499.jpg",
+      "coverImage": "/assets/covers/sheet-12.jpg",
       "level": "basic",
       "tags": [
         "文學"
@@ -23,7 +23,7 @@ export const sheetData = {
       "title": "少年臺灣史",
       "author": "周婉窈",
       "description": "觀點具主體性且流暢，涵蓋原民到當代，認識土地最佳入門。",
-      "coverImage": "https://www.books.com.tw/img/001/083/43/0010834309.jpg",
+      "coverImage": "/assets/covers/sheet-16.jpg",
       "level": "basic",
       "tags": [
         "通論"
@@ -40,7 +40,7 @@ export const sheetData = {
       "title": "無法送達的遺書：記那些在恐怖年代失落的人",
       "author": "呂蒼一",
       "description": "受難者死刑前絕筆，字字血淚，展現對家人的愛與理想堅持。",
-      "coverImage": "https://www.books.com.tw/img/001/092/65/0010926548.jpg",
+      "coverImage": "/assets/covers/sheet-22.jpg",
       "level": "basic",
       "tags": [
         "白恐",
@@ -58,7 +58,7 @@ export const sheetData = {
       "title": "祝你快樂：魏廷朝給孩子的信",
       "author": "陳俊愷, 陳榮聲, 王皓中, 周馥儀, 呂亭詠, 巫秀淇",
       "description": "魏廷朝獄中家書，缺席父親的深情叮嚀，看見政治犯凡人一面。",
-      "coverImage": "https://www.books.com.tw/img/001/104/30/0011043070.jpg",
+      "coverImage": "/assets/covers/sheet-34.jpg",
       "level": "basic",
       "tags": [
         "白恐",
@@ -76,7 +76,7 @@ export const sheetData = {
       "title": "台灣人四百年史",
       "author": "史明",
       "description": "史明畢生心血，從被殖民者立場建構獨派史觀的經典論述。",
-      "coverImage": "https://www.books.com.tw/img/001/076/86/0010768686.jpg",
+      "coverImage": "/assets/covers/sheet-17.jpg",
       "level": "basic",
       "tags": [
         "通論"
@@ -93,7 +93,7 @@ export const sheetData = {
       "title": "台灣之春：解嚴前的台灣民主運動",
       "author": "胡慧玲",
       "description": "聚焦解嚴前夕狂飆社運，描繪改革洪流如何衝垮威權體制。",
-      "coverImage": "https://www.books.com.tw/img/001/086/82/0010868260.jpg",
+      "coverImage": "/assets/covers/sheet-18.jpg",
       "level": "basic",
       "tags": [
         "民主運動"
@@ -126,7 +126,7 @@ export const sheetData = {
       "title": "百年追求：台灣民主運動的故事",
       "author": "陳翠蓮、吳乃德、胡慧玲",
       "description": "權威三部曲，完整勾勒從日治到黨外，台灣人爭取民主長河。",
-      "coverImage": "https://www.books.com.tw/img/001/061/12/0010611223.jpg",
+      "coverImage": "/assets/covers/sheet-20.jpg",
       "level": "basic",
       "tags": [
         "通論",
@@ -144,7 +144,7 @@ export const sheetData = {
       "title": "自治之夢：日治時期到二二八的臺灣民主運動",
       "author": "陳翠蓮",
       "description": "追溯民主源頭，探討日治自治論述與二二八的延續與斷裂。",
-      "coverImage": "https://www.books.com.tw/img/001/086/47/0010864745.jpg",
+      "coverImage": "/assets/covers/sheet-21.jpg",
       "level": "basic",
       "tags": [
         "民主運動",
@@ -162,7 +162,7 @@ export const sheetData = {
       "title": "義光教會相關人物訪談錄",
       "author": "陳儀深等",
       "description": "訪談林宅血案地相關人物，紀錄信仰如何支撐民主運動。",
-      "coverImage": "https://www.books.com.tw/img/001/099/25/0010992500.jpg",
+      "coverImage": "/assets/covers/sheet-23.jpg",
       "level": "basic",
       "tags": [
         "民主運動",
@@ -180,7 +180,7 @@ export const sheetData = {
       "title": "三代臺灣人：百年追求的現實與理想",
       "author": "台灣研究基金會、吳密察、許雪姬等",
       "description": "三代生命經驗折射百年政治變遷，呈現台灣人做主人的堅持。",
-      "coverImage": "https://www.books.com.tw/img/001/077/31/0010773174.jpg",
+      "coverImage": "/assets/covers/sheet-14.jpg",
       "level": "basic",
       "tags": [
         "民主運動"
@@ -197,7 +197,7 @@ export const sheetData = {
       "title": "反抗的意志：1977-1979美麗島民主運動影像史",
       "author": "邱萬興",
       "description": "邱萬興攝影集，視覺震撼呈現美麗島前後台灣社會力爆發。",
-      "coverImage": "https://www.books.com.tw/img/001/065/74/0010657465.jpg",
+      "coverImage": "/assets/covers/sheet-15.jpg",
       "level": "basic",
       "tags": [
         "民主運動"
@@ -214,7 +214,7 @@ export const sheetData = {
       "title": "臺灣歷史圖說",
       "author": "周婉窈",
       "description": "豐富圖片地圖搭配簡練文字，快速掌握台灣歷史空間與變遷。",
-      "coverImage": "https://www.books.com.tw/img/001/002/40/0010024026.jpg",
+      "coverImage": "/assets/covers/sheet-25.jpg",
       "level": "basic",
       "tags": [
         "通論"
@@ -231,7 +231,7 @@ export const sheetData = {
       "title": "回家是一趟沒有線性終點的旅程：白色恐怖與我的左派阿公",
       "author": "范容瑛",
       "description": "孫女視角追尋阿公白恐經歷，探討創傷記憶傳遞與世代和解。",
-      "coverImage": "https://www.books.com.tw/img/001/101/32/0011013229.jpg",
+      "coverImage": "/assets/covers/sheet-30.jpg",
       "level": "basic",
       "tags": [
         "人物",
@@ -249,7 +249,7 @@ export const sheetData = {
       "title": "此地即世界",
       "author": "StoryStudio",
       "description": "拒絕孤立，從全球化脈絡看台灣歷史，具國際視野普及讀物。",
-      "coverImage": "https://www.books.com.tw/img/001/102/65/0011026528.jpg",
+      "coverImage": "/assets/covers/sheet-5.jpg",
       "level": "intermediate",
       "tags": [
         "通論"
@@ -266,7 +266,7 @@ export const sheetData = {
       "title": "他們沒在寫小說的時候：戒嚴台灣小說家群像",
       "author": "朱宥勳",
       "description": "朱宥勳評傳，揭示戒嚴作家如何透過文學偷渡思想與權力角力。",
-      "coverImage": "https://www.books.com.tw/img/001/090/06/0010900615.jpg",
+      "coverImage": "/assets/covers/sheet-27.jpg",
       "level": "intermediate",
       "tags": [
         "文學"
@@ -283,7 +283,7 @@ export const sheetData = {
       "title": "一甲子的未亡人：王培五與她的6個子女",
       "author": "呂培苓",
       "description": "張敏之遺孀的流亡與堅毅，女性撐起家庭的偉大紀錄。",
-      "coverImage": "https://www.books.com.tw/img/001/067/63/0010676365.jpg",
+      "coverImage": "/assets/covers/sheet-1.jpg",
       "level": "intermediate",
       "tags": [
         "白恐",
@@ -301,7 +301,7 @@ export const sheetData = {
       "title": "天猶未光：二二八事件的真相、紀念與究責",
       "author": "薛化元",
       "description": "薛化元主編，據新檔案釐清責任，轉型正義重要基石。",
-      "coverImage": "https://www.books.com.tw/img/001/074/45/0010744574.jpg",
+      "coverImage": "/assets/covers/sheet-2.jpg",
       "level": "intermediate",
       "tags": [
         "白恐"
@@ -318,7 +318,7 @@ export const sheetData = {
       "title": "台海・冷戰・蔣介石：解密檔案中消失的台灣史1948-1988",
       "author": "林孝庭",
       "description": "解密檔案揭露冷戰台美博弈，打破傳統史觀的台灣縮影。",
-      "coverImage": "https://www.books.com.tw/img/001/068/04/0010680467.jpg",
+      "coverImage": "/assets/covers/sheet-3.jpg",
       "level": "intermediate",
       "tags": [
         "通論"
@@ -335,7 +335,7 @@ export const sheetData = {
       "title": "茶金歲月",
       "author": "廖運潘",
       "description": "《茶金》原型，記錄北埔姜家茶業商戰與沒落的經濟家族史。",
-      "coverImage": "https://www.books.com.tw/img/001/090/76/0010907623.jpg",
+      "coverImage": "/assets/covers/sheet-7.jpg",
       "level": "intermediate",
       "tags": [
         "文學"
@@ -370,7 +370,7 @@ export const sheetData = {
       "title": "福爾摩沙紀事",
       "author": "馬偕",
       "description": "馬偕在台見聞，記錄19世紀台灣生態與風俗的珍貴史料。",
-      "coverImage": "https://www.books.com.tw/img/001/036/60/0010366083.jpg",
+      "coverImage": "/assets/covers/sheet-9.jpg",
       "level": "intermediate",
       "tags": [
         "通論"
@@ -387,7 +387,7 @@ export const sheetData = {
       "title": "轉型正義之路：島嶼的過去與未來",
       "author": "周婉窈",
       "description": "周婉窈為青年寫的公民課，解析各國案例與台灣民主未來。",
-      "coverImage": "https://www.books.com.tw/img/001/094/40/0010944069.jpg",
+      "coverImage": "/assets/covers/sheet-10.jpg",
       "level": "intermediate",
       "tags": [
         "通論",
@@ -405,7 +405,7 @@ export const sheetData = {
       "title": "讓過去成為此刻：台灣白色恐怖小說選",
       "author": "胡淑雯、童偉格",
       "description": "精選跨世代白恐小說，展現政治暴力如何銘刻人心與肉體。",
-      "coverImage": "https://www.books.com.tw/img/001/084/56/0010845692.jpg",
+      "coverImage": "/assets/covers/sheet-11.jpg",
       "level": "intermediate",
       "tags": [
         "白恐"
@@ -422,7 +422,7 @@ export const sheetData = {
       "title": "二二八反抗運動：台灣爭取民主之路",
       "author": "黃惠君",
       "description": "顛覆屠殺視角，強調台灣人的反抗與能動性，見證先輩勇氣。",
-      "coverImage": "https://www.books.com.tw/img/001/091/67/0010916707.jpg",
+      "coverImage": "/assets/covers/sheet-13.jpg",
       "level": "intermediate",
       "tags": [
         "白恐"
@@ -439,7 +439,7 @@ export const sheetData = {
       "title": "臺灣史是什麼？",
       "author": "吳密察",
       "description": "吳密察總結史學思考，教讀者解讀史料與建構觀點的後設歷史。",
-      "coverImage": "https://www.books.com.tw/img/001/101/19/0011011987.jpg",
+      "coverImage": "/assets/covers/sheet-24.jpg",
       "level": "intermediate",
       "tags": [
         "通論"
@@ -455,8 +455,8 @@ export const sheetData = {
       "id": "sheet-36",
       "title": "被出賣的台灣",
       "author": "George H. Kerr",
-      "description": "柯喬治目擊證詞，記錄戰後混亂與二二八，國際了解台灣關鍵。",
-      "coverImage": "https://www.books.com.tw/img/001/000/87/0010008706.jpg",
+      "description": "柯喬治目擊證��，記錄戰後混亂與二二八，國際了解台灣關鍵。",
+      "coverImage": "/assets/covers/sheet-36.jpg",
       "level": "intermediate",
       "tags": [
         "通論"
@@ -473,7 +473,7 @@ export const sheetData = {
       "title": "記憶與遺忘的鬥爭：臺灣轉型正義階段報告",
       "author": "臺灣民間真相與和解促進會",
       "description": "真促會報告，多面向檢視轉型正義困境，政策爭議重要參考。",
-      "coverImage": "https://www.books.com.tw/img/001/069/20/0010692067.jpg",
+      "coverImage": "/assets/covers/sheet-26.jpg",
       "level": "advanced",
       "tags": [
         "轉型正義"
@@ -490,7 +490,7 @@ export const sheetData = {
       "title": "台灣經濟四百年",
       "author": "吳聰敏",
       "description": "吳聰敏數據分析，破解迷思，剖析台灣如何走出貧困邁向富裕。",
-      "coverImage": "https://www.books.com.tw/img/001/094/91/0010949161.jpg",
+      "coverImage": "/assets/covers/sheet-28.jpg",
       "level": "advanced",
       "tags": [
         "通論"
@@ -507,7 +507,7 @@ export const sheetData = {
       "title": "永遠不再：臺灣威權體制下的壓迫與抵抗",
       "author": "國家人權博物館",
       "description": "人權館專書，介紹威權統治法律機構與不義遺址，人權教育指南。",
-      "coverImage": "https://www.books.com.tw/img/001/096/86/0010968624.jpg",
+      "coverImage": "/assets/covers/sheet-29.jpg",
       "level": "advanced",
       "tags": [
         "通論"
@@ -524,7 +524,7 @@ export const sheetData = {
       "title": "帝國主義下的臺灣",
       "author": "矢內原忠雄",
       "description": "矢內原忠雄名著，馬克思主義分析日治經濟結構的經典學術書。",
-      "coverImage": "https://www.books.com.tw/img/001/093/66/0010936624.jpg",
+      "coverImage": "/assets/covers/sheet-31.jpg",
       "level": "advanced",
       "tags": [
         "通論"
@@ -541,7 +541,7 @@ export const sheetData = {
       "title": "政治檔案會說話：自由時代公民指南",
       "author": "陳昱齊",
       "description": "教你讀懂監控檔案，揭露威權政府如何監控與羅織罪名。",
-      "coverImage": "https://www.books.com.tw/img/001/088/97/0010889799.jpg",
+      "coverImage": "/assets/covers/sheet-32.jpg",
       "level": "advanced",
       "tags": [
         "白恐"
@@ -558,7 +558,7 @@ export const sheetData = {
       "title": "重構二二八：戰後美中體制、中國統治模式與臺灣",
       "author": "陳翠蓮",
       "description": "拉高到國際格局，分析美中體制與國民黨統治如何導致悲劇。",
-      "coverImage": "https://www.books.com.tw/img/001/074/39/0010743933.jpg",
+      "coverImage": "/assets/covers/sheet-33.jpg",
       "level": "advanced",
       "tags": [
         "通論",
@@ -576,7 +576,7 @@ export const sheetData = {
       "title": "記憶與遺忘的鬥爭：臺灣轉型正義階段報告",
       "author": "台灣民間真相與和解促進會",
       "description": "解嚴二十八年後，臺灣第一份轉型正義報告書",
-      "coverImage": "https://www.books.com.tw/img/001/069/20/0010692067.jpg",
+      "coverImage": "/assets/covers/sheet-35.jpg",
       "level": "advanced",
       "tags": [
         "白恐"
@@ -593,7 +593,7 @@ export const sheetData = {
       "title": "激越與死滅：二二八世代民主路",
       "author": "黃惠君",
       "description": "悼念二二八殞落菁英，呈現台灣人才斷層的巨大歷史傷痕。",
-      "coverImage": "https://www.books.com.tw/img/001/074/33/0010743399.jpg",
+      "coverImage": "/assets/covers/sheet-37.jpg",
       "level": "advanced",
       "tags": [
         "通論",
@@ -614,7 +614,7 @@ export const sheetData = {
       "title": "窗",
       "author": "國家人權博物館策劃",
       "description": "人權館白恐記憶繪本",
-      "coverImage": "https://www.books.com.tw/img/001/103/11/0011031115.jpg",
+      "coverImage": "/assets/covers/child-sheet-1.jpg",
       "level": "basic",
       "tags": [
         "人權教育",
@@ -632,7 +632,7 @@ export const sheetData = {
       "title": "我的奶奶，總是聽見奇怪的聲音",
       "author": "國家人權博物館策劃",
       "description": "家庭記憶轉譯",
-      "coverImage": "https://www.books.com.tw/img/001/103/11/0011031114.jpg",
+      "coverImage": "/assets/covers/child-sheet-2.jpg",
       "level": "basic",
       "tags": [
         "人權教育",
@@ -650,7 +650,7 @@ export const sheetData = {
       "title": "說好不要哭",
       "author": "吳易蓁",
       "description": "動物寓言形式",
-      "coverImage": "https://www.books.com.tw/img/001/078/70/0010787016.jpg",
+      "coverImage": "/assets/covers/child-sheet-3.jpg",
       "level": "basic",
       "tags": [
         "人權教育",
@@ -668,7 +668,7 @@ export const sheetData = {
       "title": "愛唱歌的小熊",
       "author": "吳易蓁",
       "description": "自由表達主題",
-      "coverImage": "https://www.books.com.tw/img/001/075/20/0010752035.jpg",
+      "coverImage": "/assets/covers/child-sheet-4.jpg",
       "level": "basic",
       "tags": [
         "人權教育",
@@ -686,7 +686,7 @@ export const sheetData = {
       "title": "希望小提琴",
       "author": "幸佳慧",
       "description": "受難者生命故事",
-      "coverImage": "https://www.books.com.tw/img/001/100/64/0011006427.jpg",
+      "coverImage": "/assets/covers/child-sheet-5.jpg",
       "level": "basic",
       "tags": [
         "人權教育",
@@ -704,7 +704,7 @@ export const sheetData = {
       "title": "來自清水的孩子（The Boy from Clearwater）",
       "author": "游珮芸 等",
       "description": "白恐歷史漫畫",
-      "coverImage": "https://www.books.com.tw/img/001/091/04/0010910448.jpg",
+      "coverImage": "/assets/covers/child-sheet-6.jpg",
       "level": "basic",
       "tags": [
         "人權教育",
@@ -722,7 +722,7 @@ export const sheetData = {
       "title": "禁止黑暗的國王",
       "author": "Emily Haworth-Booth",
       "description": "民主象徵教材",
-      "coverImage": "https://www.books.com.tw/img/001/086/78/0010867810.jpg",
+      "coverImage": "/assets/covers/child-sheet-7.jpg",
       "level": "basic",
       "tags": [
         "人權教育",
@@ -740,7 +740,7 @@ export const sheetData = {
       "title": "阿嬤的碗公",
       "author": "陳麗雅",
       "description": "延伸人權閱讀",
-      "coverImage": "https://www.books.com.tw/img/001/071/43/0010714340.jpg",
+      "coverImage": "/assets/covers/child-sheet-8.jpg",
       "level": "basic",
       "tags": [
         "人權教育",
@@ -758,7 +758,7 @@ export const sheetData = {
       "title": "戴帽子的女孩",
       "author": "林滿秋 繪者陳澄波",
       "description": "威權與自由",
-      "coverImage": "https://www.books.com.tw/img/001/062/47/0010624706.jpg",
+      "coverImage": "/assets/covers/child-sheet-9.jpg",
       "level": "basic",
       "tags": [
         "人權教育",
@@ -776,7 +776,7 @@ export const sheetData = {
       "title": "鞋匠馬丁",
       "author": "托爾斯泰原作改寫",
       "description": "道德良知主題",
-      "coverImage": "https://www.books.com.tw/img/001/069/86/0010698613.jpg",
+      "coverImage": "/assets/covers/child-sheet-10.jpg",
       "level": "basic",
       "tags": [
         "人權教育",
@@ -797,7 +797,7 @@ export const sheetData = {
       "director": "莊益增、顏蘭權",
       "year": "2010",
       "description": "牽阮的手",
-      "thumbnail": "https://zh.wikipedia.org/wiki/%E7%89%BD%E9%98%AE%E7%9A%84%E6%89%8B#/media/File:%E7%89%BD%E9%98%AE%E7%9A%84%E6%89%8B.jpg",
+      "thumbnail": "/assets/posters/doc-sheet-21.jpg",
       "tags": [
         "民主運動"
       ]
@@ -819,7 +819,7 @@ export const sheetData = {
       "director": "綠色小組",
       "year": "1986-",
       "description": "綠色小組系列紀錄片",
-      "thumbnail": "https://greenteam.tnnua.edu.tw/var/file/55/1055/randimg/ad_1136_402169_99102.jpg",
+      "thumbnail": "/assets/posters/doc-sheet-25.jpg",
       "tags": [
         "民主運動"
       ]
@@ -830,7 +830,7 @@ export const sheetData = {
       "director": "廖建華",
       "year": "2015",
       "description": "末代叛亂犯",
-      "thumbnail": "https://docs.tfai.org.tw/sites/default/files/styles/film_poster/public/film/img2/mo_dai_pan_luan_fan_guan_fang_hai_bao__0.jpeg",
+      "thumbnail": "/assets/posters/doc-sheet-26.jpeg",
       "tags": [
         "民主運動"
       ]
@@ -841,7 +841,7 @@ export const sheetData = {
       "director": "郭珍弟、簡偉斯",
       "year": "2003",
       "description": "跳舞時代",
-      "thumbnail": "https://viewpoint.pts.org.tw/uploads/event_carousel_image/file/68061f243673761ade8a1e70/medium_3067ae263cd49b162290e8a0bb27b4d8_71e48c0d92.jpg",
+      "thumbnail": "/assets/posters/doc-sheet-2.jpg",
       "tags": [
         "日本二戰時代"
       ]
@@ -852,7 +852,7 @@ export const sheetData = {
       "director": "郭亮吟",
       "year": "2006",
       "description": "綠的海平線",
-      "thumbnail": "https://upload.wikimedia.org/wikipedia/zh/e/e3/%E7%B6%A0%E7%9A%84%E6%B5%B7%E5%B9%B3%E7%B7%9A%E5%AE%A3%E5%82%B3.gif",
+      "thumbnail": "/assets/posters/doc-sheet-3.gif",
       "tags": [
         "日本二戰時代"
       ]
@@ -863,7 +863,7 @@ export const sheetData = {
       "director": "郭亮吟、藤田修平",
       "year": "2016",
       "description": "灣生畫家：立石鐵臣",
-      "thumbnail": "https://docs.tfai.org.tw/sites/default/files/styles/film_poster/public/film/img2/wan_sheng_hua_jia_li_shi_tie_chen_-still_02_0.jpg",
+      "thumbnail": "/assets/posters/doc-sheet-4.jpg",
       "tags": [
         "日本二戰時代"
       ]
@@ -896,7 +896,7 @@ export const sheetData = {
       "director": "黃胤毓",
       "year": "2016",
       "description": "海的彼端",
-      "thumbnail": "https://docs.tfai.org.tw/sites/default/files/styles/film_poster/public/film/img2/bi_duan_v2_0.jpg",
+      "thumbnail": "/assets/posters/doc-sheet-7.jpg",
       "tags": [
         "日本二戰時代"
       ]
@@ -970,7 +970,7 @@ export const sheetData = {
     {
       "id": "doc-sheet-14",
       "title": "暗夜哭聲",
-      "director": "吳乙峰",
+      "director": "洪維健",
       "year": "1996",
       "description": "暗夜哭聲",
       "thumbnail": "",
@@ -981,7 +981,7 @@ export const sheetData = {
     {
       "id": "doc-sheet-15",
       "title": "綠色玫瑰",
-      "director": "陳俊志",
+      "director": "洪維健",
       "year": "2007",
       "description": "綠色玫瑰",
       "thumbnail": "",

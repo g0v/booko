@@ -12,12 +12,15 @@ const DocCard: React.FC<DocCardProps> = ({ doc }) => {
   // 依照片名搜尋 YouTube 相關影片的連結
   const searchUrl = `https://www.youtube.com/results?search_query=${encodeURIComponent('紀錄片 ' + doc.title)}`;
 
-  // 輔助函式：針對會擋外連的網域使用代理
+  // 輔助函式：處理圖片網址
   const getImageUrl = (url: string) => {
     if (!url) return '';
+    // 如果是本地資源 (以 /assets 開頭)，直接回傳
+    if (url.startsWith('/assets/')) {
+      return url;
+    }
     const absoluteUrl = url.startsWith('http') ? url : `https://${url}`;
-    // 使用 wsrv.nl 並對全網址直接進行編碼
-    // 這樣對已編碼的 Wikipedia 網址會形成雙重編碼（% -> %25），可規避 429 錯誤
+    // 對外部連結使用 wsrv.nl 代理並編碼
     return `https://wsrv.nl/?url=${encodeURIComponent(absoluteUrl)}`;
   };
 
