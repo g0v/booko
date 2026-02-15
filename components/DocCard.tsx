@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { Documentary } from '../types';
-import { Calendar, User, Search, ImageOff, ArrowRight } from 'lucide-react';
+import { Calendar, User, Search, Video, ArrowRight } from 'lucide-react';
 
 interface DocCardProps {
   doc: Documentary;
@@ -11,6 +11,15 @@ const DocCard: React.FC<DocCardProps> = ({ doc }) => {
   const [imageError, setImageError] = useState(false);
   // 依照片名搜尋 YouTube 相關影片的連結
   const searchUrl = `https://www.youtube.com/results?search_query=${encodeURIComponent('紀錄片 ' + doc.title)}`;
+
+  // 輔助函式：針對會擋外連的網域使用代理
+  const getImageUrl = (url: string) => {
+    if (!url) return '';
+    const absoluteUrl = url.startsWith('http') ? url : `https://${url}`;
+    // 使用 wsrv.nl 並對全網址直接進行編碼
+    // 這樣對已編碼的 Wikipedia 網址會形成雙重編碼（% -> %25），可規避 429 錯誤
+    return `https://wsrv.nl/?url=${encodeURIComponent(absoluteUrl)}`;
+  };
 
   return (
     <div className="group relative flex flex-col bg-white dark:bg-stone-900 rounded-lg overflow-hidden border border-stone-200 dark:border-stone-800 hover:border-rose-300 dark:hover:border-rose-900/50 transition-all duration-500 hover:shadow-xl hover:shadow-rose-500/5 dark:hover:shadow-rose-900/10 hover:-translate-y-1 h-full">
@@ -22,15 +31,20 @@ const DocCard: React.FC<DocCardProps> = ({ doc }) => {
           rel="noopener noreferrer"
           className="block w-full h-full"
         >
-          {imageError ? (
-            <div className="w-full h-full flex flex-col items-center justify-center text-stone-400 dark:text-stone-600">
-              <ImageOff size={32} strokeWidth={1.5} className="mb-2 opacity-50" />
-              <span className="text-[10px] serif italic">Poster Missing</span>
+          {!doc.thumbnail || imageError ? (
+            <div className="w-full h-full flex flex-col items-center justify-center text-stone-400 dark:text-stone-600 bg-stone-100 dark:bg-stone-800">
+              <div className="relative">
+                <Video size={48} strokeWidth={1} className="text-rose-500/20" />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <Video size={24} strokeWidth={1.5} className="text-rose-500/40 animate-pulse" />
+                </div>
+              </div>
+              <span className="mt-4 text-[9px] serif italic tracking-[0.2em] uppercase opacity-40">No Poster Available</span>
             </div>
           ) : (
             <>
               <img
-                src={doc.thumbnail || `https://placehold.co/400x600/1c1917/rose?text=${encodeURIComponent(doc.title)}`}
+                src={getImageUrl(doc.thumbnail)}
                 alt={doc.title}
                 onError={() => setImageError(true)}
                 referrerPolicy="no-referrer"

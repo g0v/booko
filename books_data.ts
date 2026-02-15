@@ -1,5 +1,5 @@
 export const sheetData = {
-  "lastUpdated": "2026-02-15T04:48:16.138Z",
+  "lastUpdated": "2026-02-15T18:15:27.135Z",
   "books": [
     {
       "id": "sheet-12",
@@ -54,24 +54,6 @@ export const sheetData = {
       }
     },
     {
-      "id": "sheet-23",
-      "title": "義光教會相關人物訪談錄",
-      "author": "陳儀深等",
-      "description": "訪談林宅血案地相關人物，紀錄信仰如何支撐民主運動。",
-      "coverImage": "https://www.books.com.tw/img/001/099/25/0010992500.jpg",
-      "level": "basic",
-      "tags": [
-        "民主運動",
-        "人物"
-      ],
-      "links": {
-        "books": "https://www.books.com.tw/products/0010992500?sloc=main",
-        "eslite": "https://www.eslite.com/Search?q=%E7%BE%A9%E5%85%89%E6%95%99%E6%9C%83%E7%9B%B8%E9%97%9C%E4%BA%BA%E7%89%A9%E8%A8%AA%E8%AB%87%E9%8C%84",
-        "kingstone": "https://www.kingstone.com.tw/search/search?q=%E7%BE%A9%E5%85%89%E6%95%99%E6%9C%83%E7%9B%B8%E9%97%9C%E4%BA%BA%E7%89%A9%E8%A8%AA%E8%AB%87%E9%8C%84",
-        "nlpi": "https://ebook.nlpi.edu.tw/search?search_field=TI&search_input=%E7%BE%A9%E5%85%89%E6%95%99%E6%9C%83%E7%9B%B8%E9%97%9C%E4%BA%BA%E7%89%A9%E8%A8%AA%E8%AB%87%E9%8C%84"
-      }
-    },
-    {
       "id": "sheet-34",
       "title": "祝你快樂：魏廷朝給孩子的信",
       "author": "陳俊愷, 陳榮聲, 王皓中, 周馥儀, 呂亭詠, 巫秀淇",
@@ -87,23 +69,6 @@ export const sheetData = {
         "eslite": "https://www.eslite.com/Search?q=%E7%A5%9D%E4%BD%A0%E5%BF%AB%E6%A8%82%EF%BC%9A%E9%AD%8F%E5%BB%B7%E6%9C%9D%E7%B5%A6%E5%AD%A9%E5%AD%90%E7%9A%84%E4%BF%A1",
         "kingstone": "https://www.kingstone.com.tw/search/search?q=%E7%A5%9D%E4%BD%A0%E5%BF%AB%E6%A8%82%EF%BC%9A%E9%AD%8F%E5%BB%B7%E6%9C%9D%E7%B5%A6%E5%AD%A9%E5%AD%90%E7%9A%84%E4%BF%A1",
         "nlpi": "https://ebook.nlpi.edu.tw/search?search_field=TI&search_input=%E7%A5%9D%E4%BD%A0%E5%BF%AB%E6%A8%82%EF%BC%9A%E9%AD%8F%E5%BB%B7%E6%9C%9D%E7%B5%A6%E5%AD%A9%E5%AD%90%E7%9A%84%E4%BF%A1"
-      }
-    },
-    {
-      "id": "sheet-14",
-      "title": "三代臺灣人：百年追求的現實與理想",
-      "author": "台灣研究基金會、吳密察、許雪姬等",
-      "description": "三代生命經驗折射百年政治變遷，呈現台灣人做主人的堅持。",
-      "coverImage": "https://www.books.com.tw/img/001/077/31/0010773174.jpg",
-      "level": "basic",
-      "tags": [
-        "民主運動"
-      ],
-      "links": {
-        "books": "https://www.books.com.tw/products/0010773174",
-        "eslite": "https://www.eslite.com/Search?q=%E4%B8%89%E4%BB%A3%E8%87%BA%E7%81%A3%E4%BA%BA%EF%BC%9A%E7%99%BE%E5%B9%B4%E8%BF%BD%E6%B1%82%E7%9A%84%E7%8F%BE%E5%AF%A6%E8%88%87%E7%90%86%E6%83%B3",
-        "kingstone": "https://www.kingstone.com.tw/search/search?q=%E4%B8%89%E4%BB%A3%E8%87%BA%E7%81%A3%E4%BA%BA%EF%BC%9A%E7%99%BE%E5%B9%B4%E8%BF%BD%E6%B1%82%E7%9A%84%E7%8F%BE%E5%AF%A6%E8%88%87%E7%90%86%E6%83%B3",
-        "nlpi": "https://ebook.nlpi.edu.tw/search?search_field=TI&search_input=%E4%B8%89%E4%BB%A3%E8%87%BA%E7%81%A3%E4%BA%BA%EF%BC%9A%E7%99%BE%E5%B9%B4%E8%BF%BD%E6%B1%82%E7%9A%84%E7%8F%BE%E5%AF%A6%E8%88%87%E7%90%86%E6%83%B3"
       }
     },
     {
@@ -190,6 +155,41 @@ export const sheetData = {
         "eslite": "https://www.eslite.com/Search?q=%E8%87%AA%E6%B2%BB%E4%B9%8B%E5%A4%A2%EF%BC%9A%E6%97%A5%E6%B2%BB%E6%99%82%E6%9C%9F%E5%88%B0%E4%BA%8C%E4%BA%8C%E5%85%AB%E7%9A%84%E8%87%BA%E7%81%A3%E6%B0%91%E4%B8%BB%E9%81%8B%E5%8B%95",
         "kingstone": "https://www.kingstone.com.tw/search/search?q=%E8%87%AA%E6%B2%BB%E4%B9%8B%E5%A4%A2%EF%BC%9A%E6%97%A5%E6%B2%BB%E6%99%82%E6%9C%9F%E5%88%B0%E4%BA%8C%E4%BA%8C%E5%85%AB%E7%9A%84%E8%87%BA%E7%81%A3%E6%B0%91%E4%B8%BB%E9%81%8B%E5%8B%95",
         "nlpi": "https://ebook.nlpi.edu.tw/search?search_field=TI&search_input=%E8%87%AA%E6%B2%BB%E4%B9%8B%E5%A4%A2%EF%BC%9A%E6%97%A5%E6%B2%BB%E6%99%82%E6%9C%9F%E5%88%B0%E4%BA%8C%E4%BA%8C%E5%85%AB%E7%9A%84%E8%87%BA%E7%81%A3%E6%B0%91%E4%B8%BB%E9%81%8B%E5%8B%95"
+      }
+    },
+    {
+      "id": "sheet-23",
+      "title": "義光教會相關人物訪談錄",
+      "author": "陳儀深等",
+      "description": "訪談林宅血案地相關人物，紀錄信仰如何支撐民主運動。",
+      "coverImage": "https://www.books.com.tw/img/001/099/25/0010992500.jpg",
+      "level": "basic",
+      "tags": [
+        "民主運動",
+        "人物"
+      ],
+      "links": {
+        "books": "https://www.books.com.tw/products/0010992500?sloc=main",
+        "eslite": "https://www.eslite.com/Search?q=%E7%BE%A9%E5%85%89%E6%95%99%E6%9C%83%E7%9B%B8%E9%97%9C%E4%BA%BA%E7%89%A9%E8%A8%AA%E8%AB%87%E9%8C%84",
+        "kingstone": "https://www.kingstone.com.tw/search/search?q=%E7%BE%A9%E5%85%89%E6%95%99%E6%9C%83%E7%9B%B8%E9%97%9C%E4%BA%BA%E7%89%A9%E8%A8%AA%E8%AB%87%E9%8C%84",
+        "nlpi": "https://ebook.nlpi.edu.tw/search?search_field=TI&search_input=%E7%BE%A9%E5%85%89%E6%95%99%E6%9C%83%E7%9B%B8%E9%97%9C%E4%BA%BA%E7%89%A9%E8%A8%AA%E8%AB%87%E9%8C%84"
+      }
+    },
+    {
+      "id": "sheet-14",
+      "title": "三代臺灣人：百年追求的現實與理想",
+      "author": "台灣研究基金會、吳密察、許雪姬等",
+      "description": "三代生命經驗折射百年政治變遷，呈現台灣人做主人的堅持。",
+      "coverImage": "https://www.books.com.tw/img/001/077/31/0010773174.jpg",
+      "level": "basic",
+      "tags": [
+        "民主運動"
+      ],
+      "links": {
+        "books": "https://www.books.com.tw/products/0010773174",
+        "eslite": "https://www.eslite.com/Search?q=%E4%B8%89%E4%BB%A3%E8%87%BA%E7%81%A3%E4%BA%BA%EF%BC%9A%E7%99%BE%E5%B9%B4%E8%BF%BD%E6%B1%82%E7%9A%84%E7%8F%BE%E5%AF%A6%E8%88%87%E7%90%86%E6%83%B3",
+        "kingstone": "https://www.kingstone.com.tw/search/search?q=%E4%B8%89%E4%BB%A3%E8%87%BA%E7%81%A3%E4%BA%BA%EF%BC%9A%E7%99%BE%E5%B9%B4%E8%BF%BD%E6%B1%82%E7%9A%84%E7%8F%BE%E5%AF%A6%E8%88%87%E7%90%86%E6%83%B3",
+        "nlpi": "https://ebook.nlpi.edu.tw/search?search_field=TI&search_input=%E4%B8%89%E4%BB%A3%E8%87%BA%E7%81%A3%E4%BA%BA%EF%BC%9A%E7%99%BE%E5%B9%B4%E8%BF%BD%E6%B1%82%E7%9A%84%E7%8F%BE%E5%AF%A6%E8%88%87%E7%90%86%E6%83%B3"
       }
     },
     {
@@ -797,7 +797,7 @@ export const sheetData = {
       "director": "莊益增、顏蘭權",
       "year": "2010",
       "description": "牽阮的手",
-      "thumbnail": "https://upload.wikimedia.org/wikipedia/zh/e/e5/%E7%89%BD%E9%98%AE%E7%9A%84%E6%89%8B.jpg",
+      "thumbnail": "https://zh.wikipedia.org/wiki/%E7%89%BD%E9%98%AE%E7%9A%84%E6%89%8B#/media/File:%E7%89%BD%E9%98%AE%E7%9A%84%E6%89%8B.jpg",
       "tags": [
         "民主運動"
       ]
@@ -805,7 +805,7 @@ export const sheetData = {
     {
       "id": "doc-sheet-24",
       "title": "春雨424",
-      "director": "廖建華",
+      "director": "馮賢賢",
       "year": "2020",
       "description": "春雨424",
       "thumbnail": "",
@@ -819,7 +819,7 @@ export const sheetData = {
       "director": "綠色小組",
       "year": "1986-",
       "description": "綠色小組系列紀錄片",
-      "thumbnail": "",
+      "thumbnail": "https://greenteam.tnnua.edu.tw/var/file/55/1055/randimg/ad_1136_402169_99102.jpg",
       "tags": [
         "民主運動"
       ]
@@ -830,7 +830,7 @@ export const sheetData = {
       "director": "廖建華",
       "year": "2015",
       "description": "末代叛亂犯",
-      "thumbnail": "",
+      "thumbnail": "https://docs.tfai.org.tw/sites/default/files/styles/film_poster/public/film/img2/mo_dai_pan_luan_fan_guan_fang_hai_bao__0.jpeg",
       "tags": [
         "民主運動"
       ]
@@ -863,7 +863,7 @@ export const sheetData = {
       "director": "郭亮吟、藤田修平",
       "year": "2016",
       "description": "灣生畫家：立石鐵臣",
-      "thumbnail": "",
+      "thumbnail": "https://docs.tfai.org.tw/sites/default/files/styles/film_poster/public/film/img2/wan_sheng_hua_jia_li_shi_tie_chen_-still_02_0.jpg",
       "tags": [
         "日本二戰時代"
       ]
@@ -896,7 +896,7 @@ export const sheetData = {
       "director": "黃胤毓",
       "year": "2016",
       "description": "海的彼端",
-      "thumbnail": "",
+      "thumbnail": "https://docs.tfai.org.tw/sites/default/files/styles/film_poster/public/film/img2/bi_duan_v2_0.jpg",
       "tags": [
         "日本二戰時代"
       ]
