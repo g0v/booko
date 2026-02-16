@@ -1,12 +1,13 @@
 
 import React, { useState, useEffect, useMemo } from 'react';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Layout from './components/Layout';
 import BookCard from './components/BookCard';
 import DocCard from './components/DocCard';
 import { BOOKS, CHILDREN_BOOKS, DOCUMENTARIES } from './constants';
 import { BookMarked, GraduationCap, Compass, Palette, Star, Pencil, Quote, X, Hash, Search, ExternalLink } from 'lucide-react';
 import { Book, ReadingLevel } from './types';
+import SEO from './components/SEO';
 
 const BooksView: React.FC = () => {
   const [filterTag, setFilterTag] = useState<string | null>(null);
@@ -350,15 +351,41 @@ const ShareView: React.FC = () => {
   );
 };
 
+const NotFoundView: React.FC = () => {
+  return (
+    <section className="animate-in fade-in duration-700 min-h-[60vh] flex flex-col items-center justify-center text-center px-4">
+      <SEO title="找不到頁面" description="您所尋找的頁面不存在。" />
+      <div className="text-8xl font-black text-stone-200 dark:text-stone-700 serif mb-4">404</div>
+      <h2 className="text-2xl font-bold text-stone-900 dark:text-stone-100 serif mb-4">找不到這個頁面</h2>
+      <p className="text-stone-500 dark:text-stone-400 mb-8">您所尋找的頁面可能已移除，或是網址有誤。</p>
+      <Link
+        to="/"
+        className="inline-flex items-center px-6 py-3 font-bold text-white bg-rose-700 dark:bg-rose-600 rounded-full hover:bg-rose-800 dark:hover:bg-rose-500 transition-colors"
+      >
+        回到首頁
+      </Link>
+    </section>
+  );
+};
+
+const routes = [
+  { path: '/', element: <BooksView />, title: '精選書單', description: '精選台灣民主歷史書單，從白色恐怖到民主轉型，分階補課計畫帶你認識自由的來歷。' },
+  { path: '/children', element: <ChildrenView />, title: '兒童與青少年書房', description: '適合親子共讀的台灣歷史繪本與青少年讀物，用溫柔的筆觸帶孩子認識土地的故事。' },
+  { path: '/documentaries', element: <DocumentariesView />, title: '紀錄片影視', description: '精選台灣民主運動紀錄片，用影像保存被遺忘的聲音，看見真實的歷史面容。' },
+  { path: '/share', element: <ShareView />, title: '我要推薦', description: '推薦你心目中的民主補課好書，一起成為民主記憶的守護者。' },
+];
+
 const App: React.FC = () => {
   return (
     <Router>
       <Layout>
         <Routes>
-          <Route path="/" element={<BooksView />} />
-          <Route path="/children" element={<ChildrenView />} />
-          <Route path="/documentaries" element={<DocumentariesView />} />
-          <Route path="/share" element={<ShareView />} />
+          {routes.map(({ path, element, title, description }) => (
+            <Route key={path} path={path} element={
+              <><SEO title={title} description={description} path={path} />{element}</>
+            } />
+          ))}
+          <Route path="*" element={<NotFoundView />} />
         </Routes>
       </Layout>
     </Router>
