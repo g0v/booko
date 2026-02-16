@@ -1,14 +1,24 @@
-
-import React, { useState, useEffect, useMemo } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Layout from './components/Layout';
+import {
+  BookMarked,
+  Compass,
+  ExternalLink,
+  GraduationCap,
+  Palette,
+  Pencil,
+  Quote,
+  Search,
+  Star,
+  X,
+} from 'lucide-react';
+import type React from 'react';
+import { useMemo, useState } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import BookCard from './components/BookCard';
 import DocCard from './components/DocCard';
-import { BOOKS, CHILDREN_BOOKS, DOCUMENTARIES } from './constants';
-import { BookMarked, GraduationCap, Compass, Palette, Star, Pencil, Quote, X, Hash, Search, ExternalLink } from 'lucide-react';
-import { Book, ReadingLevel } from './types';
-import SEO from './components/SEO';
+import Layout from './components/Layout';
 import NotFoundView from './components/NotFoundView';
+import SEO from './components/SEO';
+import { BOOKS, CHILDREN_BOOKS, DOCUMENTARIES } from './constants';
 import { routes } from './routes';
 
 const BooksView: React.FC = () => {
@@ -20,25 +30,26 @@ const BooksView: React.FC = () => {
 
     // 1. Tag Filter
     if (filterTag) {
-      books = books.filter(book => book.tags?.includes(filterTag));
+      books = books.filter((book) => book.tags?.includes(filterTag));
     }
 
     // 2. Search Filter
     if (searchQuery.trim()) {
       const query = searchQuery.toLowerCase().trim();
-      books = books.filter(book =>
-        book.title.toLowerCase().includes(query) ||
-        book.author.toLowerCase().includes(query) ||
-        book.description.toLowerCase().includes(query)
+      books = books.filter(
+        (book) =>
+          book.title.toLowerCase().includes(query) ||
+          book.author.toLowerCase().includes(query) ||
+          book.description.toLowerCase().includes(query),
       );
     }
 
     return books;
   }, [filterTag, searchQuery]);
 
-  const basicBooks = filteredBooks.filter(b => b.level === 'basic');
-  const intermediateBooks = filteredBooks.filter(b => b.level === 'intermediate');
-  const advancedBooks = filteredBooks.filter(b => b.level === 'advanced');
+  const basicBooks = filteredBooks.filter((b) => b.level === 'basic');
+  const intermediateBooks = filteredBooks.filter((b) => b.level === 'intermediate');
+  const advancedBooks = filteredBooks.filter((b) => b.level === 'advanced');
 
   return (
     <section className="animate-in fade-in duration-700">
@@ -84,6 +95,7 @@ const BooksView: React.FC = () => {
           />
           {searchQuery && (
             <button
+              type="button"
               onClick={() => setSearchQuery('')}
               className="absolute inset-y-0 right-0 pr-3 flex items-center text-stone-400 dark:text-stone-500 hover:text-stone-600 dark:hover:text-stone-300 cursor-pointer"
             >
@@ -96,6 +108,7 @@ const BooksView: React.FC = () => {
           <div className="flex items-center justify-center mt-4 gap-2">
             {filterTag && (
               <button
+                type="button"
                 onClick={() => setFilterTag(null)}
                 className="flex items-center gap-2 px-4 py-2 bg-rose-100 dark:bg-rose-900/40 text-rose-700 dark:text-rose-400 rounded-full text-sm font-bold hover:bg-rose-200 dark:hover:bg-rose-900/60 transition-colors"
               >
@@ -185,6 +198,7 @@ const BooksView: React.FC = () => {
           <div className="flex justify-center gap-4 mt-4">
             {filterTag && (
               <button
+                type="button"
                 onClick={() => setFilterTag(null)}
                 className="text-rose-700 dark:text-rose-400 font-bold hover:underline"
               >
@@ -193,6 +207,7 @@ const BooksView: React.FC = () => {
             )}
             {searchQuery && (
               <button
+                type="button"
                 onClick={() => setSearchQuery('')}
                 className="text-rose-700 dark:text-rose-400 font-bold hover:underline"
               >
@@ -211,7 +226,7 @@ const ChildrenView: React.FC = () => {
 
   const filteredChildrenBooks = useMemo(() => {
     if (!filterTag) return CHILDREN_BOOKS;
-    return CHILDREN_BOOKS.filter(book => book.tags?.includes(filterTag));
+    return CHILDREN_BOOKS.filter((book) => book.tags?.includes(filterTag));
   }, [filterTag]);
 
   return (
@@ -227,6 +242,7 @@ const ChildrenView: React.FC = () => {
         </h2>
         {filterTag && (
           <button
+            type="button"
             onClick={() => setFilterTag(null)}
             className="flex items-center gap-2 px-3 py-1 bg-stone-100 dark:bg-stone-700 text-stone-600 dark:text-stone-300 rounded-full text-xs font-bold mx-auto mb-4 hover:bg-rose-100 dark:hover:bg-rose-900/50 hover:text-rose-700 dark:hover:text-rose-400 transition-colors"
           >
@@ -244,9 +260,7 @@ const ChildrenView: React.FC = () => {
         ))}
       </div>
       {filteredChildrenBooks.length === 0 && (
-        <div className="text-center py-20 text-stone-400 dark:text-stone-500 serif">
-          目前該標籤下沒有童書推薦。
-        </div>
+        <div className="text-center py-20 text-stone-400 dark:text-stone-500 serif">目前該標籤下沒有童書推薦。</div>
       )}
     </section>
   );
@@ -256,12 +270,12 @@ const DocumentariesView: React.FC = () => {
   const groupedDocs = useMemo(() => {
     const groups: Record<string, typeof DOCUMENTARIES> = {};
 
-    DOCUMENTARIES.forEach(doc => {
+    DOCUMENTARIES.forEach((doc) => {
       const tags = doc.tags && doc.tags.length > 0 ? doc.tags : ['其他影片'];
-      tags.forEach(tag => {
+      tags.forEach((tag) => {
         if (!groups[tag]) groups[tag] = [];
         // Avoid duplicate in same tag if somehow tags repeat
-        if (!groups[tag].some(d => d.id === doc.id)) {
+        if (!groups[tag].some((d) => d.id === doc.id)) {
           groups[tag].push(doc);
         }
       });
@@ -276,16 +290,18 @@ const DocumentariesView: React.FC = () => {
       return a.localeCompare(b, 'zh-TW');
     });
 
-    return sortedTags.map(tag => ({
+    return sortedTags.map((tag) => ({
       tag,
-      docs: groups[tag]
+      docs: groups[tag],
     }));
   }, []);
 
   return (
     <section className="animate-in fade-in duration-700">
       <div className="mb-12 text-center max-w-3xl mx-auto">
-        <h2 className="text-3xl sm:text-4xl font-black text-stone-900 dark:text-stone-100 serif mb-4">光影紀實：看見真實的面容</h2>
+        <h2 className="text-3xl sm:text-4xl font-black text-stone-900 dark:text-stone-100 serif mb-4">
+          光影紀實：看見真實的面容
+        </h2>
         <p className="text-stone-600 dark:text-stone-300 text-base leading-relaxed">
           文字之外，紀錄片用最直觀的方式，保存了那些被遺忘的聲音與影像。
           <br />
@@ -332,7 +348,8 @@ const ShareView: React.FC = () => {
         我要推薦：民主共編
       </h2>
       <p className="text-stone-600 dark:text-stone-300 text-lg mb-8 max-w-2xl leading-relaxed">
-        我們相信，每個人都能成為民主記憶的守護者。<br />
+        我們相信，每個人都能成為民主記憶的守護者。
+        <br />
         歡迎透過下方表單分享您心目中的補課好書，我們將會定期整理並更新至這份書單中。
       </p>
 
@@ -346,9 +363,7 @@ const ShareView: React.FC = () => {
         <ExternalLink size={20} className="ml-2 group-hover:translate-x-1 transition-transform" />
       </a>
 
-      <p className="mt-8 text-stone-400 dark:text-stone-500 text-sm">
-        * 點擊按鈕將開啟 Google Form 頁面
-      </p>
+      <p className="mt-8 text-stone-400 dark:text-stone-500 text-sm">* 點擊按鈕將開啟 Google Form 頁面</p>
     </section>
   );
 };
@@ -368,9 +383,16 @@ const App: React.FC = () => {
           {routes.map(({ path, title, description }) => {
             const View = viewComponents[path];
             return (
-              <Route key={path} path={path} element={
-                <><SEO title={title} description={description} path={path} /><View /></>
-              } />
+              <Route
+                key={path}
+                path={path}
+                element={
+                  <>
+                    <SEO title={title} description={description} path={path} />
+                    <View />
+                  </>
+                }
+              />
             );
           })}
           <Route path="*" element={<NotFoundView />} />

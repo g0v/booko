@@ -1,9 +1,9 @@
-
-import React, { useState } from 'react';
-import { Book, ReadingLevel } from '../types';
+import { AlertCircle, Check, Copy, RotateCcw, Sparkles, Terminal } from 'lucide-react';
+import type React from 'react';
+import { useState } from 'react';
 import { getGeminiInsight } from '../services/geminiService';
+import type { Book, ReadingLevel } from '../types';
 import BookCard from './BookCard';
-import { Sparkles, Copy, Check, Save, RotateCcw, AlertCircle, Terminal } from 'lucide-react';
 
 const AdminView: React.FC = () => {
   const [loading, setLoading] = useState(false);
@@ -20,8 +20,8 @@ const AdminView: React.FC = () => {
       books: '',
       eslite: '',
       kingstone: '',
-      nlpi: ''
-    }
+      nlpi: '',
+    },
   });
 
   const [aiPrompt, setAiPrompt] = useState('');
@@ -47,7 +47,7 @@ const AdminView: React.FC = () => {
       `);
 
       const data = JSON.parse(response.replace(/```json|```/g, ''));
-      
+
       setFormData({
         ...formData,
         title: data.title,
@@ -59,8 +59,8 @@ const AdminView: React.FC = () => {
           books: `https://search.books.com.tw/search/query/key/${encodeURIComponent(data.title)}`,
           eslite: `https://www.eslite.com/Search?q=${encodeURIComponent(data.title)}`,
           kingstone: `https://www.kingstone.com.tw/search/search?q=${encodeURIComponent(data.title)}`,
-          nlpi: `https://ebook.nlpi.edu.tw/search?search_field=TI&search_input=${encodeURIComponent(data.title)}`
-        }
+          nlpi: `https://ebook.nlpi.edu.tw/search?search_field=TI&search_input=${encodeURIComponent(data.title)}`,
+        },
       });
     } catch (err) {
       setError('AI 魔法暫時失效，請手動輸入或稍後再試。');
@@ -78,7 +78,7 @@ const AdminView: React.FC = () => {
     description: '${formData.description?.replace(/'/g, "\\'")}',
     coverImage: 'https://images.unsplash.com/photo-1544648156-5388451882c5?q=80&w=400', // 請手動替換封面
     level: '${formData.level}',
-    tags: [${formData.tags?.map(t => `'${t}'`).join(', ')}],
+    tags: [${formData.tags?.map((t) => `'${t}'`).join(', ')}],
     links: {
       books: '${formData.links?.books}',
       eslite: '${formData.links?.eslite}',
@@ -86,7 +86,7 @@ const AdminView: React.FC = () => {
       nlpi: '${formData.links?.nlpi}'
     }
   },`;
-    
+
     navigator.clipboard.writeText(code);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
@@ -109,18 +109,19 @@ const AdminView: React.FC = () => {
           {/* Form Side */}
           <div className="space-y-6">
             <div className="bg-rose-50 p-6 rounded-2xl border border-rose-100">
-              <label className="block text-rose-800 text-xs font-bold uppercase tracking-widest mb-3 flex items-center gap-2">
+              <span className="block text-rose-800 text-xs font-bold uppercase tracking-widest mb-3 flex items-center gap-2">
                 <Sparkles size={14} /> AI 魔法自動填表
-              </label>
+              </span>
               <div className="flex gap-2">
-                <input 
-                  type="text" 
+                <input
+                  type="text"
                   placeholder="輸入書名或關鍵字，例如：百年追求"
                   className="flex-grow p-3 rounded-xl border-none focus:ring-2 focus:ring-rose-500 shadow-inner"
                   value={aiPrompt}
-                  onChange={e => setAiPrompt(e.target.value)}
+                  onChange={(e) => setAiPrompt(e.target.value)}
                 />
-                <button 
+                <button
+                  type="button"
                   onClick={handleAiMagic}
                   disabled={loading}
                   className="bg-rose-600 text-white px-6 rounded-xl font-bold hover:bg-rose-700 transition-all disabled:opacity-50 flex items-center gap-2"
@@ -128,41 +129,52 @@ const AdminView: React.FC = () => {
                   {loading ? <RotateCcw className="animate-spin" size={18} /> : '施法'}
                 </button>
               </div>
-              {error && <p className="mt-2 text-red-600 text-xs flex items-center gap-1"><AlertCircle size={12} /> {error}</p>}
+              {error && (
+                <p className="mt-2 text-red-600 text-xs flex items-center gap-1">
+                  <AlertCircle size={12} /> {error}
+                </p>
+              )}
             </div>
 
             <div className="space-y-4">
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-stone-500 text-[10px] font-black uppercase mb-1">書名</label>
-                  <input 
-                    type="text" 
+                  <label htmlFor="admin-title" className="block text-stone-500 text-[10px] font-black uppercase mb-1">
+                    書名
+                  </label>
+                  <input
+                    id="admin-title"
+                    type="text"
                     className="w-full p-3 rounded-xl bg-stone-50 border border-stone-200 focus:ring-2 focus:ring-rose-500 outline-none"
                     value={formData.title}
-                    onChange={e => setFormData({...formData, title: e.target.value})}
+                    onChange={(e) => setFormData({ ...formData, title: e.target.value })}
                   />
                 </div>
                 <div>
-                  <label className="block text-stone-500 text-[10px] font-black uppercase mb-1">作者</label>
-                  <input 
-                    type="text" 
+                  <label htmlFor="admin-author" className="block text-stone-500 text-[10px] font-black uppercase mb-1">
+                    作者
+                  </label>
+                  <input
+                    id="admin-author"
+                    type="text"
                     className="w-full p-3 rounded-xl bg-stone-50 border border-stone-200 focus:ring-2 focus:ring-rose-500 outline-none"
                     value={formData.author}
-                    onChange={e => setFormData({...formData, author: e.target.value})}
+                    onChange={(e) => setFormData({ ...formData, author: e.target.value })}
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-stone-500 text-[10px] font-black uppercase mb-1">閱讀難度分階</label>
+                <span className="block text-stone-500 text-[10px] font-black uppercase mb-1">閱讀難度分階</span>
                 <div className="flex gap-2">
-                  {(['basic', 'intermediate', 'advanced'] as ReadingLevel[]).map(lvl => (
+                  {(['basic', 'intermediate', 'advanced'] as ReadingLevel[]).map((lvl) => (
                     <button
+                      type="button"
                       key={lvl}
-                      onClick={() => setFormData({...formData, level: lvl})}
+                      onClick={() => setFormData({ ...formData, level: lvl })}
                       className={`flex-grow py-2 rounded-lg text-xs font-bold transition-all ${
-                        formData.level === lvl 
-                          ? 'bg-rose-700 text-white shadow-md' 
+                        formData.level === lvl
+                          ? 'bg-rose-700 text-white shadow-md'
                           : 'bg-stone-100 text-stone-500 hover:bg-stone-200'
                       }`}
                     >
@@ -173,17 +185,24 @@ const AdminView: React.FC = () => {
               </div>
 
               <div>
-                <label className="block text-stone-500 text-[10px] font-black uppercase mb-1">專業書介 (Markdown)</label>
-                <textarea 
+                <label
+                  htmlFor="admin-description"
+                  className="block text-stone-500 text-[10px] font-black uppercase mb-1"
+                >
+                  專業書介 (Markdown)
+                </label>
+                <textarea
+                  id="admin-description"
                   className="w-full p-3 rounded-xl bg-stone-50 border border-stone-200 focus:ring-2 focus:ring-rose-500 outline-none h-32 text-sm"
                   value={formData.description}
-                  onChange={e => setFormData({...formData, description: e.target.value})}
+                  onChange={(e) => setFormData({ ...formData, description: e.target.value })}
                 ></textarea>
               </div>
             </div>
 
             <div className="pt-4 border-t border-stone-100">
-              <button 
+              <button
+                type="button"
                 onClick={copyToClipboard}
                 className="w-full bg-stone-900 text-white p-4 rounded-2xl font-bold flex items-center justify-center gap-3 hover:bg-stone-800 transition-all shadow-xl"
               >
@@ -199,9 +218,11 @@ const AdminView: React.FC = () => {
           {/* Preview Side */}
           <div className="relative">
             <div className="sticky top-24">
-              <label className="block text-stone-500 text-[10px] font-black uppercase mb-4 tracking-widest text-center">即時樣貌預覽 (Live Preview)</label>
+              <span className="block text-stone-500 text-[10px] font-black uppercase mb-4 tracking-widest text-center">
+                即時樣貌預覽 (Live Preview)
+              </span>
               <div className="max-w-[280px] mx-auto scale-110 origin-top">
-                <BookCard 
+                <BookCard
                   book={{
                     id: 'preview',
                     title: formData.title || '書名預覽',
@@ -210,8 +231,8 @@ const AdminView: React.FC = () => {
                     level: formData.level || 'basic',
                     tags: formData.tags || ['預覽標籤'],
                     coverImage: 'https://images.unsplash.com/photo-1544648156-5388451882c5?q=80&w=400',
-                    links: formData.links || { books: '', eslite: '', kingstone: '', nlpi: '' }
-                  }} 
+                    links: formData.links || { books: '', eslite: '', kingstone: '', nlpi: '' },
+                  }}
                 />
               </div>
             </div>

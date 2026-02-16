@@ -1,7 +1,7 @@
-import fs from 'fs';
-import https from 'https';
-import path from 'path';
-import { fileURLToPath } from 'url';
+import fs from 'node:fs';
+import https from 'node:https';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -17,7 +17,7 @@ const DOC_CSV_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?f
 
 const CACHE_PATH = path.join(__dirname, 'cover_cache.json');
 
-function loadCache() {
+function _loadCache() {
   try {
     if (fs.existsSync(CACHE_PATH)) {
       return JSON.parse(fs.readFileSync(CACHE_PATH, 'utf8'));
@@ -28,7 +28,7 @@ function loadCache() {
   return {};
 }
 
-function saveCache(cache) {
+function _saveCache(cache) {
   try {
     fs.writeFileSync(CACHE_PATH, JSON.stringify(cache, null, 2));
   } catch (err) {
@@ -49,11 +49,12 @@ function getCoverFromUrl(url) {
 }
 
 // 輔助函式：產生搜尋連結
-const getNlpiLink = (title) => `https://ebook.nlpi.edu.tw/search?search_field=TI&search_input=${encodeURIComponent(title)}`;
+const getNlpiLink = (title) =>
+  `https://ebook.nlpi.edu.tw/search?search_field=TI&search_input=${encodeURIComponent(title)}`;
 const getEsliteSearch = (title) => `https://www.eslite.com/Search?q=${encodeURIComponent(title)}`;
 const getKingstoneSearch = (title) => `https://www.kingstone.com.tw/search/search?q=${encodeURIComponent(title)}`;
 
-const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 async function downloadFile(url, dest) {
   if (!url) return null;
@@ -64,75 +65,87 @@ async function downloadFile(url, dest) {
   }
 
   return new Promise((resolve) => {
-    https.get(url, {
-      headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
-      }
-    }, (res) => {
-      if (res.statusCode === 301 || res.statusCode === 302 || res.statusCode === 307) {
-        return resolve(downloadFile(res.headers.location, dest));
-      }
+    https
+      .get(
+        url,
+        {
+          headers: {
+            'User-Agent':
+              'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+          },
+        },
+        (res) => {
+          if (res.statusCode === 301 || res.statusCode === 302 || res.statusCode === 307) {
+            return resolve(downloadFile(res.headers.location, dest));
+          }
 
-      if (res.statusCode !== 200) {
-        console.error(`    Download failed: ${res.statusCode} for ${url}`);
-        resolve(false);
-        return;
-      }
+          if (res.statusCode !== 200) {
+            console.error(`    Download failed: ${res.statusCode} for ${url}`);
+            resolve(false);
+            return;
+          }
 
-      const fileStream = fs.createWriteStream(dest);
-      res.pipe(fileStream);
-      fileStream.on('finish', () => {
-        fileStream.close();
-        resolve(true);
-      });
-      fileStream.on('error', (err) => {
-        console.error(`    Stream error for ${url}: ${err.message}`);
+          const fileStream = fs.createWriteStream(dest);
+          res.pipe(fileStream);
+          fileStream.on('finish', () => {
+            fileStream.close();
+            resolve(true);
+          });
+          fileStream.on('error', (err) => {
+            console.error(`    Stream error for ${url}: ${err.message}`);
+            resolve(false);
+          });
+        },
+      )
+      .on('error', (err) => {
+        console.error(`    Network error downloading ${url}: ${err.message}`);
         resolve(false);
       });
-    }).on('error', (err) => {
-      console.error(`    Network error downloading ${url}: ${err.message}`);
-      resolve(false);
-    });
   });
 }
 
-async function fetchCoverFromGoogle(title, author) {
+async function _fetchCoverFromGoogle(title, author) {
   // Clean title: remove 《 》 and other common punctuation
   const cleanTitle = title.replace(/[《》【】「」]/g, '').trim();
   // Take only the first author if there are multiple or if it's a category
-  const cleanAuthor = author.split(',')[0].replace(/[未知作者]/g, '').trim();
+  const cleanAuthor = author
+    .split(',')[0]
+    .replace(/[未知作者]/g, '')
+    .trim();
 
   async function search(q) {
     const apiKey = process.env.GOOGLE_BOOKS_API_KEY;
     const url = `https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(q)}&maxResults=1${apiKey ? `&key=${apiKey}` : ''}`;
 
     return new Promise((resolve) => {
-      https.get(url, (res) => {
-        if (res.statusCode !== 200) {
-          console.error(`    API Error: ${res.statusCode} for ${q}`);
-          resolve(null);
-          return;
-        }
-        let data = '';
-        res.on('data', (chunk) => data += chunk);
-        res.on('end', () => {
-          try {
-            const json = JSON.parse(data);
-            if (json.items && json.items[0]?.volumeInfo?.imageLinks) {
-              const links = json.items[0].volumeInfo.imageLinks;
-              resolve(links.thumbnail || links.smallThumbnail || null);
-            } else {
+      https
+        .get(url, (res) => {
+          if (res.statusCode !== 200) {
+            console.error(`    API Error: ${res.statusCode} for ${q}`);
+            resolve(null);
+            return;
+          }
+          let data = '';
+          res.on('data', (chunk) => (data += chunk));
+          res.on('end', () => {
+            try {
+              const json = JSON.parse(data);
+              if (json.items?.[0]?.volumeInfo?.imageLinks) {
+                const links = json.items[0].volumeInfo.imageLinks;
+                resolve(links.thumbnail || links.smallThumbnail || null);
+              } else {
+                resolve(null);
+              }
+            } catch (e) {
+              console.error(`    JSON Error: ${e.message}`);
               resolve(null);
             }
-          } catch (e) {
-            console.error(`    JSON Error: ${e.message}`);
-            resolve(null);
-          }
+          });
+        })
+        .on('error', (err) => {
+          console.error(`    Network Error: ${err.message}`);
+          resolve(null);
         });
-      }).on('error', (err) => {
-        console.error(`    Network Error: ${err.message}`);
-        resolve(null);
-      });
     });
   }
 
@@ -147,7 +160,6 @@ async function fetchCoverFromGoogle(title, author) {
   return cover;
 }
 
-
 function parseAdultCsv(csvData) {
   const lines = csvData.split(/\r?\n/);
   const books = [];
@@ -158,12 +170,26 @@ function parseAdultCsv(csvData) {
     const line = lines[i].trim();
     if (!line) continue;
 
-    const cols = line.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/).map(c => c.replace(/^"|"$/g, '').trim());
+    const cols = line.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/).map((c) => c.replace(/^"|"$/g, '').trim());
 
     const [
-      sortOrderStr, title, category, author, year, level,
-      booksUrl, kingstoneUrl, esliteUrl, momoUrl, tazzeUrl, koboUrl, readmooUrl,
-      description, _ks_unused, _es_unused, include
+      sortOrderStr,
+      title,
+      category,
+      author,
+      _year,
+      level,
+      booksUrl,
+      kingstoneUrl,
+      esliteUrl,
+      momoUrl,
+      _tazzeUrl,
+      koboUrl,
+      readmooUrl,
+      description,
+      _ks_unused,
+      _es_unused,
+      include,
     ] = cols;
 
     if (!title || title === '書名' || title.includes('新增以下書目')) continue;
@@ -174,7 +200,7 @@ function parseAdultCsv(csvData) {
 
     // Parse sort order, default to a high number if missing to put at the end
     const sortOrder = parseInt(sortOrderStr, 10);
-    const validSortOrder = isNaN(sortOrder) ? 999999 : sortOrder;
+    const validSortOrder = Number.isNaN(sortOrder) ? 999999 : sortOrder;
 
     // Map Chinese level to English
     let mappedLevel = 'basic';
@@ -189,7 +215,7 @@ function parseAdultCsv(csvData) {
       description: description || `${title} - ${category || ''}`,
       coverImage: coverUrl || undefined,
       level: mappedLevel,
-      tags: category ? category.split(',').map(t => t.trim()) : [],
+      tags: category ? category.split(',').map((t) => t.trim()) : [],
       links: {
         books: booksUrl || `https://search.books.com.tw/search/query/key/${encodeURIComponent(title)}`,
         eslite: esliteUrl || getEsliteSearch(title),
@@ -197,8 +223,8 @@ function parseAdultCsv(csvData) {
         momo: momoUrl || undefined,
         kobo: koboUrl || undefined,
         readmoo: readmooUrl || undefined,
-        nlpi: getNlpiLink(title)
-      }
+        nlpi: getNlpiLink(title),
+      },
     };
     books.push(book);
   }
@@ -214,8 +240,8 @@ function parseChildrenCsv(csvData) {
     const line = lines[i].trim();
     if (!line) continue;
 
-    const cols = line.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/).map(c => c.replace(/^"|"$/g, '').trim());
-    const [source, title, author, year, booksUrl, category, subcat1, subcat2] = cols;
+    const cols = line.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/).map((c) => c.replace(/^"|"$/g, '').trim());
+    const [_source, title, author, _year, booksUrl, category, _subcat1, subcat2] = cols;
 
     if (!title || title === '書名') continue;
 
@@ -228,13 +254,13 @@ function parseChildrenCsv(csvData) {
       description: subcat2 || category || '相關繪本',
       coverImage: coverUrl || undefined,
       level: 'basic',
-      tags: category ? category.split(',').map(t => t.trim()) : [],
+      tags: category ? category.split(',').map((t) => t.trim()) : [],
       links: {
         books: booksUrl || `https://search.books.com.tw/search/query/key/${encodeURIComponent(title)}`,
         eslite: getEsliteSearch(title),
         kingstone: getKingstoneSearch(title),
-        nlpi: getNlpiLink(title)
-      }
+        nlpi: getNlpiLink(title),
+      },
     };
     books.push(book);
   }
@@ -245,20 +271,20 @@ function parseDocCsv(csvData) {
   const lines = csvData.split(/\r?\n/);
   const docs = [];
 
-  // Documentary Header: 
+  // Documentary Header:
   // 0: 排序, 1: 標籤, 2: 片名, 3: 首映年份, 4: 導演, 5: 圖片, 6: 說明 48字內
   for (let i = 1; i < lines.length; i++) {
     const line = lines[i].trim();
     if (!line) continue;
 
-    const cols = line.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/).map(c => c.replace(/^"|"$/g, '').trim());
+    const cols = line.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/).map((c) => c.replace(/^"|"$/g, '').trim());
     const [sortOrderStr, tagsStr, title, year, director, thumbnail, description] = cols;
 
     if (!title || title === '片名') continue;
 
     // Parse sort order, default to a high number if missing
     const sortOrder = parseInt(sortOrderStr, 10);
-    const validSortOrder = isNaN(sortOrder) ? 999999 : sortOrder;
+    const validSortOrder = Number.isNaN(sortOrder) ? 999999 : sortOrder;
 
     const doc = {
       _sortOrder: validSortOrder, // Temporary property for sorting
@@ -268,25 +294,25 @@ function parseDocCsv(csvData) {
       year: year || '未知',
       description: description || title,
       thumbnail: thumbnail || '',
-      tags: tagsStr ? tagsStr.split(',').map(t => t.trim()) : []
+      tags: tagsStr ? tagsStr.split(',').map((t) => t.trim()) : [],
     };
     docs.push(doc);
   }
   return docs;
 }
 
-
-
 function fetchSheet(url) {
   return new Promise((resolve, reject) => {
-    https.get(url, (res) => {
-      if (res.statusCode === 301 || res.statusCode === 302 || res.statusCode === 307) {
-        return resolve(fetchSheet(res.headers.location));
-      }
-      let data = '';
-      res.on('data', (chunk) => data += chunk);
-      res.on('end', () => resolve(data));
-    }).on('error', (err) => reject(err));
+    https
+      .get(url, (res) => {
+        if (res.statusCode === 301 || res.statusCode === 302 || res.statusCode === 307) {
+          return resolve(fetchSheet(res.headers.location));
+        }
+        let data = '';
+        res.on('data', (chunk) => (data += chunk));
+        res.on('end', () => resolve(data));
+      })
+      .on('error', (err) => reject(err));
   });
 }
 
@@ -297,18 +323,18 @@ async function sync() {
     const [adultsCsv, childrenCsv, docsCsv] = await Promise.all([
       fetchSheet(ADULT_CSV_URL),
       fetchSheet(CHILDREN_CSV_URL),
-      fetchSheet(DOC_CSV_URL)
+      fetchSheet(DOC_CSV_URL),
     ]);
 
     let books = parseAdultCsv(adultsCsv);
-    let childrenBooks = parseChildrenCsv(childrenCsv);
+    const childrenBooks = parseChildrenCsv(childrenCsv);
     let documentaries = parseDocCsv(docsCsv);
 
     console.log('Downloading images...');
 
     // Download Documentary Posters
     for (const doc of documentaries) {
-      if (doc.thumbnail && doc.thumbnail.startsWith('http')) {
+      if (doc.thumbnail?.startsWith('http')) {
         const ext = path.extname(new URL(doc.thumbnail).pathname) || '.jpg';
         const filename = `${doc.id}${ext}`;
         const dest = path.join(__dirname, '../public/assets/posters', filename);
@@ -322,7 +348,7 @@ async function sync() {
 
     // Download Adult Book Covers
     for (const book of books) {
-      if (book.coverImage && book.coverImage.startsWith('http')) {
+      if (book.coverImage?.startsWith('http')) {
         const ext = path.extname(new URL(book.coverImage).pathname) || '.jpg';
         const filename = `${book.id}${ext}`;
         const dest = path.join(__dirname, '../public/assets/covers', filename);
@@ -336,7 +362,7 @@ async function sync() {
 
     // Download Children Book Covers
     for (const book of childrenBooks) {
-      if (book.coverImage && book.coverImage.startsWith('http')) {
+      if (book.coverImage?.startsWith('http')) {
         const ext = path.extname(new URL(book.coverImage).pathname) || '.jpg';
         const filename = `${book.id}${ext}`;
         const dest = path.join(__dirname, '../public/assets/covers', filename);
@@ -349,7 +375,7 @@ async function sync() {
     }
 
     // Sort books by Level (basic -> intermediate -> advanced) then by _sortOrder
-    const levelOrder = { 'basic': 1, 'intermediate': 2, 'advanced': 3 };
+    const levelOrder = { basic: 1, intermediate: 2, advanced: 3 };
 
     books.sort((a, b) => {
       // Primary sort: Level
@@ -375,18 +401,16 @@ async function sync() {
       lastUpdated: new Date().toISOString(),
       books,
       childrenBooks,
-      documentaries
+      documentaries,
     };
 
     const content = `export const sheetData = ${JSON.stringify(output, null, 2)};`;
-    fs.writeFileSync(
-      path.join(__dirname, '../books_data.ts'),
-      content
+    fs.writeFileSync(path.join(__dirname, '../books_data.ts'), content);
+
+    console.log(
+      `Successfully synced ${books.length} books, ${childrenBooks.length} children books, and ${documentaries.length} documentaries to books_data.ts.`,
     );
-
-    console.log(`Successfully synced ${books.length} books, ${childrenBooks.length} children books, and ${documentaries.length} documentaries to books_data.ts.`);
     process.exit(0);
-
   } catch (err) {
     console.error('Error syncing sheets:', err);
     process.exit(1);
