@@ -1,0 +1,34 @@
+---
+description: Biome linting and formatting rules
+globs: "**/*.{ts,tsx,js,jsx}"
+---
+
+# Linting & Formatting
+
+Biome is the single tool for both linting and formatting. Do not add ESLint or Prettier.
+
+## Config (biome.json)
+
+- 2-space indentation, 120 char line width
+- Single quotes (JS), double quotes (JSX attributes)
+- Recommended lint rules enabled
+- Import organization enabled (auto-sorted by Biome)
+- Ignored: `books_data.json`, `metadata.json`, `dist/**`, `public/assets/**`
+
+## Commands
+
+- `npm run lint` — check only (CI-friendly)
+- `npm run lint:fix` — check + auto-fix
+- `npm run format` — format only
+
+## Pre-commit
+
+Husky + lint-staged runs `biome check --write` on staged files automatically before every commit.
+
+## Code Style Enforced
+
+- No unused imports or variables.
+- `import type` for type-only imports.
+- No `any` — use specific types.
+- Semicolons required.
+- Trailing commas in multi-line structures.

@@ -1,0 +1,66 @@
+---
+description: React component conventions
+globs: "**/*.tsx"
+---
+
+# Component Conventions
+
+## Structure
+
+Follow this exact order in every component file:
+
+```tsx
+// 1. External imports (alphabetical within package)
+import { IconName } from 'lucide-react';
+import type React from 'react';
+import { useState } from 'react';
+// 2. Internal imports
+import type { Book } from '../types';
+import { getBookCoverUrl } from '../utils/bookCover';
+
+// 3. Props interface directly above component
+interface MyComponentProps {
+  book: Book;
+  onTagClick?: (tag: string) => void;
+}
+
+// 4. React.FC with explicit generic, destructure props
+const MyComponent: React.FC<MyComponentProps> = ({ book, onTagClick }) => {
+  // ...
+};
+
+// 5. Default export
+export default MyComponent;
+```
+
+## Rules
+
+- Use `import type` for type-only imports.
+- Callback props prefixed with `on` (e.g. `onTagClick`, `onAction`).
+- Use `useMemo` for filtered/grouped data, `useCallback` for handlers passed as props.
+- All `<button>` elements must have explicit `type="button"` unless it is a form submit.
+- All `<label>` elements must have `htmlFor` linked to an input `id`. Use `<span>` for decorative labels.
+- All `<img>` tags must have `loading="lazy"` and meaningful `alt` text.
+- External links: always `target="_blank" rel="noopener noreferrer"`.
+- Use semantic HTML: `<header>`, `<main>`, `<footer>`, `<section>`, `<nav>`.
+- Add `aria-label` on icon-only interactive elements.
+
+## Styling
+
+Color palette: `stone-*` (neutrals), `rose-*` (primary), `amber-*` (children/secondary).
+
+Every themed element must include both light and dark variants:
+```
+className="bg-white dark:bg-stone-800 text-stone-900 dark:text-stone-100"
+```
+
+Card grid pattern:
+```
+className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-5"
+```
+
+Typography: `.serif` class for headings. `font-black` for main headings, `font-bold` for sections.
+
+Always add `transition-colors duration-300` on theme-sensitive wrappers.
+
+Mobile-first: base classes for mobile, `sm:`/`md:`/`lg:`/`xl:` for larger screens.
