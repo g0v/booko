@@ -15,6 +15,8 @@ This is a curated website for books and documentaries related to Taiwan's democr
 - **社群共編 (Community Contribution):** 連結至 Google Form 收集推薦書單。
 - **標籤與關鍵字搜尋 (Enhanced Search):** 支持書名、作者、描述與標籤搜尋。
 - **響應式網格佈局 (Responsive Grid):** 針對大螢幕優化，每排顯示 6 本書籍。
+- **本地圖資儲存 (Local Image Storage):** 採用本地儲存方案，同步時自動下載海報與封面圖至 `public/assets/`，徹底解決外部擋圖與 CORS 問題。
+- **智能圖片代理 (Smart Image Proxy):** 對於尚未同步的外部連結，自動透過 `wsrv.nl` 進行代理與優化，確保圖片加載穩定性。
 - **封面圖自動產出 (Automated Covers):** 建立博客來封面圖 sharding 邏輯，確保書籍封面精準度。
 
 ## 技術棧 / Tech Stack
