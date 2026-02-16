@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://booko.g0v.tw/sitemap.xml
