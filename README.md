@@ -26,6 +26,8 @@ This is a curated website for books and documentaries related to Taiwan's democr
 - **Styling:** Tailwind CSS
 - **Icons:** Lucide React
 - **Routing:** React Router DOM
+- **Linting & Formatting:** Biome (all-in-one linter + formatter)
+- **Pre-commit Hook:** Husky + lint-staged (auto-fix on commit)
 
 ## 本地開發 / Development
 
@@ -38,7 +40,15 @@ This is a curated website for books and documentaries related to Taiwan's democr
     ```bash
     npm run dev
     ```
-3.  **建置 / Build:**
+3.  **程式碼檢查 / Lint & Format:**
+    ```bash
+    npm run lint        # 檢查程式碼問題
+    npm run lint:fix    # 自動修正
+    npm run format      # 自動排版
+    ```
+    每次 commit 時會自動透過 pre-commit hook 執行檢查與修正。
+
+4.  **建置 / Build:**
     ```bash
     npm run build
     ```
