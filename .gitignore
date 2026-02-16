@@ -17,7 +17,16 @@ dist-ssr
 .vscode/*
 !.vscode/extensions.json
 .idea
+.cursor
 .DS_Store
+
+# AI tool config (local to each dev)
+.claude
+CLAUDE.md
+.cursorrules
+.windsurfrules
+.github/copilot-instructions.md
+.gemini
 *.suo
 *.ntvs*
 *.njsproj

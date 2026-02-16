@@ -6,7 +6,7 @@
     "useIgnoreFile": true
   },
   "files": {
-    "includes": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx", "**/*.json", "**/*.css"]
+    "includes": ["*.ts", "*.tsx", "*.js", "components/**", "hooks/**", "services/**", "utils/**", "scripts/**"]
   },
   "formatter": {
     "enabled": true,
@@ -35,15 +35,5 @@
       }
     }
   },
-  "overrides": [
-    {
-      "includes": ["books_data.json", "metadata.json", "dist/**", "public/assets/**"],
-      "linter": {
-        "enabled": false
-      },
-      "formatter": {
-        "enabled": false
-      }
-    }
-  ]
+  "overrides": []
 }

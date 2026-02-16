@@ -1,4 +1,4 @@
-# CLAUDE.md — Project Intelligence for TWb00ks
+# AGENTS.md — Project Intelligence for TWb00ks
 
 ## Project Overview
 
@@ -137,7 +137,7 @@ npm run format        # format only
 - Single quotes (JS), double quotes (JSX attributes)
 - Recommended lint rules enabled
 - Import organization enabled (auto-sorted)
-- Ignored: `books_data.json`, `metadata.json`, `dist/**`, `public/assets/**`
+- Scoped to source files only: `*.ts`, `*.tsx`, `*.js`, `components/`, `hooks/`, `services/`, `utils/`, `scripts/`
 
 Pre-commit hook via Husky + lint-staged runs `biome check --write` on staged files automatically.
 
@@ -173,12 +173,12 @@ To add a new route: add to `App.tsx` Routes + add nav item in `Layout.tsx` `navI
 3. Keep it brief — one-liner per tool is enough.
 
 **After any architectural change** (adding, removing, or renaming folders/files/routes):
-1. Update the **Architecture & Data Flow** section and file tree in this `CLAUDE.md`.
+1. Update the **Architecture & Data Flow** section and file tree in this `AGENTS.md`.
 2. Update `README.md` if the change affects project structure descriptions, data flow, or developer setup instructions.
 3. Both files must stay in sync — never update one without checking the other.
 
 **After any route change** (adding, removing, or renaming routes):
-1. Update the **Routing** table in this `CLAUDE.md`.
+1. Update the **Routing** table in this `AGENTS.md`.
 2. Update `sitemap.xml` (in `public/`) if it exists. If no sitemap exists yet, skip this step.
 3. Update the `navItems` array in `Layout.tsx` if the route should appear in navigation.
 

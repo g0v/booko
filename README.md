@@ -53,6 +53,31 @@ This is a curated website for books and documentaries related to Taiwan's democr
     npm run build
     ```
 
+## AI 輔助開發 / AI-Assisted Development
+
+本專案使用 [`AGENTS.md`](./AGENTS.md) 作為所有 AI 編程助手的共用規範（程式碼風格、架構慣例、文件維護規則等）。
+
+各 AI 工具各自讀取不同的設定檔，請依照你使用的工具建立 symlink，讓它指向 `AGENTS.md`：
+
+```bash
+# Claude Code
+ln -s AGENTS.md CLAUDE.md
+
+# Cursor
+ln -s AGENTS.md .cursorrules
+
+# GitHub Copilot
+mkdir -p .github && ln -s ../AGENTS.md .github/copilot-instructions.md
+
+# Windsurf
+ln -s AGENTS.md .windsurfrules
+
+# Google Antigravity
+mkdir -p .gemini && ln -s ../AGENTS.md .gemini/GEMINI.md
+```
+
+> 這些 symlink 不需要 commit 進 repo，已加入 `.gitignore`。
+
 ## 部署 / Deployment
 
 本專案使用 GitHub Actions 自動部署至 GitHub Pages。
