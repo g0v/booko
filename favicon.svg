@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="12" fill="#be123c"/>
+  <g transform="translate(32,34)" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Left page -->
+    <path d="M-2,-14 C-2,-14 -16,-14 -16,-14 C-18,-14 -20,-12 -20,-10 L-20,10 C-20,12 -18,14 -16,14 L-2,14" fill="#fff" fill-opacity="0.15"/>
+    <!-- Right page -->
+    <path d="M2,-14 C2,-14 16,-14 16,-14 C18,-14 20,-12 20,-10 L20,10 C20,12 18,14 16,14 L2,14" fill="#fff" fill-opacity="0.15"/>
+    <!-- Spine -->
+    <line x1="0" y1="-16" x2="0" y2="14"/>
+    <!-- Text lines left -->
+    <line x1="-15" y1="-6" x2="-6" y2="-6" stroke-opacity="0.6" stroke-width="1.5"/>
+    <line x1="-15" y1="-1" x2="-8" y2="-1" stroke-opacity="0.6" stroke-width="1.5"/>
+    <line x1="-15" y1="4" x2="-6" y2="4" stroke-opacity="0.6" stroke-width="1.5"/>
+    <!-- Text lines right -->
+    <line x1="6" y1="-6" x2="15" y2="-6" stroke-opacity="0.6" stroke-width="1.5"/>
+    <line x1="8" y1="-1" x2="15" y2="-1" stroke-opacity="0.6" stroke-width="1.5"/>
+    <line x1="6" y1="4" x2="15" y2="4" stroke-opacity="0.6" stroke-width="1.5"/>
+  </g>
+</svg>
