@@ -1,12 +1,15 @@
 
 import React, { useState, useEffect, useMemo } from 'react';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import BookCard from './components/BookCard';
 import DocCard from './components/DocCard';
 import { BOOKS, CHILDREN_BOOKS, DOCUMENTARIES } from './constants';
 import { BookMarked, GraduationCap, Compass, Palette, Star, Pencil, Quote, X, Hash, Search, ExternalLink } from 'lucide-react';
 import { Book, ReadingLevel } from './types';
+import SEO from './components/SEO';
+import NotFoundView from './components/NotFoundView';
+import { routes } from './routes';
 
 const BooksView: React.FC = () => {
   const [filterTag, setFilterTag] = useState<string | null>(null);
@@ -350,15 +353,27 @@ const ShareView: React.FC = () => {
   );
 };
 
+const viewComponents: Record<string, React.FC> = {
+  '/': BooksView,
+  '/children': ChildrenView,
+  '/documentaries': DocumentariesView,
+  '/share': ShareView,
+};
+
 const App: React.FC = () => {
   return (
     <Router>
       <Layout>
         <Routes>
-          <Route path="/" element={<BooksView />} />
-          <Route path="/children" element={<ChildrenView />} />
-          <Route path="/documentaries" element={<DocumentariesView />} />
-          <Route path="/share" element={<ShareView />} />
+          {routes.map(({ path, title, description }) => {
+            const View = viewComponents[path];
+            return (
+              <Route key={path} path={path} element={
+                <><SEO title={title} description={description} path={path} /><View /></>
+              } />
+            );
+          })}
+          <Route path="*" element={<NotFoundView />} />
         </Routes>
       </Layout>
     </Router>
