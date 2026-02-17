@@ -1,6 +1,6 @@
-import React from 'react';
-import { Sun, Moon, Monitor } from 'lucide-react';
-import { useTheme, Theme } from '../hooks/useTheme';
+import { Monitor, Moon, Sun } from 'lucide-react';
+import type React from 'react';
+import { type Theme, useTheme } from '../hooks/useTheme';
 
 const ThemeToggle: React.FC = () => {
   const { theme, cycleTheme } = useTheme();
@@ -19,6 +19,7 @@ const ThemeToggle: React.FC = () => {
 
   return (
     <button
+      type="button"
       onClick={cycleTheme}
       className="flex items-center justify-center w-9 h-9 rounded-full bg-stone-100 dark:bg-stone-700 text-stone-600 dark:text-stone-300 hover:bg-stone-200 dark:hover:bg-stone-600 transition-colors"
       title={labels[theme]}

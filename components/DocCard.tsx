@@ -1,7 +1,7 @@
-
-import React, { useState } from 'react';
-import { Documentary } from '../types';
-import { Calendar, User, Search, Video, ArrowRight } from 'lucide-react';
+import { ArrowRight, Calendar, Search, User, Video } from 'lucide-react';
+import type React from 'react';
+import { useState } from 'react';
+import type { Documentary } from '../types';
 
 interface DocCardProps {
   doc: Documentary;
@@ -10,7 +10,7 @@ interface DocCardProps {
 const DocCard: React.FC<DocCardProps> = ({ doc }) => {
   const [imageError, setImageError] = useState(false);
   // 依照片名搜尋 YouTube 相關影片的連結
-  const searchUrl = `https://www.youtube.com/results?search_query=${encodeURIComponent('紀錄片 ' + doc.title)}`;
+  const searchUrl = `https://www.youtube.com/results?search_query=${encodeURIComponent(`紀錄片 ${doc.title}`)}`;
 
   // 輔助函式：處理圖片網址
   const getImageUrl = (url: string) => {
@@ -28,12 +28,7 @@ const DocCard: React.FC<DocCardProps> = ({ doc }) => {
     <div className="group relative flex flex-col bg-white dark:bg-stone-900 rounded-lg overflow-hidden border border-stone-200 dark:border-stone-800 hover:border-rose-300 dark:hover:border-rose-900/50 transition-all duration-500 hover:shadow-xl hover:shadow-rose-500/5 dark:hover:shadow-rose-900/10 hover:-translate-y-1 h-full">
       {/* Film Poster Section */}
       <div className="relative aspect-[2/3] overflow-hidden bg-stone-100 dark:bg-stone-800">
-        <a
-          href={searchUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block w-full h-full"
-        >
+        <a href={searchUrl} target="_blank" rel="noopener noreferrer" className="block w-full h-full">
           {!doc.thumbnail || imageError ? (
             <div className="w-full h-full flex flex-col items-center justify-center text-stone-400 dark:text-stone-600 bg-stone-100 dark:bg-stone-800">
               <div className="relative">
@@ -42,7 +37,9 @@ const DocCard: React.FC<DocCardProps> = ({ doc }) => {
                   <Video size={24} strokeWidth={1.5} className="text-rose-500/40 animate-pulse" />
                 </div>
               </div>
-              <span className="mt-4 text-[9px] serif italic tracking-[0.2em] uppercase opacity-40">No Poster Available</span>
+              <span className="mt-4 text-[9px] serif italic tracking-[0.2em] uppercase opacity-40">
+                No Poster Available
+              </span>
             </div>
           ) : (
             <>
@@ -96,9 +93,9 @@ const DocCard: React.FC<DocCardProps> = ({ doc }) => {
 
         {doc.tags && doc.tags.length > 0 && (
           <div className="flex flex-wrap gap-1.5 mt-auto mb-4">
-            {doc.tags.slice(0, 2).map((tag, index) => (
+            {doc.tags.slice(0, 2).map((tag) => (
               <span
-                key={index}
+                key={tag}
                 className="px-1.5 py-0.5 bg-stone-50 dark:bg-stone-800/50 text-stone-500 dark:text-stone-500 text-[9px] font-bold rounded border border-stone-100 dark:border-stone-700/50"
               >
                 #{tag}

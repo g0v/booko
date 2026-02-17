@@ -1,7 +1,7 @@
-
-import React, { useState, useRef, useEffect } from 'react';
-import { Book } from '../types';
-import { Library, ExternalLink, Hash, ShoppingCart, ChevronDown } from 'lucide-react';
+import { ChevronDown, ExternalLink, Hash, Library, ShoppingCart } from 'lucide-react';
+import type React from 'react';
+import { useEffect, useRef, useState } from 'react';
+import type { Book } from '../types';
 import { getBookCoverUrl } from '../utils/bookCover';
 
 interface BookCardProps {
@@ -28,23 +28,26 @@ const BookCard: React.FC<BookCardProps> = ({ book, onTagClick }) => {
     { name: '博客來', url: book.links.books },
     {
       name: book.links.eslite ? '誠品線上' : '誠品線上 (Google)',
-      url: book.links.eslite || `https://www.google.com/search?q=${encodeURIComponent(book.title)}+site:eslite.com`
+      url: book.links.eslite || `https://www.google.com/search?q=${encodeURIComponent(book.title)}+site:eslite.com`,
     },
     {
       name: book.links.kingstone ? '金石堂' : '金石堂 (Google)',
-      url: book.links.kingstone || `https://www.google.com/search?q=${encodeURIComponent(book.title)}+site:kingstone.com.tw`
+      url:
+        book.links.kingstone ||
+        `https://www.google.com/search?q=${encodeURIComponent(book.title)}+site:kingstone.com.tw`,
     },
     {
       name: book.links.momo ? 'momo購物' : 'momo購物 (Google)',
-      url: book.links.momo || `https://www.google.com/search?q=${encodeURIComponent(book.title)}+site:momoshop.com.tw`
+      url: book.links.momo || `https://www.google.com/search?q=${encodeURIComponent(book.title)}+site:momoshop.com.tw`,
     },
     {
       name: book.links.kobo ? '樂天Kobo' : '樂天Kobo (Google)',
-      url: book.links.kobo || `https://www.google.com/search?q=${encodeURIComponent(book.title)}+site:www.rakuten.com.tw`
+      url:
+        book.links.kobo || `https://www.google.com/search?q=${encodeURIComponent(book.title)}+site:www.rakuten.com.tw`,
     },
     {
       name: book.links.readmoo ? '讀墨Readmoo' : '讀墨Readmoo (Google)',
-      url: book.links.readmoo || `https://www.google.com/search?q=${encodeURIComponent(book.title)}+site:readmoo.com`
+      url: book.links.readmoo || `https://www.google.com/search?q=${encodeURIComponent(book.title)}+site:readmoo.com`,
     },
   ];
 
@@ -61,7 +64,9 @@ const BookCard: React.FC<BookCardProps> = ({ book, onTagClick }) => {
       </div>
 
       <div className="p-3.5 flex flex-col flex-grow">
-        <span className="text-rose-700 dark:text-rose-400 text-[9px] font-bold tracking-widest uppercase mb-1">{book.author}</span>
+        <span className="text-rose-700 dark:text-rose-400 text-[9px] font-bold tracking-widest uppercase mb-1">
+          {book.author}
+        </span>
         <h3 className="text-sm font-bold text-stone-900 dark:text-stone-100 serif mb-1.5 group-hover:text-rose-800 dark:group-hover:text-rose-400 transition-colors leading-tight line-clamp-2 min-h-[2.5rem]">
           {book.title}
         </h3>
@@ -71,6 +76,7 @@ const BookCard: React.FC<BookCardProps> = ({ book, onTagClick }) => {
           <div className="flex flex-wrap gap-1 mb-2.5">
             {book.tags.map((tag) => (
               <button
+                type="button"
                 key={tag}
                 onClick={(e) => {
                   e.preventDefault();
@@ -103,6 +109,7 @@ const BookCard: React.FC<BookCardProps> = ({ book, onTagClick }) => {
                   <span>網路購書</span>
                 </a>
                 <button
+                  type="button"
                   onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                   className="flex items-center px-1.5 bg-stone-900 dark:bg-rose-700 hover:bg-rose-800 dark:hover:bg-rose-600 text-white border-l border-white/20 transition-colors"
                 >
@@ -112,9 +119,9 @@ const BookCard: React.FC<BookCardProps> = ({ book, onTagClick }) => {
 
               {isDropdownOpen && (
                 <div className="absolute bottom-full left-0 mb-2 w-32 bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 rounded-lg shadow-xl py-1 z-50 animate-in fade-in slide-in-from-top-1 duration-200">
-                  {purchaseOptions.map((option, index) => (
+                  {purchaseOptions.map((option) => (
                     <a
-                      key={index}
+                      key={option.name}
                       href={option.url}
                       target="_blank"
                       rel="noopener noreferrer"

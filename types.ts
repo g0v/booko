@@ -1,4 +1,3 @@
-
 export interface PurchaseLinks {
   books: string;
   eslite: string;

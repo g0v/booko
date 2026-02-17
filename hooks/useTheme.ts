@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 export type Theme = 'light' | 'dark' | 'system';
 
@@ -19,15 +19,18 @@ export function useTheme() {
     }
   }, []);
 
-  const setTheme = useCallback((newTheme: Theme) => {
-    setThemeState(newTheme);
-    if (newTheme === 'system') {
-      localStorage.removeItem('theme');
-    } else {
-      localStorage.setItem('theme', newTheme);
-    }
-    applyTheme(newTheme);
-  }, [applyTheme]);
+  const setTheme = useCallback(
+    (newTheme: Theme) => {
+      setThemeState(newTheme);
+      if (newTheme === 'system') {
+        localStorage.removeItem('theme');
+      } else {
+        localStorage.setItem('theme', newTheme);
+      }
+      applyTheme(newTheme);
+    },
+    [applyTheme],
+  );
 
   const cycleTheme = useCallback(() => {
     const nextTheme: Record<Theme, Theme> = {
