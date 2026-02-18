@@ -59,11 +59,6 @@ const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 async function downloadFile(url, dest) {
   if (!url) return null;
 
-  // If we already have the file, skip downloading (unless we want to force refresh)
-  if (fs.existsSync(dest)) {
-    return true;
-  }
-
   return new Promise((resolve) => {
     https
       .get(
@@ -81,6 +76,14 @@ async function downloadFile(url, dest) {
 
           if (res.statusCode !== 200) {
             console.error(`    Download failed: ${res.statusCode} for ${url}`);
+            resolve(false);
+            return;
+          }
+
+          // Validate Content-Type: must be an image
+          const contentType = res.headers['content-type'];
+          if (!contentType || !contentType.startsWith('image/')) {
+            console.error(`    Validation failed: Expected image, got ${contentType} for ${url}`);
             resolve(false);
             return;
           }
@@ -320,6 +323,8 @@ async function sync() {
   console.log('Fetching data from Google Sheets...');
 
   try {
+    const cache = _loadCache();
+
     const [adultsCsv, childrenCsv, docsCsv] = await Promise.all([
       fetchSheet(ADULT_CSV_URL),
       fetchSheet(CHILDREN_CSV_URL),
@@ -332,47 +337,36 @@ async function sync() {
 
     console.log('Downloading images...');
 
-    // Download Documentary Posters
-    for (const doc of documentaries) {
-      if (doc.thumbnail?.startsWith('http')) {
-        const ext = path.extname(new URL(doc.thumbnail).pathname) || '.jpg';
-        const filename = `${doc.id}${ext}`;
-        const dest = path.join(__dirname, '../public/assets/posters', filename);
-        console.log(`  Downloading poster for: ${doc.title}`);
-        const success = await downloadFile(doc.thumbnail, dest);
-        if (success) {
-          doc.thumbnail = `/assets/posters/${filename}`;
+    // Helper function for incremental sync and image validation
+    async function processImages(items, assetFolder) {
+      for (const item of items) {
+        const imgUrl = item.coverImage || item.thumbnail;
+        if (imgUrl?.startsWith('http')) {
+          const ext = path.extname(new URL(imgUrl).pathname) || '.jpg';
+          const filename = `${item.id}${ext}`;
+          const dest = path.join(__dirname, `../public/assets/${assetFolder}`, filename);
+
+          // Skip if already in cache and file exists
+          if (cache[item.id] === imgUrl && fs.existsSync(dest)) {
+            if (item.coverImage) item.coverImage = `/assets/${assetFolder}/${filename}`;
+            if (item.thumbnail) item.thumbnail = `/assets/${assetFolder}/${filename}`;
+            continue;
+          }
+
+          console.log(`  Checking image for: ${item.title}`);
+          const success = await downloadFile(imgUrl, dest);
+          if (success) {
+            cache[item.id] = imgUrl; // Store the remote URL
+            if (item.coverImage) item.coverImage = `/assets/${assetFolder}/${filename}`;
+            if (item.thumbnail) item.thumbnail = `/assets/${assetFolder}/${filename}`;
+          }
         }
       }
     }
 
-    // Download Adult Book Covers
-    for (const book of books) {
-      if (book.coverImage?.startsWith('http')) {
-        const ext = path.extname(new URL(book.coverImage).pathname) || '.jpg';
-        const filename = `${book.id}${ext}`;
-        const dest = path.join(__dirname, '../public/assets/covers', filename);
-        console.log(`  Downloading cover for: ${book.title}`);
-        const success = await downloadFile(book.coverImage, dest);
-        if (success) {
-          book.coverImage = `/assets/covers/${filename}`;
-        }
-      }
-    }
-
-    // Download Children Book Covers
-    for (const book of childrenBooks) {
-      if (book.coverImage?.startsWith('http')) {
-        const ext = path.extname(new URL(book.coverImage).pathname) || '.jpg';
-        const filename = `${book.id}${ext}`;
-        const dest = path.join(__dirname, '../public/assets/covers', filename);
-        console.log(`  Downloading cover for: ${book.title}`);
-        const success = await downloadFile(book.coverImage, dest);
-        if (success) {
-          book.coverImage = `/assets/covers/${filename}`;
-        }
-      }
-    }
+    await processImages(documentaries, 'posters');
+    await processImages(books, 'covers');
+    await processImages(childrenBooks, 'covers');
 
     // Sort books by Level (basic -> intermediate -> advanced) then by _sortOrder
     const levelOrder = { basic: 1, intermediate: 2, advanced: 3 };
@@ -406,6 +400,8 @@ async function sync() {
 
     const content = `export const sheetData = ${JSON.stringify(output, null, 2)};`;
     fs.writeFileSync(path.join(__dirname, '../books_data.ts'), content);
+
+    _saveCache(cache);
 
     console.log(
       `Successfully synced ${books.length} books, ${childrenBooks.length} children books, and ${documentaries.length} documentaries to books_data.ts.`,
