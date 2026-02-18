@@ -111,11 +111,11 @@ mkdir -p .gemini && ln -s ../AGENTS.md .gemini/GEMINI.md
 - [x] **搜尋功能優化 (Enhanced Search):** 增加對書名、作者、描述的關鍵字搜尋功能。
 - [x] **書籍封面精準度 (Book Cover Accuracy):** 已建立 `utils/bookCover.ts` 處理博客來圖片 sharding 邏輯，同步時會自動下載至本地儲存，確保顯示穩定。
 - [x] **佈局優化 (Layout Optimization):** 大螢幕每排顯示從 5 本增加至 6 本。
-- [x] **多平台購書連結 (Multi-platform Purchase Links):** 資料層已同步金石堂、誠品等連結，UI 介面開發中。
+- [x] **多平台購書連結 (Multi-platform Purchase Links):** 資料層已同步金石堂、誠品等連結，UI 介面已實作，支持博客來、誠品、金石堂、momo、Kobo、Readmoo 等平台。
 - [x] **影音資料 SSOT 同步 (Video Data SSOT Sync):** 已從 SSOT 匯入紀錄片影視片單，具有分類、說明、tag。
 - [x] **紀錄片圖片修正 (Documentary Image Fix):** 已同步 SSOT 中 Column F「圖片」欄位。採用 **本地儲存 (Local Storage)** 方案，同步時自動下載圖檔至 GitHub 倉庫，徹底解決外部擋圖與 CORS 問題。
 - [x] **紀錄片排序邏輯 (Documentary Sorting Logic):** 建立紀錄片影視的兩級排序：第一級以 SSOT 中「標籤」分組（「民主運動」置頂），第二級按試算表中的「排序」欄位進行升冪排列。
-- [ ] **SSOT 資料強化 (SSOT Data Enhancement):** 新增 kobo, readmoo 商品頁連結。
+- [x] **SSOT 資料強化 (SSOT Data Enhancement):** 新增 kobo, readmoo 商品頁連結。
 - [ ] **書籍資訊擴充 (Book Info Expansion):** 書籍欄增加出版年份資訊。
 - [ ] **新增「關於本站」分頁 (About Page):** 新增關於本站的介紹與說明頁面。
 - [ ] **Google Analytics:** 整合 Google Analytics 追蹤網站流量。
@@ -127,4 +127,5 @@ mkdir -p .gemini && ln -s ../AGENTS.md .gemini/GEMINI.md
 - [x] **授權標示 (License):** 增加授權標示 CC BY 4.0 並增加圖示。
 - [ ] **投稿方式擴充 (Submission Expansion):** 新增批次書單投稿方式（除了單本從 Google Form 填寫之外的方法）。
 - [x] **網域指向 (Domain):** 將網域指向 [booko.g0v.tw](https://booko.g0v.tw)。
+- [x] **專案轉移 (Project Transfer):** 已將 repository 轉移至 g0v organization，並更新相關 metadata。
 
