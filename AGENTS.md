@@ -27,7 +27,6 @@ App.tsx views → components/
 |---|---|---|
 | Components | PascalCase `.tsx` | `BookCard.tsx` |
 | Hooks | `use` prefix, camelCase `.ts` | `useTheme.ts` |
-| Services | camelCase + `Service` suffix `.ts` | `geminiService.ts` |
 | Utilities | camelCase `.ts` | `bookCover.ts` |
 | Scripts | kebab-case `.js` (Node ESM) | `sync-data.js` |
 | Constants | UPPER_SNAKE_CASE exports | `BOOKS`, `DOCUMENTARIES` |
@@ -101,7 +100,7 @@ Before creating anything new, check if these already cover your need:
 | `ThemeToggle` | `components/ThemeToggle.tsx` | Light/dark/system cycle button |
 | `useTheme` | `hooks/useTheme.ts` | Theme state + persistence (localStorage) + system preference detection |
 | `getBookCoverUrl` | `utils/bookCover.ts` | Resolves book cover: local path > books.com.tw sharding > fallback |
-| `getGeminiInsight` | `services/geminiService.ts` | Calls Gemini API with a prompt, returns text response |
+
 
 ## Code Quality Standards
 
@@ -137,7 +136,7 @@ npm run format        # format only
 - Single quotes (JS), double quotes (JSX attributes)
 - Recommended lint rules enabled
 - Import organization enabled (auto-sorted)
-- Scoped to source files only: `*.ts`, `*.tsx`, `*.js`, `components/`, `hooks/`, `services/`, `utils/`, `scripts/`
+- Scoped to source files only: `*.ts`, `*.tsx`, `*.js`, `components/`, `hooks/`, `utils/`, `scripts/`
 
 Pre-commit hook via Husky + lint-staged runs `biome check --write` on staged files automatically.
 
