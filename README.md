@@ -108,6 +108,7 @@ mkdir -p .gemini && ln -s ../AGENTS.md .gemini/GEMINI.md
 
 - [x] **推薦功能改版 (Revamp Recommendation):** 將「我要推薦」功能改成使用 Google Form: [Link](https://docs.google.com/forms/d/1HZPkLNFjrCWHlJ5qjLVhf6sM5AFGG5-w12R71jqt_PQ/edit)
 - [x] **紀錄片資料維護 (Documentary Data):** 修正《牽阮的手》等紀錄片的 thumbnail 連結，改用官方海報或可靠來源。
+- [x] **穩健圖資同步 (Robust Image Sync):** 實作內容校驗、增量更新與本地保護機制，確保手動修正不被覆蓋。
 - [x] **搜尋功能優化 (Enhanced Search):** 增加對書名、作者、描述的關鍵字搜尋功能。
 - [x] **書籍封面精準度 (Book Cover Accuracy):** 已建立 `utils/bookCover.ts` 處理博客來圖片 sharding 邏輯，同步時會自動下載至本地儲存，確保顯示穩定。
 - [x] **佈局優化 (Layout Optimization):** 大螢幕每排顯示從 5 本增加至 6 本。

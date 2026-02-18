@@ -357,6 +357,10 @@ async function sync() {
           const success = await downloadFile(imgUrl, dest);
           if (success) {
             cache[item.id] = imgUrl; // Store the remote URL
+          }
+
+          // Fallback: If local file exists (manually or from previous sync), use it!
+          if (fs.existsSync(dest)) {
             if (item.coverImage) item.coverImage = `/assets/${assetFolder}/${filename}`;
             if (item.thumbnail) item.thumbnail = `/assets/${assetFolder}/${filename}`;
           }

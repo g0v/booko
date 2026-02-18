@@ -1,5 +1,5 @@
 export const sheetData = {
-  "lastUpdated": "2026-02-18T22:03:02.301Z",
+  "lastUpdated": "2026-02-18T23:08:37.048Z",
   "books": [
     {
       "id": "sheet-12",
@@ -797,7 +797,7 @@ export const sheetData = {
       "director": "莊益增、顏蘭權",
       "year": "2010",
       "description": "記錄台灣民主運動與街頭抗爭，呈現公民力量如何推動政治轉型歷程",
-      "thumbnail": "https://zh.wikipedia.org/wiki/%E7%89%BD%E9%98%AE%E7%9A%84%E6%89%8B#/media/File:%E7%89%BD%E9%98%AE%E7%9A%84%E6%89%8B.jpg",
+      "thumbnail": "/assets/posters/doc-sheet-21.jpg",
       "tags": [
         "民主運動"
       ]
@@ -1126,7 +1126,7 @@ export const sheetData = {
       "title": "狂飆的世代",
       "director": "潘曉剛",
       "year": "2015",
-      "description": "記錄解嚴前後青年世代經驗，呈現社會轉型中的理想與現實落差",
+      "description": "記錄解嚴前後青年世代經驗，呈現社會轉型���的理想與現實落差",
       "thumbnail": "",
       "tags": [
         "台灣史"
