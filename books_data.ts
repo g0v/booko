@@ -1,5 +1,5 @@
 export const sheetData = {
-  "lastUpdated": "2026-02-18T20:05:43.660Z",
+  "lastUpdated": "2026-02-18T23:08:37.048Z",
   "books": [
     {
       "id": "sheet-12",
@@ -796,7 +796,7 @@ export const sheetData = {
       "title": "牽阮的手",
       "director": "莊益增、顏蘭權",
       "year": "2010",
-      "description": "牽阮的手",
+      "description": "記錄台灣民主運動與街頭抗爭，呈現公民力量如何推動政治轉型歷程",
       "thumbnail": "/assets/posters/doc-sheet-21.jpg",
       "tags": [
         "民主運動"
@@ -807,7 +807,7 @@ export const sheetData = {
       "title": "春雨424",
       "director": "馮賢賢",
       "year": "2020",
-      "description": "春雨424",
+      "description": "聚焦學運與民主抗爭事件，呈現青年世代對政治改革的參與與期待",
       "thumbnail": "/assets/posters/doc-sheet-24.jpg",
       "tags": [
         "民主運動"
@@ -818,7 +818,7 @@ export const sheetData = {
       "title": "綠色小組系列紀錄片",
       "director": "綠色小組",
       "year": "1986-",
-      "description": "綠色小組系列紀錄片",
+      "description": "黨外運動影像紀錄合集，保存威權末期街頭運動與民主化重要影像",
       "thumbnail": "/assets/posters/doc-sheet-25.jpg",
       "tags": [
         "民主運動"
@@ -829,7 +829,7 @@ export const sheetData = {
       "title": "末代叛亂犯",
       "director": "廖建華",
       "year": "2015",
-      "description": "末代叛亂犯",
+      "description": "訪談政治犯生命經驗，反思法律、歷史與轉型正義在當代的意義",
       "thumbnail": "/assets/posters/doc-sheet-26.jpeg",
       "tags": [
         "民主運動"
@@ -840,7 +840,7 @@ export const sheetData = {
       "title": "跳舞時代",
       "director": "郭珍弟、簡偉斯",
       "year": "2003",
-      "description": "跳舞時代",
+      "description": "透過舞廳文化與流行音樂，回望日治時代台灣社會風貌與現代化過程中的文化變遷",
       "thumbnail": "/assets/posters/doc-sheet-2.jpg",
       "tags": [
         "日本二戰時代"
@@ -851,7 +851,7 @@ export const sheetData = {
       "title": "綠的海平線",
       "director": "郭亮吟",
       "year": "2006",
-      "description": "綠的海平線",
+      "description": "紀錄太平洋戰爭末期，日本募集臺灣少年前往日本海軍工廠生產軍用飛機",
       "thumbnail": "/assets/posters/doc-sheet-3.gif",
       "tags": [
         "日本二戰時代"
@@ -862,7 +862,7 @@ export const sheetData = {
       "title": "灣生畫家：立石鐵臣",
       "director": "郭亮吟、藤田修平",
       "year": "2016",
-      "description": "灣生畫家：立石鐵臣",
+      "description": "記錄出生台灣的日籍畫家立石鐵臣，一生在記憶與藝術之間尋找身分定位",
       "thumbnail": "/assets/posters/doc-sheet-4.jpg",
       "tags": [
         "日本二戰時代"
@@ -873,7 +873,7 @@ export const sheetData = {
       "title": "灣生回家",
       "director": "黃銘正",
       "year": "2015",
-      "description": "灣生回家",
+      "description": "訪談日本灣生重返台灣尋根歷程，反思殖民歷史、故鄉認同與跨世代記憶",
       "thumbnail": "/assets/posters/doc-sheet-5.PNG",
       "tags": [
         "日本二戰時代"
@@ -884,7 +884,7 @@ export const sheetData = {
       "title": "路有多長",
       "director": "湯湘竹",
       "year": "2010",
-      "description": "路有多長",
+      "description": "透過人物生命軌跡追索戰爭與遷徙，呈現台灣人民在動盪年代中的歷史經驗",
       "thumbnail": "/assets/posters/doc-sheet-6.jpg",
       "tags": [
         "日本二戰時代"
@@ -895,7 +895,7 @@ export const sheetData = {
       "title": "海的彼端",
       "director": "黃胤毓",
       "year": "2016",
-      "description": "海的彼端",
+      "description": "連結沖繩與台灣歷史經驗，探討殖民統治、戰爭記憶與島嶼身分認同議題",
       "thumbnail": "/assets/posters/doc-sheet-7.jpg",
       "tags": [
         "日本二戰時代"
@@ -906,7 +906,7 @@ export const sheetData = {
       "title": "綠色牢籠",
       "director": "黃胤毓",
       "year": "2021",
-      "description": "綠色牢籠",
+      "description": "揭露戰俘與殖民統治下的囚禁歷史，關注人權議題與被忽視的戰爭記憶",
       "thumbnail": "/assets/posters/doc-sheet-8.jpg",
       "tags": [
         "日本二戰時代"
@@ -917,7 +917,7 @@ export const sheetData = {
       "title": "由島至島",
       "director": "許雅舒",
       "year": "2024",
-      "description": "由島至島",
+      "description": "以跨島歷史視角觀察遷徙與政治變動，重新思考台灣與周邊島嶼關係",
       "thumbnail": "/assets/posters/doc-sheet-9.webp",
       "tags": [
         "日本二戰時代"
@@ -928,7 +928,7 @@ export const sheetData = {
       "title": "沖天",
       "director": "張釗維",
       "year": "2015",
-      "description": "沖天",
+      "description": "記錄二戰台籍飛行員歷史與生命故事，呈現殖民時代青年面臨的戰爭選擇",
       "thumbnail": "/assets/posters/doc-sheet-10.jpg",
       "tags": [
         "日本二戰時代"
@@ -939,7 +939,7 @@ export const sheetData = {
       "title": "疾風魅影－黑貓中隊",
       "director": "楊佈新",
       "year": "2018",
-      "description": "疾風魅影－黑貓中隊",
+      "description": "回顧冷戰時期黑貓中隊偵察任務，揭示台美軍事合作與飛行員生命風險",
       "thumbnail": "/assets/posters/doc-sheet-11.jpg",
       "tags": [
         "日本二戰時代"
@@ -950,7 +950,7 @@ export const sheetData = {
       "title": "春天－許金玉的故事",
       "director": "曾文珍",
       "year": "2002",
-      "description": "春天－許金玉的故事",
+      "description": "白色恐怖受難者許金玉生命紀錄，呈現政治壓迫下個人堅韌與時代傷痕",
       "thumbnail": "",
       "tags": [
         "白色恐怖二二八"
@@ -961,7 +961,7 @@ export const sheetData = {
       "title": "白色見證",
       "director": "柯一正",
       "year": "2003",
-      "description": "白色見證",
+      "description": "透過受難者證言與歷史資料，重建白色恐怖年代政治迫害與社會恐懼氛圍",
       "thumbnail": "",
       "tags": [
         "白色恐怖二二八"
@@ -972,7 +972,7 @@ export const sheetData = {
       "title": "暗夜哭聲",
       "director": "洪維健",
       "year": "1996",
-      "description": "暗夜哭聲",
+      "description": "以口述歷史呈現政治犯經驗，揭示威權時期人民沉默與創傷記憶延續",
       "thumbnail": "",
       "tags": [
         "白色恐怖二二八"
@@ -983,7 +983,7 @@ export const sheetData = {
       "title": "綠色玫瑰",
       "director": "洪維健",
       "year": "2007",
-      "description": "綠色玫瑰",
+      "description": "從女性視角切入白色恐怖歷史，探討家庭、政治與個人命運交織關係",
       "thumbnail": "",
       "tags": [
         "白色恐怖二二八"
@@ -994,7 +994,7 @@ export const sheetData = {
       "title": "尋找湯德章",
       "director": "黃銘正、連楨惠",
       "year": "2024",
-      "description": "尋找湯德章",
+      "description": "追索二二八義士湯德章事蹟，重建歷史現場並反思轉型正義與公共記憶",
       "thumbnail": "",
       "tags": [
         "白色恐怖二二八"
@@ -1005,7 +1005,7 @@ export const sheetData = {
       "title": "他們為什麼不說話",
       "director": "廖建華",
       "year": "2017",
-      "description": "他們為什麼不說話",
+      "description": "探討白色恐怖受難者長期沉默原因，呈現威權統治對心理與社會影響",
       "thumbnail": "",
       "tags": [
         "白色恐怖二二八"
@@ -1016,7 +1016,7 @@ export const sheetData = {
       "title": "野番茄",
       "director": "廖克發",
       "year": "2021",
-      "description": "野番茄",
+      "description": "以青年觀點回望白色恐怖歷史，反思記憶傳承與世代理解的差距問題",
       "thumbnail": "",
       "tags": [
         "白色恐怖二二八"
@@ -1027,7 +1027,7 @@ export const sheetData = {
       "title": "無法離開的人",
       "director": "陳芯宜",
       "year": "2022",
-      "description": "無法離開的人",
+      "description": "記錄政治犯出獄後人生軌跡，呈現創傷記憶與社會重建的艱難歷程",
       "thumbnail": "",
       "tags": [
         "白色恐怖二二八"
@@ -1049,7 +1049,7 @@ export const sheetData = {
       "title": "革命進行式",
       "director": "陳麗貴",
       "year": "2015",
-      "description": "革命進行式",
+      "description": "回顧民主運動關鍵時刻，呈現社會改革力量與政治變遷之間的互動",
       "thumbnail": "/assets/posters/doc-sheet-22.jpg",
       "tags": [
         "民主運動"
@@ -1060,7 +1060,7 @@ export const sheetData = {
       "title": "回首來時路－她們參政的足跡",
       "director": "陳麗貴",
       "year": "2014",
-      "description": "回首來時路－她們參政的足跡",
+      "description": "記錄女性政治參與歷程，呈現台灣民主發展中性別角色的重要轉變",
       "thumbnail": "/assets/posters/doc-sheet-23.jpg",
       "tags": [
         "民主運動"
@@ -1071,7 +1071,7 @@ export const sheetData = {
       "title": "狂飆一夢",
       "director": "廖建華",
       "year": "2019",
-      "description": "狂飆一夢",
+      "description": "回望民主運動世代理想與挫折，呈現社會變革過程中的熱情與代價",
       "thumbnail": "/assets/posters/doc-sheet-27.jpg",
       "tags": [
         "民主運動"
@@ -1082,7 +1082,7 @@ export const sheetData = {
       "title": "山有多高",
       "director": "湯湘竹",
       "year": "2002",
-      "description": "山有多高",
+      "description": "結合登山紀錄與歷史敘事，呈現土地記憶與人群生活的深層連結",
       "thumbnail": "",
       "tags": [
         "台灣史"
@@ -1093,7 +1093,7 @@ export const sheetData = {
       "title": "銀簪子",
       "director": "蕭菊貞",
       "year": "2000",
-      "description": "銀簪子",
+      "description": "透過家族女性生命史，呈現時代變遷與個人記憶交織的歷史敘事",
       "thumbnail": "",
       "tags": [
         "台灣史"
@@ -1104,7 +1104,7 @@ export const sheetData = {
       "title": "打拚－台灣人民的歷史",
       "director": "符昌鋒 等",
       "year": "2007",
-      "description": "打拚－台灣人民的歷史",
+      "description": "系統回顧台灣人民奮鬥歷史，呈現社會發展與民主進程的重要脈絡",
       "thumbnail": "",
       "tags": [
         "台灣史"
@@ -1115,7 +1115,7 @@ export const sheetData = {
       "title": "阿罩霧風雲",
       "director": "許明淳",
       "year": "2013",
-      "description": "阿罩霧風雲",
+      "description": "描寫霧峰林家歷史與台灣變遷，呈現地方家族與時代政治互動",
       "thumbnail": "",
       "tags": [
         "台灣史"
@@ -1126,7 +1126,7 @@ export const sheetData = {
       "title": "狂飆的世代",
       "director": "潘曉剛",
       "year": "2015",
-      "description": "狂飆的世代",
+      "description": "記錄解嚴前後青年世代經驗，呈現社會轉型���的理想與現實落差",
       "thumbnail": "",
       "tags": [
         "台灣史"
@@ -1137,7 +1137,7 @@ export const sheetData = {
       "title": "台灣人在滿洲國",
       "director": "蔣顯斌",
       "year": "2013",
-      "description": "台灣人在滿洲國",
+      "description": "探討日治時期台灣人赴滿洲國經驗，呈現殖民體制下複雜身分認同",
       "thumbnail": "",
       "tags": [
         "台灣史"
@@ -1148,7 +1148,7 @@ export const sheetData = {
       "title": "最後島嶼－台灣防衛戰1950-1955",
       "director": "謝嘉錕",
       "year": "2011",
-      "description": "最後島嶼－台灣防衛戰1950-1955",
+      "description": "聚焦冷戰初期台灣防衛歷史，呈現國際局勢與地方社會互動",
       "thumbnail": "",
       "tags": [
         "台灣史"
@@ -1159,7 +1159,7 @@ export const sheetData = {
       "title": "單打雙不打",
       "director": "黃明川",
       "year": "1994",
-      "description": "單打雙不打",
+      "description": "探討政治衝突與族群關係議題，反映社會變遷下的矛盾與對話",
       "thumbnail": "",
       "tags": [
         "台灣史"
@@ -1170,7 +1170,7 @@ export const sheetData = {
       "title": "消失的王國：拱樂社",
       "director": "郭珍弟",
       "year": "1999",
-      "description": "消失的王國：拱樂社",
+      "description": "記錄民間戲曲團體興衰歷史，呈現傳統表演藝術與社會文化轉變",
       "thumbnail": "",
       "tags": [
         "其他民間"
@@ -1181,7 +1181,7 @@ export const sheetData = {
       "title": "台灣黑電影",
       "director": "侯季然",
       "year": "2005",
-      "description": "台灣黑電影",
+      "description": "追溯台灣地下電影與產業發展史，呈現影像文化與社會變遷關係",
       "thumbnail": "",
       "tags": [
         "其他民間"
@@ -1192,7 +1192,7 @@ export const sheetData = {
       "title": "天亮前的戀愛故事",
       "director": "林俊傑",
       "year": "2011",
-      "description": "天亮前的戀愛故事",
+      "description": "以愛情故事切入社會背景，呈現青年世代情感與時代變遷交織",
       "thumbnail": "",
       "tags": [
         "其他民間"
@@ -1203,7 +1203,7 @@ export const sheetData = {
       "title": "甘露水",
       "director": "林君昵、黃邦銓",
       "year": "2021",
-      "description": "甘露水",
+      "description": "記錄女性藝術家生命歷程，探討創作、信仰與女性角色的多重面向",
       "thumbnail": "",
       "tags": [
         "其他民間"
@@ -1214,7 +1214,7 @@ export const sheetData = {
       "title": "櫻之聲",
       "director": "郭亮吟、藤田修平",
       "year": "2016",
-      "description": "櫻之聲",
+      "description": "以跨國訪談呈現歷史記憶，反思戰爭與殖民留下的情感與文化連結",
       "thumbnail": "",
       "tags": [
         "其他民間"
@@ -1225,7 +1225,7 @@ export const sheetData = {
       "title": "四十年",
       "director": "侯季然",
       "year": "2016",
-      "description": "四十年",
+      "description": "導演回望台灣四十年社會變遷，呈現政治、文化與生活面貌演變",
       "thumbnail": "",
       "tags": [
         "其他民間"
@@ -1236,7 +1236,7 @@ export const sheetData = {
       "title": "我們的那時時刻",
       "director": "楊力州",
       "year": "2016",
-      "description": "我們的那時時刻",
+      "description": "回顧台灣電影黃金年代，呈現電影文化與社會集體記憶之間關係",
       "thumbnail": "",
       "tags": [
         "其他民間"
@@ -1247,7 +1247,7 @@ export const sheetData = {
       "title": "蘋果的滋味",
       "director": "李惠仁",
       "year": "2015",
-      "description": "蘋果的滋味",
+      "description": "探討媒體議題與社會事件，呈現新聞敘事如何形塑公共認知",
       "thumbnail": "",
       "tags": [
         "其他民間"
@@ -1258,7 +1258,7 @@ export const sheetData = {
       "title": "流離島影",
       "director": "游智煒 等",
       "year": "2000",
-      "description": "流離島影",
+      "description": "記錄離島歷史與居民記憶，呈現地理邊緣與文化中心之間關係",
       "thumbnail": "",
       "tags": [
         "其他民間"
@@ -1269,7 +1269,7 @@ export const sheetData = {
       "title": "稻草人",
       "director": "王童",
       "year": "1987",
-      "description": "稻草人",
+      "description": "描寫戰後農村小人物生活，呈現社會底層在歷史變遷中的掙扎",
       "thumbnail": "",
       "tags": [
         "劇情片"
@@ -1280,7 +1280,7 @@ export const sheetData = {
       "title": "香蕉天堂",
       "director": "王童",
       "year": "1989",
-      "description": "香蕉天堂",
+      "description": "描寫外省老兵來台生活經驗，呈現戰後族群融合與身分認同問題",
       "thumbnail": "",
       "tags": [
         "劇情片"
@@ -1291,7 +1291,7 @@ export const sheetData = {
       "title": "無言的山丘",
       "director": "王童",
       "year": "1992",
-      "description": "無言的山丘",
+      "description": "以礦工家庭為背景，呈現殖民時代勞動、家庭與歷史創傷",
       "thumbnail": "",
       "tags": [
         "劇情片"
@@ -1302,7 +1302,7 @@ export const sheetData = {
       "title": "紅柿子",
       "director": "王童",
       "year": "1996",
-      "description": "紅柿子",
+      "description": "透過家庭記憶敘事，呈現個人成長與歷史背景交織的情感",
       "thumbnail": "",
       "tags": [
         "劇情片"
@@ -1313,7 +1313,7 @@ export const sheetData = {
       "title": "超級市民",
       "director": "萬仁",
       "year": "1985",
-      "description": "超級市民",
+      "description": "描寫都市底層市民生活，呈現快速現代化下社會階層問題",
       "thumbnail": "",
       "tags": [
         "劇情片"
@@ -1324,7 +1324,7 @@ export const sheetData = {
       "title": "超級大國民",
       "director": "萬仁",
       "year": "1995",
-      "description": "超級大國民",
+      "description": "探討政治迫害與轉型正義議題，呈現歷史陰影對個人的影響",
       "thumbnail": "",
       "tags": [
         "劇情片"
@@ -1335,7 +1335,7 @@ export const sheetData = {
       "title": "破輪胎",
       "director": "萬仁",
       "year": "1999",
-      "description": "破輪胎",
+      "description": "以黑色幽默描寫小人物命運，反映社會荒謬與人性掙扎",
       "thumbnail": "",
       "tags": [
         "劇情片"
@@ -1346,7 +1346,7 @@ export const sheetData = {
       "title": "眼淚",
       "director": "鄭文堂",
       "year": "2010",
-      "description": "眼淚",
+      "description": "描寫黑道與警察間複雜關係，呈現人性、正義與制度衝突",
       "thumbnail": "",
       "tags": [
         "劇情片"
@@ -1357,7 +1357,7 @@ export const sheetData = {
       "title": "天馬茶房",
       "director": "林正盛",
       "year": "1999",
-      "description": "天馬茶房",
+      "description": "以二二八事件為背景，透過茶室人物命運呈現歷史轉折",
       "thumbnail": "",
       "tags": [
         "劇情片"
