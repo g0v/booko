@@ -1,5 +1,5 @@
 export const sheetData = {
-  "lastUpdated": "2026-02-18T23:08:37.048Z",
+  "lastUpdated": "2026-02-19T01:36:37.856Z",
   "books": [
     {
       "id": "sheet-12",
@@ -796,7 +796,7 @@ export const sheetData = {
       "title": "牽阮的手",
       "director": "莊益增、顏蘭權",
       "year": "2010",
-      "description": "記錄台灣民主運動與街頭抗爭，呈現公民力量如何推動政治轉型歷程",
+      "description": "記錄田孟淑（田媽媽）與田朝明醫師跨越階級的堅定愛情，並以兩人的生命軌跡，串起台灣從戒嚴走向民主化半世紀的抗爭史。",
       "thumbnail": "/assets/posters/doc-sheet-21.jpg",
       "tags": [
         "民主運動"
@@ -807,7 +807,7 @@ export const sheetData = {
       "title": "春雨424",
       "director": "馮賢賢",
       "year": "2020",
-      "description": "聚焦學運與民主抗爭事件，呈現青年世代對政治改革的參與與期待",
+      "description": "還原 1970 年震驚國際的「四二四刺蔣案」，聚焦黃文雄、鄭自才與黃晴美的流亡歲月，透過女性視角重新梳理這段曲折歷史。",
       "thumbnail": "/assets/posters/doc-sheet-24.jpg",
       "tags": [
         "民主運動"
@@ -818,7 +818,7 @@ export const sheetData = {
       "title": "綠色小組系列紀錄片",
       "director": "綠色小組",
       "year": "1986-",
-      "description": "黨外運動影像紀錄合集，保存威權末期街頭運動與民主化重要影像",
+      "description": "匯集解嚴前後由民間「綠色小組」在街頭衝鋒陷陣拍攝的抗爭影像，打破當時老三台的媒體壟斷，為民主化運動留下真實見證。",
       "thumbnail": "/assets/posters/doc-sheet-25.jpg",
       "tags": [
         "民主運動"
@@ -829,7 +829,7 @@ export const sheetData = {
       "title": "末代叛亂犯",
       "director": "廖建華",
       "year": "2015",
-      "description": "訪談政治犯生命經驗，反思法律、歷史與轉型正義在當代的意義",
+      "description": "聚焦 1991 年「獨台會案」，回顧這場促成《懲治叛亂條例》廢除的關鍵社運，探討年輕知識份子如何以肉身衝撞體制。",
       "thumbnail": "/assets/posters/doc-sheet-26.jpeg",
       "tags": [
         "民主運動"
@@ -840,7 +840,7 @@ export const sheetData = {
       "title": "跳舞時代",
       "director": "郭珍弟、簡偉斯",
       "year": "2003",
-      "description": "透過舞廳文化與流行音樂，回望日治時代台灣社會風貌與現代化過程中的文化變遷",
+      "description": "聚焦 1930 年代台灣流行音樂與舞廳文化，從留聲機與歌手的歌聲中，重現日治摩登男女追求自由戀愛的時代風華。",
       "thumbnail": "/assets/posters/doc-sheet-2.jpg",
       "tags": [
         "日本二戰時代"
@@ -851,7 +851,7 @@ export const sheetData = {
       "title": "綠的海平線",
       "director": "郭亮吟",
       "year": "2006",
-      "description": "紀錄太平洋戰爭末期，日本募集臺灣少年前往日本海軍工廠生產軍用飛機",
+      "description": "紀錄二戰末期八千多名台灣少年，受日本募集前往海軍工廠製造戰鬥機的「海軍少年工」歷史，刻劃戰火下青春的迷惘與鄉愁。",
       "thumbnail": "/assets/posters/doc-sheet-3.gif",
       "tags": [
         "日本二戰時代"
@@ -862,7 +862,7 @@ export const sheetData = {
       "title": "灣生畫家：立石鐵臣",
       "director": "郭亮吟、藤田修平",
       "year": "2016",
-      "description": "記錄出生台灣的日籍畫家立石鐵臣，一生在記憶與藝術之間尋找身分定位",
+      "description": "追尋出生於台灣的日籍畫家立石鐵臣之生命軌跡，他在戰後被迫返日，一生於畫布上傾訴對台灣的深情與身分認同的無奈。",
       "thumbnail": "/assets/posters/doc-sheet-4.jpg",
       "tags": [
         "日本二戰時代"
@@ -873,7 +873,7 @@ export const sheetData = {
       "title": "灣生回家",
       "director": "黃銘正",
       "year": "2015",
-      "description": "訪談日本灣生重返台灣尋根歷程，反思殖民歷史、故鄉認同與跨世代記憶",
+      "description": "紀錄戰後遭遣返的「灣生」日本人，在暮年不辭千里重返台灣尋根的動人旅程，交織出跨越台日半世紀的時代無奈與土地羈絆。",
       "thumbnail": "/assets/posters/doc-sheet-5.PNG",
       "tags": [
         "日本二戰時代"
@@ -884,7 +884,7 @@ export const sheetData = {
       "title": "路有多長",
       "director": "湯湘竹",
       "year": "2010",
-      "description": "透過人物生命軌跡追索戰爭與遷徙，呈現台灣人民在動盪年代中的歷史經驗",
+      "description": "以阿美族台籍日本兵的口述歷史為主軸，記錄他們經歷二戰、國共內戰，甚至滯留中國大半生的流離命運與對家鄉的無盡思念。",
       "thumbnail": "/assets/posters/doc-sheet-6.jpg",
       "tags": [
         "日本二戰時代"
@@ -895,7 +895,7 @@ export const sheetData = {
       "title": "海的彼端",
       "director": "黃胤毓",
       "year": "2016",
-      "description": "連結沖繩與台灣歷史經驗，探討殖民統治、戰爭記憶與島嶼身分認同議題",
+      "description": "紀錄日治時期移居沖繩八重山的台灣農民，如何在異鄉開墾、經歷戰火與無國籍的邊緣夾縫中求生，傳承三個世代的家族記憶。",
       "thumbnail": "/assets/posters/doc-sheet-7.jpg",
       "tags": [
         "日本二戰時代"
@@ -906,7 +906,7 @@ export const sheetData = {
       "title": "綠色牢籠",
       "director": "黃胤毓",
       "year": "2021",
-      "description": "揭露戰俘與殖民統治下的囚禁歷史，關注人權議題與被忽視的戰爭記憶",
+      "description": "探尋戰前遭誘騙至沖繩西表島煤礦場的台灣礦工，透過炭坑阿嬤生前的口述，揭開這段被遺忘的帝國剝削與囚禁歷史。",
       "thumbnail": "/assets/posters/doc-sheet-8.jpg",
       "tags": [
         "日本二戰時代"
@@ -917,7 +917,7 @@ export const sheetData = {
       "title": "由島至島",
       "director": "許雅舒",
       "year": "2024",
-      "description": "以跨島歷史視角觀察遷徙與政治變動，重新思考台灣與周邊島嶼關係",
+      "description": "以新加坡為視點，串聯台灣、馬來西亞與日本等島嶼的二戰記憶，從原住民軍屬、慰安婦等視角拼湊出複雜的亞洲戰火傷痕。",
       "thumbnail": "/assets/posters/doc-sheet-9.webp",
       "tags": [
         "日本二戰時代"
@@ -928,7 +928,7 @@ export const sheetData = {
       "title": "沖天",
       "director": "張釗維",
       "year": "2015",
-      "description": "記錄二戰台籍飛行員歷史與生命故事，呈現殖民時代青年面臨的戰爭選擇",
+      "description": "重現八年抗戰期間中華民國空軍的血淚史，透過三位女眷的視角與動畫結合，刻劃這群年輕飛行員翱翔天際卻隨時面臨死亡的悲歌。",
       "thumbnail": "/assets/posters/doc-sheet-10.jpg",
       "tags": [
         "日本二戰時代"
@@ -939,7 +939,7 @@ export const sheetData = {
       "title": "疾風魅影－黑貓中隊",
       "director": "楊佈新",
       "year": "2018",
-      "description": "回顧冷戰時期黑貓中隊偵察任務，揭示台美軍事合作與飛行員生命風險",
+      "description": "揭開冷戰時期台美合作「黑貓中隊」的神祕面紗，紀錄 U-2 偵察機飛行員出生入死、遭擊落俘虜的悲壯命運與被時代犧牲的無奈。",
       "thumbnail": "/assets/posters/doc-sheet-11.jpg",
       "tags": [
         "日本二戰時代"
@@ -950,7 +950,7 @@ export const sheetData = {
       "title": "春天－許金玉的故事",
       "director": "曾文珍",
       "year": "2002",
-      "description": "白色恐怖受難者許金玉生命紀錄，呈現政治壓迫下個人堅韌與時代傷痕",
+      "description": "紀錄白色恐怖受難者許金玉，因參與郵電工會而遭逢15年黑牢；透過她堅毅的晚年自述，展現女性政治犯不屈的生命韌性。",
       "thumbnail": "",
       "tags": [
         "白色恐怖二二八"
@@ -961,7 +961,7 @@ export const sheetData = {
       "title": "白色見證",
       "director": "柯一正",
       "year": "2003",
-      "description": "透過受難者證言與歷史資料，重建白色恐怖年代政治迫害與社會恐懼氛圍",
+      "description": "探訪多位白色恐怖時期的醫事人員受難者，透過他們獄中與出獄後的經歷，揭示威權體制如何摧毀菁英階層並留下深遠創傷。",
       "thumbnail": "",
       "tags": [
         "白色恐怖二二八"
@@ -972,7 +972,7 @@ export const sheetData = {
       "title": "暗夜哭聲",
       "director": "洪維健",
       "year": "1996",
-      "description": "以口述歷史呈現政治犯經驗，揭示威權時期人民沉默與創傷記憶延續",
+      "description": "以口述歷史形式，記錄 1950 年代多位政治受難者及其家屬的血淚回憶，忠實呈現威權時代下國家暴力對人權的迫害與無盡黑夜。",
       "thumbnail": "",
       "tags": [
         "白色恐怖二二八"
@@ -983,7 +983,7 @@ export const sheetData = {
       "title": "綠色玫瑰",
       "director": "洪維健",
       "year": "2007",
-      "description": "從女性視角切入白色恐怖歷史，探討家庭、政治與個人命運交織關係",
+      "description": "以 1981 年陳文成博士命案為原型，藉由將政治謀殺諷刺性地轉化為情殺案的黑色幽默，探討白色恐怖下懸案未解的荒謬。",
       "thumbnail": "",
       "tags": [
         "白色恐怖二二八"
@@ -994,7 +994,7 @@ export const sheetData = {
       "title": "尋找湯德章",
       "director": "黃銘正、連楨惠",
       "year": "2024",
-      "description": "追索二二八義士湯德章事蹟，重建歷史現場並反思轉型正義與公共記憶",
+      "description": "追尋二二八事件中為保護市民而遭槍決的台南律師湯德章之生平，透過歷史考證，重塑這位台日混血英雄的生命輪廓與時代意義。",
       "thumbnail": "",
       "tags": [
         "白色恐怖二二八"
@@ -1005,7 +1005,7 @@ export const sheetData = {
       "title": "他們為什麼不說話",
       "director": "廖建華",
       "year": "2017",
-      "description": "探討白色恐怖受難者長期沉默原因，呈現威權統治對心理與社會影響",
+      "description": "探討白色恐怖受難者及家屬長期噤聲的深層原因，剖析國家暴力帶來的心理創傷與社會恐懼，如何讓沉默成為世代傳承的烙印。",
       "thumbnail": "",
       "tags": [
         "白色恐怖二二八"
@@ -1016,7 +1016,7 @@ export const sheetData = {
       "title": "野番茄",
       "director": "廖克發",
       "year": "2021",
-      "description": "以青年觀點回望白色恐怖歷史，反思記憶傳承與世代理解的差距問題",
+      "description": "聚焦高雄二二八歷史，尋訪台籍日本兵、雄中自衛隊成員與受難遺族，在日常與軍事遺址的凝視中，讓失語的創傷結出記憶果實。",
       "thumbnail": "",
       "tags": [
         "白色恐怖二二八"
@@ -1027,7 +1027,7 @@ export const sheetData = {
       "title": "無法離開的人",
       "director": "陳芯宜",
       "year": "2022",
-      "description": "記錄政治犯出獄後人生軌跡，呈現創傷記憶與社會重建的艱難歷程",
+      "description": "透過 VR 虛擬實境技術，帶領觀者沉浸於綠島前輩的遺書與幽閉的牢房中，見證白色恐怖受難者未竟的遺願與時代悲歌。",
       "thumbnail": "",
       "tags": [
         "白色恐怖二二八"
@@ -1038,7 +1038,7 @@ export const sheetData = {
       "title": "流麻溝十五號 (原圖標示為流麻溝女思想的)",
       "director": "周美玲",
       "year": "2022",
-      "description": "流麻溝十五號 (原圖標示為流麻溝女思想的)",
+      "description": "翻拍自真實歷史，講述 1950 年代多位女性政治受難者被押解至綠島進行思想改造，在威權壓迫下堅守尊嚴與姊妹情誼的血淚故事。",
       "thumbnail": "",
       "tags": [
         "白色恐怖二二八"
@@ -1049,7 +1049,7 @@ export const sheetData = {
       "title": "革命進行式",
       "director": "陳麗貴",
       "year": "2015",
-      "description": "回顧民主運動關鍵時刻，呈現社會改革力量與政治變遷之間的互動",
+      "description": "聚焦台獨左派傳奇人物史明的一生，從赴日留學、前往延安、企圖刺蔣到流亡海外撰寫史書，紀錄其堅持百年的革命狂熱。",
       "thumbnail": "/assets/posters/doc-sheet-22.jpg",
       "tags": [
         "民主運動"
@@ -1060,7 +1060,7 @@ export const sheetData = {
       "title": "回首來時路－她們參政的足跡",
       "director": "陳麗貴",
       "year": "2014",
-      "description": "記錄女性政治參與歷程，呈現台灣民主發展中性別角色的重要轉變",
+      "description": "爬梳台灣女性參與政治的歷史脈絡，從威權時期的異議發聲到民主化後的代議士，呈現女性如何突破限制、推動平權。",
       "thumbnail": "/assets/posters/doc-sheet-23.jpg",
       "tags": [
         "民主運動"
@@ -1071,7 +1071,7 @@ export const sheetData = {
       "title": "狂飆一夢",
       "director": "廖建華",
       "year": "2019",
-      "description": "回望民主運動世代理想與挫折，呈現社會變革過程中的熱情與代價",
+      "description": "記錄兩位基層黨外運動人士在民主浪潮退去後的生活，呈現社會底層為政治理想付出代價後，在殘酷現實中掙扎的真實面貌。",
       "thumbnail": "/assets/posters/doc-sheet-27.jpg",
       "tags": [
         "民主運動"
@@ -1082,7 +1082,7 @@ export const sheetData = {
       "title": "山有多高",
       "director": "湯湘竹",
       "year": "2002",
-      "description": "結合登山紀錄與歷史敘事，呈現土地記憶與人群生活的深層連結",
+      "description": "導演跟隨外省老兵父親返回湖南老家探親，並在台灣誕下新生兒，透過祖孫三代的血脈連結，刻劃大時代戰亂下的鄉愁與世代和解。",
       "thumbnail": "",
       "tags": [
         "台灣史"
@@ -1093,7 +1093,7 @@ export const sheetData = {
       "title": "銀簪子",
       "director": "蕭菊貞",
       "year": "2000",
-      "description": "透過家族女性生命史，呈現時代變遷與個人記憶交織的歷史敘事",
+      "description": "以外省老兵父親晚年失智為起點，導演追溯一輩子未曾來台的大媽，用一枚銀簪子串起兩岸三地在戰亂中被撕裂的親情與遺憾。",
       "thumbnail": "",
       "tags": [
         "台灣史"
@@ -1104,7 +1104,7 @@ export const sheetData = {
       "title": "打拚－台灣人民的歷史",
       "director": "符昌鋒 等",
       "year": "2007",
-      "description": "系統回顧台灣人民奮鬥歷史，呈現社會發展與民主進程的重要脈絡",
+      "description": "由公視製作的史詩級歷史紀錄片，從史前時代至近代民主化，透過紮實考證與動畫，宏觀呈現台灣各族群的奮鬥歷程。",
       "thumbnail": "",
       "tags": [
         "台灣史"
@@ -1115,7 +1115,7 @@ export const sheetData = {
       "title": "阿罩霧風雲",
       "director": "許明淳",
       "year": "2013",
-      "description": "描寫霧峰林家歷史與台灣變遷，呈現地方家族與時代政治互動",
+      "description": "結合戲劇重演與歷史考證，細述中部霧峰林家兩百年的興衰史，從清代平亂、抗法保台到日治時期的文化啟蒙，縮影台灣近代史。",
       "thumbnail": "",
       "tags": [
         "台灣史"
@@ -1126,7 +1126,7 @@ export const sheetData = {
       "title": "狂飆的世代",
       "director": "潘曉剛",
       "year": "2015",
-      "description": "記錄解嚴前後青年世代經驗，呈現社會轉型���的理想與現實落差",
+      "description": "紀錄解嚴前後（1980年代）台灣社會劇烈變動的風貌，呈現學運、工運與環保抗爭蜂擁而起的勃勃生機，見證公民力量的覺醒。",
       "thumbnail": "",
       "tags": [
         "台灣史"
@@ -1137,7 +1137,7 @@ export const sheetData = {
       "title": "台灣人在滿洲國",
       "director": "蔣顯斌",
       "year": "2013",
-      "description": "探討日治時期台灣人赴滿洲國經驗，呈現殖民體制下複雜身分認同",
+      "description": "揭開日治時期多達五千名台灣人前往偽滿洲國尋求發展的歷史，記錄這群菁英在帝國擴張下，錯綜複雜的認同糾葛與命運。",
       "thumbnail": "",
       "tags": [
         "台灣史"
@@ -1148,7 +1148,7 @@ export const sheetData = {
       "title": "最後島嶼－台灣防衛戰1950-1955",
       "director": "謝嘉錕",
       "year": "2011",
-      "description": "聚焦冷戰初期台灣防衛歷史，呈現國際局勢與地方社會互動",
+      "description": "聚焦 1950 年代初期，國軍在舟山、海南、大陳等東南沿海島嶼的撤退血淚史，重現冷戰初期軍民被迫棄守家園的殘酷戰史。",
       "thumbnail": "",
       "tags": [
         "台灣史"
@@ -1157,9 +1157,9 @@ export const sheetData = {
     {
       "id": "doc-sheet-35",
       "title": "單打雙不打",
-      "director": "黃明川",
+      "director": "董振良",
       "year": "1994",
-      "description": "探討政治衝突與族群關係議題，反映社會變遷下的矛盾與對話",
+      "description": "以金門「單打雙不打」的炮戰歲月為背景，透過荒謬與寫實交錯的手法，描繪戰地政務體制下居民被剝奪的自由與扭曲的生活。",
       "thumbnail": "",
       "tags": [
         "台灣史"
@@ -1170,7 +1170,7 @@ export const sheetData = {
       "title": "消失的王國：拱樂社",
       "director": "郭珍弟",
       "year": "1999",
-      "description": "記錄民間戲曲團體興衰歷史，呈現傳統表演藝術與社會文化轉變",
+      "description": "追尋 1950 年代台灣最大歌仔戲團「拱樂社」的興衰史，見證內台歌仔戲與台語電影的黃金歲月，以及傳統戲曲的無奈凋零。",
       "thumbnail": "",
       "tags": [
         "其他民間"
@@ -1181,7 +1181,7 @@ export const sheetData = {
       "title": "台灣黑電影",
       "director": "侯季然",
       "year": "2005",
-      "description": "追溯台灣地下電影與產業發展史，呈現影像文化與社會變遷關係",
+      "description": "爬梳 1970 年代末台灣盛行的「社會寫實片」（暴力復仇剝削電影），探討在戒嚴高壓與國際孤立下，電影如何成為集體潛意識的宣洩。",
       "thumbnail": "",
       "tags": [
         "其他民間"
@@ -1192,7 +1192,7 @@ export const sheetData = {
       "title": "天亮前的戀愛故事",
       "director": "林俊傑",
       "year": "2011",
-      "description": "以愛情故事切入社會背景，呈現青年世代情感與時代變遷交織",
+      "description": "追尋 1930 年代赴日求���的台灣天才作家翁鬧，透過 16 釐米膠卷漫遊東京高圓寺的舊地圖，在迷霧中拼湊他短暫且謎樣的文學幻影。",
       "thumbnail": "",
       "tags": [
         "其他民間"
@@ -1203,7 +1203,7 @@ export const sheetData = {
       "title": "甘露水",
       "director": "林君昵、黃邦銓",
       "year": "2021",
-      "description": "記錄女性藝術家生命歷程，探討創作、信仰與女性角色的多重面向",
+      "description": "紀錄台灣先鋒雕塑家黃土水名作〈甘露水〉，在失蹤半世紀後奇蹟重見天日的過程，展現台灣文化藝術在時代洗禮下不滅的光輝。",
       "thumbnail": "",
       "tags": [
         "其他民間"
@@ -1214,7 +1214,7 @@ export const sheetData = {
       "title": "櫻之聲",
       "director": "郭亮吟、藤田修平",
       "year": "2016",
-      "description": "以跨國訪談呈現歷史記憶，反思戰爭與殖民留下的情感與文化連結",
+      "description": "紀錄經歷過日治到戰後的台灣「跨語世代」作家，探討他們在政權更迭下，被迫轉換語言創作的斷裂創傷與堅韌的文學心靈。",
       "thumbnail": "",
       "tags": [
         "其他民間"
@@ -1225,7 +1225,7 @@ export const sheetData = {
       "title": "四十年",
       "director": "侯季然",
       "year": "2016",
-      "description": "導演回望台灣四十年社會變遷，呈現政治、文化與生活面貌演變",
+      "description": "以民歌運動四十週年為契機，記錄胡德夫、李建復等民歌手的人生起伏，將「唱自己的歌」的青春理想，對照步入中年的歲月滄桑。",
       "thumbnail": "",
       "tags": [
         "其他民間"
@@ -1236,7 +1236,7 @@ export const sheetData = {
       "title": "我們的那時時刻",
       "director": "楊力州",
       "year": "2016",
-      "description": "回顧台灣電影黃金年代，呈現電影文化與社會集體記憶之間關係",
+      "description": "以影迷的視角回顧台灣半世紀的電影發展，從健康寫實、瓊瑤愛情到新電影，串起大銀幕上的悲歡離合與社會集體記憶的共鳴。",
       "thumbnail": "",
       "tags": [
         "其他民間"
@@ -1247,7 +1247,7 @@ export const sheetData = {
       "title": "蘋果的滋味",
       "director": "李惠仁",
       "year": "2015",
-      "description": "探討媒體議題與社會事件，呈現新聞敘事如何形塑公共認知",
+      "description": "檢視《蘋果日報》與壹傳媒進軍台灣後，對本地媒體生態、狗仔文化與政治效應帶來的巨大衝擊，反思新聞自由與腥羶色的界線。",
       "thumbnail": "",
       "tags": [
         "其他民間"
@@ -1258,7 +1258,7 @@ export const sheetData = {
       "title": "流離島影",
       "director": "游智煒 等",
       "year": "2000",
-      "description": "記錄離島歷史與居民記憶，呈現地理邊緣與文化中心之間關係",
+      "description": "由多位導演赴台灣周邊十二個離島拍攝的短片集，透過不同影像風格與觀點，打破本島中心主義，呈現邊陲島嶼的獨特生命力。",
       "thumbnail": "",
       "tags": [
         "其他民間"
@@ -1269,7 +1269,7 @@ export const sheetData = {
       "title": "稻草人",
       "director": "王童",
       "year": "1987",
-      "description": "描寫戰後農村小人物生活，呈現社會底層在歷史變遷中的掙扎",
+      "description": "以荒謬喜劇手法刻劃日治末期台灣農村的困苦生活，透過撿到未爆彈的憨厚農民，諷刺戰爭的殘酷與殖民統治下的悲哀宿命。",
       "thumbnail": "",
       "tags": [
         "劇情片"
@@ -1280,7 +1280,7 @@ export const sheetData = {
       "title": "香蕉天堂",
       "director": "王童",
       "year": "1989",
-      "description": "描寫外省老兵來台生活經驗，呈現戰後族群融合與身分認同問題",
+      "description": "描繪兩名憨厚的外省士兵在國共內戰時隨軍來台，為了生存被迫頂替他人身分的荒謬大半生，刻劃戰後老兵的無奈與濃烈鄉愁。",
       "thumbnail": "",
       "tags": [
         "劇情片"
@@ -1291,7 +1291,7 @@ export const sheetData = {
       "title": "無言的山丘",
       "director": "王童",
       "year": "1992",
-      "description": "以礦工家庭為背景，呈現殖民時代勞動、家庭與歷史創傷",
+      "description": "以日治時期的九份金瓜石礦區為背景，透過一對貧農兄弟的淘金夢與寡婦的悲劇，沉痛寫出台灣底層勞工遭殖民剝削的血淚。",
       "thumbnail": "",
       "tags": [
         "劇情片"
@@ -1302,7 +1302,7 @@ export const sheetData = {
       "title": "紅柿子",
       "director": "王童",
       "year": "1996",
-      "description": "透過家庭記憶敘事，呈現個人成長與歷史背景交織的情感",
+      "description": "透過導演自身的童年視角，溫馨回憶外省大家族隨國民政府遷台後，在外婆堅毅的持家下，努力適應新天地並守護家庭羈絆的故事。",
       "thumbnail": "",
       "tags": [
         "劇情片"
@@ -1313,7 +1313,7 @@ export const sheetData = {
       "title": "超級市民",
       "director": "萬仁",
       "year": "1985",
-      "description": "描寫都市底層市民生活，呈現快速現代化下社會階層問題",
+      "description": "呈現 1980 年代台北經濟起飛下的都市暗角，透過一名南部青年北上尋找妹妹的歷程，揭示底層社會在現代化過程中的沉淪與疏離。",
       "thumbnail": "",
       "tags": [
         "劇情片"
@@ -1324,7 +1324,7 @@ export const sheetData = {
       "title": "超級大國民",
       "director": "萬仁",
       "year": "1995",
-      "description": "探討政治迫害與轉型正義議題，呈現歷史陰影對個人的影響",
+      "description": "講述曾參與政治讀書會而入獄的政治犯，晚年拖著殘軀踏上尋找因自己無心牽連而被槍決好友的墳墓，充滿贖罪與轉型正義深意。",
       "thumbnail": "",
       "tags": [
         "劇情片"
@@ -1335,7 +1335,7 @@ export const sheetData = {
       "title": "破輪胎",
       "director": "萬仁",
       "year": "1999",
-      "description": "以黑色幽默描寫小人物命運，反映社會荒謬與人性掙扎",
+      "description": "以兩���拍攝紀錄片的男子全台尋找被毀棄的政治銅像為線索，藉由荒謬的公路電影形式，解構威權神話並反思台灣歷史的虛無。",
       "thumbnail": "",
       "tags": [
         "劇情片"
@@ -1346,7 +1346,7 @@ export const sheetData = {
       "title": "眼淚",
       "director": "鄭文堂",
       "year": "2010",
-      "description": "描寫黑道與警察間複雜關係，呈現人性、正義與制度衝突",
+      "description": "講述一名屆退老刑警，為了彌補威權時期刑求逼供的歷史罪業，在調查一宗吸毒致死案時，試圖在黑白兩道間尋求自我救贖的故事。",
       "thumbnail": "",
       "tags": [
         "劇情片"
@@ -1357,7 +1357,7 @@ export const sheetData = {
       "title": "天馬茶房",
       "director": "林正盛",
       "year": "1999",
-      "description": "以二二八事件為背景，透過茶室人物命運呈現歷史轉折",
+      "description": "以二二八事件前夕的大稻埕為背景，透過新劇團青年的純純愛戀與時代動盪交織，呈現本省人迎來國民政府卻走向幻滅的歷史悲歌。",
       "thumbnail": "",
       "tags": [
         "劇情片"
