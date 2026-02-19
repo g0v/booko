@@ -33,11 +33,10 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                   <Link
                     key={item.path}
                     to={item.path}
-                    className={`flex items-center space-x-1.5 px-4 py-2 rounded-full text-sm font-bold transition-all ${
-                      location.pathname === item.path
-                        ? 'text-rose-700 dark:text-rose-400 bg-rose-50 dark:bg-rose-900/30 shadow-sm'
-                        : 'text-stone-600 dark:text-stone-300 hover:text-rose-600 dark:hover:text-rose-400 hover:bg-stone-50 dark:hover:bg-stone-800'
-                    }`}
+                    className={`flex items-center space-x-1.5 px-4 py-2 rounded-full text-sm font-bold transition-all ${location.pathname === item.path
+                      ? 'text-rose-700 dark:text-rose-400 bg-rose-50 dark:bg-rose-900/30 shadow-sm'
+                      : 'text-stone-600 dark:text-stone-300 hover:text-rose-600 dark:hover:text-rose-400 hover:bg-stone-50 dark:hover:bg-stone-800'
+                      }`}
                   >
                     {item.icon}
                     <span>{item.label}</span>
@@ -47,6 +46,22 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
               <ThemeToggle />
             </div>
           </div>
+          {/* Mobile Navigation - Fixed width, no scroll bar */}
+          <nav className="flex md:hidden items-center justify-between gap-1 pb-4 px-1">
+            {navItems.map((item) => (
+              <Link
+                key={item.path}
+                to={item.path}
+                className={`flex-1 flex items-center justify-center space-x-1 py-2.5 rounded-full text-[10px] sm:text-xs font-bold transition-all ${location.pathname === item.path
+                    ? 'text-rose-700 dark:text-rose-400 bg-rose-50 dark:bg-rose-900/30 shadow-sm'
+                    : 'text-stone-600 dark:text-stone-300 hover:text-rose-600 dark:hover:text-rose-400 hover:bg-stone-50 dark:hover:bg-stone-800'
+                  }`}
+              >
+                <span className="hidden xs:inline-block">{item.icon}</span>
+                <span className="truncate">{item.label}</span>
+              </Link>
+            ))}
+          </nav>
         </div>
       </header>
 
@@ -65,18 +80,6 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
           <p className="text-[10px] opacity-50">
             © {new Date().getFullYear()} 民主富二代補課小站. All history belongs to the people.
           </p>
-
-          <nav className="flex flex-wrap justify-center gap-6 mt-10 md:hidden">
-            {navItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                className="text-[11px] font-black uppercase tracking-tighter hover:text-white border-b border-stone-700 dark:border-stone-600 pb-1"
-              >
-                {item.label}
-              </Link>
-            ))}
-          </nav>
         </div>
       </footer>
     </div>
