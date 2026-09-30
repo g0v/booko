@@ -50,7 +50,7 @@ function getCoverFromUrl(url) {
 
 // 輔助函式：產生搜尋連結
 const getNlpiLink = (title) =>
-  `https://ebook.nlpi.edu.tw/search?search_field=TI&search_input=${encodeURIComponent(title)}`;
+  `https://ebook.nlpi.edu.tw/search?searchField=TI&searchInput=${encodeURIComponent(title)}`;
 const getEsliteSearch = (title) => `https://www.eslite.com/Search?q=${encodeURIComponent(title)}`;
 const getKingstoneSearch = (title) => `https://www.kingstone.com.tw/search/search?q=${encodeURIComponent(title)}`;
 
